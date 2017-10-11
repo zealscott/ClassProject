@@ -17,7 +17,7 @@ RootPath = os.getcwd()
 
 
 def Is_yc(url):
-    pattern = re.compile(r'http://5sing.kugou.com/yc')
+    pattern = re.compile(r'http://5sing.kugou.com/yc/\d')
     if pattern.search(url):
         return True
     else:
@@ -57,22 +57,40 @@ def write_url(level, RootPath, url):
 
 
 
-for level in range(2, 3):
-       # open source text
-    inFile = "WebGet_" + str(level) + ".txt"
-    f_in = open(inFile, "r")
-    data = f_in.readlines()
-    for url in data:
-        url = url.replace("\n", "")
-        if level != 1:
-            # if the url isn't a yc
-            if Is_yc(url) is False:
-                # print "isn't a yc"
-                continue
-        res = requests.get(url)
-        soup = BeautifulSoup(res.text, 'html.parser')
-        soup.find_all("div",class_="view_tit")
-    f_in.close()
+
+
+
+url = "http://5sing.kugou.com/yc/3064857.html"
+
+# if the url isn't a yc
+if Is_yc(url) is False:
+     print "isn't a yc"
+res = requests.get(url)
+soup = BeautifulSoup(res.text, 'html.parser')
+songView=soup.find_all("div",class_="view")[0]
+title=songView.find_all("div",class_="view_tit")[0].text
+lt=songView.find_all("ul",class_="lt mb15")[0].text
+lt=songView.find_all("ul",class_="lt mb15")[0].text
+
+
+
+
+
+eng_info={u"演唱":"Singer",u"作词":"Writer",u"作曲":"Composer",u"编曲":"Arranger",
+u"混缩":"Mixer",u"分类":"Classification",u"语种":"Language",u"曲风":"Style"}
+info="MusicName:"+'"'+title+'",'
+count=0
+for i in lt.split("\n"):
+    if i=='':
+        continue
+    if count==8:
+        break
+    item=i.split(u"：")
+    info=info+eng_info[item[0]]+":"+'"'+item[1]+'",'
+    count+=1
+info=info[:-1]
+print info
+
     
 
 
