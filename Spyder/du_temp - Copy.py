@@ -52,10 +52,14 @@ def write_url(level, RootPath, url):
     return 1
 
 
-def get_yc_url(level, RootPath):
-    # open source text
+
+
+
+
+
+for level in range(2, 3):
+       # open source text
     inFile = "WebGet_" + str(level) + ".txt"
-    count = 0
     f_in = open(inFile, "r")
     data = f_in.readlines()
     for url in data:
@@ -67,22 +71,9 @@ def get_yc_url(level, RootPath):
                 continue
         res = requests.get(url)
         soup = BeautifulSoup(res.text, 'html.parser')
-#         #get all the url 
-        tag_a = soup.find_all("a", href=True)
-        for i in tag_a:
-            get_url = i["href"]
-            pattern = re.compile(r'http://5sing.kugou.com')
-            if pattern.match(get_url):
-                # if the url is exit, return 0, else ,return 1
-                count += write_url(level, RootPath, get_url)
-#        #get the song info
+        soup.find_all("div",class_="view_tit")
     f_in.close()
-    return count
-
-
-for i in range(1, 2):
-    number = get_yc_url(i, RootPath)
-    print "the level %d has %d urls" % (i+1, number)
+    
 
 
 
