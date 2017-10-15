@@ -116,18 +116,22 @@ def spyder(level, RootPath):
             if Is_yc(url) is False:
                 # print "isn't a yc"
                 continue
-        res = requests.get(url)
-        soup = BeautifulSoup(res.text, 'html.parser')
-        count_song += write_songInfo(level, RootPath, url)
-        tag_a = soup.find_all("a", href=True)
-        pattern = re.compile(r"http://5sing.kugou.com/")
-        for i in tag_a:
-            get_url = i["href"]
-            if pattern.match(get_url):
-                # if the url is exit, return 0, else ,return 1
-                count_url += write_url(level, RootPath, get_url)
-        s = requests.session()
-        s.keep_alive = False
+        try:
+            res = requests.get(url)
+            soup = BeautifulSoup(res.text, 'html.parser')
+            count_song += write_songInfo(level, RootPath, url)
+            tag_a = soup.find_all("a", href=True)
+            pattern = re.compile(r"http://5sing.kugou.com/")
+            for i in tag_a:
+                get_url = i["href"]
+                if pattern.match(get_url):
+                    # if the url is exit, return 0, else ,return 1
+                    count_url += write_url(level, RootPath, get_url)
+            s = requests.session()
+            s.keep_alive = False
+        except:
+            print res
+            print "connect error!"
     f_in.close()
     return count_url, count_song
 
