@@ -1,0 +1,79 @@
+{MusicName:"【魔道同人】东风志",Singer:"Aki阿杰",Writer:"择荇",Composer:"银临",Arranger:"灰原穷",Mixer:"灰原穷",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"《万万没想到》角色歌《神通》",Singer:"小爱的妈",Writer:"EDIQ",Composer:"gold",Arranger:"gold",Mixer:"曾经",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"不老梦",Singer:"银临",Writer:"慕清明",Composer:"银临",Arranger:"灰原穷",Mixer:"灰原穷",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"红梅白雪知",Singer:"云の泣",Writer:"乘物游心",Composer:"月千宸",Arranger:"月千宸",Mixer:"CuTTlefish",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"一笑倾城",Singer:"汪苏泷",Writer:"Finale",Composer:"汪苏泷",Arranger:"欧阳尹路",Mixer:"",Classification:"原创",Language:"华语",Style:"流行 影视"}
+{MusicName:"思想悼亡者",Singer:"老虎欧巴",Writer:"Amaya貔貅",Composer:"sakura",Arranger:"粮油屋",Mixer:"小吴太太【平纱落雁】",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"【流行抒情】好的坏人",Singer:"JessieG",Writer:"MK",Composer:"古奇光  浪浪",Arranger:"古奇光",Mixer:"昊淡定",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"九九八十一",Singer:"西瓜Kune",Writer:"邪叫教主",Composer:"乌龟老牌电动车3号",Arranger:"乌龟老牌电动车3号",Mixer:"燕alyssa",Classification:"原创",Language:"华语",Style:"古风 摇滚"}
+{MusicName:"《从前有座灵剑山》中文版ED——《夕山谣》",Singer:"叫ぶ獣",Writer:"琉璃菌",Composer:"LBG萝卜根",Arranger:"LBG萝卜根",Mixer:"LBG萝卜根",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"狐言——演唱：河图&洛天依",Singer:"河图&洛天依",Writer:"予词【芙蓉帐暖】",Composer:"银临",Arranger:"灰原穷（异新音乐）",Mixer:"灰原穷（异新音乐）",Classification:"原创",Language:"华语",Style:"古风 对唱/合唱 流行"}
+{MusicName:"剑网3霸刀门派主题歌纯歌版",Singer:"音频怪物",Writer:"焰三一",Composer:"陈鹏杰",Arranger:"陈鹏杰",Mixer:"幺唠",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"别赋",Singer:"慕寒",Writer:"若紫鸢",Composer:"印iAn",Arranger:"印iAn",Mixer:"印iAn",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"再起荣耀——《全职高手》宣传曲",Singer:"小魂",Writer:"乘物游心",Composer:"litterzy",Arranger:"litterzy",Mixer:"_Cuttlefish",Classification:"原创",Language:"华语",Style:"动漫/游戏"}
+{MusicName:"【阴阳师】《百鬼阴阳抄》",Singer:"西瓜Kune",Writer:"St_色太",Composer:"乌龟Sui",Arranger:"",Mixer:"",Classification:"原创",Language:"华语",Style:"动漫/游戏"}
+{MusicName:"天命风流",Singer:"音频怪物",Writer:"檀烧",Composer:"千草仙",Arranger:"田汨",Mixer:"Daniel Kresco 汪佳杰",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"【醉江湖】笑傲江湖OL",Singer:"小曲儿",Writer:"纱朵",Composer:"小旭音乐",Arranger:"小旭音乐",Mixer:"小旭音乐",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"【天谕】业火如刹-李向哲X特曼X金弦",Singer:"李向哲、特曼、金弦",Writer:"冉语优",Composer:"王朝",Arranger:"宏宇",Mixer:"宏宇",Classification:"原创",Language:"华语",Style:"摇滚 电子 动漫/游戏"}
+{MusicName:"剑侠情缘手游峨眉主题曲之《白露凝霜》",Singer:"不才",Writer:"云衣",Composer:"五仁小月饼",Arranger:"五仁小月饼",Mixer:"维她命",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"龙之谷宣传曲——龙翼",Singer:"伦桑",Writer:"邪叫教主",Composer:"灰原穷",Arranger:"灰原穷",Mixer:"灰原穷",Classification:"原创",Language:"华语",Style:"流行 动漫/游戏"}
+{MusicName:"大唐游仙记",Singer:"河图",Writer:"乘物游心",Composer:"Litterzy",Arranger:"Litterzy",Mixer:"少年E",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"【笔耕不辍】——陆游",Singer:"小曲儿",Writer:"贰哲",Composer:"魄珺",Arranger:"贺鑫【乐舞音乐工作室】",Mixer:"Mr.鱼",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"寒梅煮雪 Ft.灰老板",Singer:"灰老板&萧忆情",Writer:"马小瞳",Composer:"潮汐-TIDE",Arranger:"潮汐-TIDE",Mixer:"Mr.鱼",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"半生你我",Singer:"Assen捷",Writer:"沈行之",Composer:"月千宸",Arranger:"月千宸",Mixer:"梅粮新",Classification:"原创",Language:"华语",Style:"古风 流行"}
+{MusicName:"【长生诀】",Singer:"西瓜JUN",Writer:"逸生",Composer:"西瓜JUN",Arranger:"西瓜JUN",Mixer:"三鹿",Classification:"原创",Language:"华语",Style:"古风 电子"}
+{MusicName:"十年一梦-橙光游戏《十年清风》主题曲",Singer:"五音Jw",Writer:"予取予求",Composer:"潮汐Tide",Arranger:"潮汐Tide",Mixer:"五音Jw、宏宇",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"奸雄",Singer:"贰婶",Writer:"冥凰",Composer:"贺鑫",Arranger:"贺鑫",Mixer:"Mr.鱼",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"不死城（纯歌版）",Singer:"小魂",Writer:"锦衣小盆友",Composer:"零",Arranger:"零",Mixer:"CuTTleFiSh",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"空谷幽梦",Singer:"排骨教主",Writer:"素昭",Composer:"深度ys",Arranger:"天津赵小肥",Mixer:"毛毛 云倾少",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"煮酒听雨（《天下3》官方专辑收录曲）",Singer:"吾恩",Writer:"安不之",Composer:"v1ncent_sun丶",Arranger:"v1ncent_sun丶",Mixer:"Mr_曾经",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"【原创】行者万里（记《大圣归来》）",Singer:"小千",Writer:"素昭",Composer:"深度ys",Arranger:"深度ys",Mixer:"Mr.曾经",Classification:"原创",Language:"华语",Style:"流行 动漫/游戏 影视"}
+{MusicName:"【原创】《岁月歌》——霹雳布袋戏·最光阴",Singer:"卡修Rui【平纱落雁】",Writer:"烟烬迷璃&明月照青灯&素锦",Composer:"Sakura【PFT】",Arranger:"李大白&Fsy小诺",Mixer:"007",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"悬空",Singer:"RaJor/云の泣",Writer:"二毛",Composer:"汤汤",Arranger:"汤汤",Mixer:"RaJor",Classification:"原创",Language:"华语",Style:"对唱/合唱 流行 动漫/游戏"}
+{MusicName:"不渝— 天涯明月刀OL五毒同人",Singer:"冬子",Writer:"甘乐",Composer:"papaw泡泡",Arranger:"papaw泡泡",Mixer:"冬子",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"【SQ】从你的名字开始",Singer:"浮生梦&西瓜",Writer:"叹息",Composer:"水鸟",Arranger:"水鸟",Mixer:"半岛",Classification:"原创",Language:"华语",Style:"民谣 流行"}
+{MusicName:"温酒叙此生-橙光游戏《穿越之逼恶成圣》主题曲",Singer:"慕斯の小乖",Writer:"顾聆落",Composer:"执素兮",Arranger:"潇梦临",Mixer:"ZENIA",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"永恒英雄曲——《300英雄》主题曲",Singer:"特曼【满汉全席】",Writer:"江岸【满汉全席】",Composer:"宏宇【满汉全席】",Arranger:"宏宇【满汉全席】",Mixer:"Mr曾经【满汉全席】",Classification:"原创",Language:"华语",Style:"动漫/游戏"}
+{MusicName:"キズナミダの木",Singer:"ゆう十/ゆめこ/rairu",Writer:"ゆう十/ゆめこ",Composer:"ゆう十",Arranger:"",Mixer:"",Classification:"原创",Language:"日语",Style:"流行"}
+{MusicName:"不思量（橙光游戏《凤踏山河》主题曲）",Singer:"嫌弃",Writer:"未见钗头凤",Composer:"洪尘",Arranger:"洪尘",Mixer:"洪尘",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"无常曲（乙女AVG《梦浮灯》片尾ED）",Singer:"吾恩",Writer:"叶清眉",Composer:"潇梦临",Arranger:"潇梦临",Mixer:"dB音频工作室",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"积梦成渊",Singer:"渊渊",Writer:"渊渊",Composer:"渊渊",Arranger:"渊渊",Mixer:"一位不留名的红领巾",Classification:"原创",Language:"华语",Style:"民谣 流行"}
+{MusicName:"梦航员",Singer:"Mario",Writer:"小坠",Composer:"Mario",Arranger:"天钦",Mixer:"王冲/吾恩",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"月光",Singer:"金弦",Writer:"金弦",Composer:"金弦",Arranger:"朱鸽",Mixer:"郑昊杰",Classification:"原创",Language:"华语",Style:"古典 流行"}
+{MusicName:"爱的躲猫猫—— 《神基喵算》原创主题曲",Singer:"佑可猫",Writer:"千月兔",Composer:"安靖羽",Arranger:"杨栋梁",Mixer:"佑可猫",Classification:"原创",Language:"华语",Style:"流行 广播剧"}
+{MusicName:"【Chn】爱何辜 广播剧《一醉经年》插曲",Singer:"呆呆akuma",Writer:"水千丞",Composer:"徐帅",Arranger:"徐帅",Mixer:"徐帅",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"【橙光】Be A Shadow（唱：britneylee）",Singer:"britneylee",Writer:"锦玉盒子",Composer:"执素兮",Arranger:"潘柯夫",Mixer:"啊鲤",Classification:"原创",Language:"欧美",Style:"流行 动漫/游戏 电子"}
+{MusicName:"【伪装者同人】落幕 演唱：五哥&慕寒&小千&贰婶",Singer:"五哥&慕寒&小千&贰婶",Writer:"伯南&清彦",Composer:"寒殇xxls",Arranger:"sea云",Mixer:"白开Bakeron",Classification:"原创",Language:"华语",Style:"对唱/合唱 影视 流行"}
+{MusicName:"幻日（Smile_小千、贰婶）",Singer:"Smile_小千、贰婶",Writer:"知月倾城",Composer:"擎天Sir",Arranger:"恒曌",Mixer:"CuTTleFiSh",Classification:"原创",Language:"华语",Style:"对唱/合唱 电子"}
+{MusicName:"出道吧！moonlight！",Singer:"Moonlight",Writer:"柚塔",Composer:"梅粮新",Arranger:"梅粮新",Mixer:"斯雷嘟dududu",Classification:"原创",Language:"华语",Style:"对唱/合唱 流行"}
+{MusicName:"《我想去造访一颗星》",Singer:"胡碧乔",Writer:"沃特艾文儿",Composer:"胡碧乔",Arranger:"胡碧乔",Mixer:"胡碧乔",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"[原创]九歌·东皇太一",Singer:"Winky诗",Writer:"屈原",Composer:"Winky诗",Arranger:"Winky诗",Mixer:"Winky诗",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"江湖归来叙旧茶",Singer:"五色石南叶/小千",Writer:"清彦",Composer:"明日天涯的KOKI",Arranger:"明日天涯的KOKI",Mixer:"鱼叉",Classification:"原创",Language:"华语",Style:"古风 对唱/合唱 流行"}
+{MusicName:"步人间（魔道祖师 · 群像）",Singer:"14位",Writer:"6位",Composer:"纯席&偃仰",Arranger:"偃仰",Mixer:"竹庭",Classification:"原创",Language:"华语",Style:"古风 对唱/合唱"}
+{MusicName:"洛阳夜雨",Singer:"HITA",Writer:"梁阿渣",Composer:"Winky诗",Arranger:"Winky诗",Mixer:"安迪",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"将卿",Singer:"小残",Writer:"碧落&小宅（方可）",Composer:"小宅",Arranger:"小宅",Mixer:"小宅",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"三生",Singer:"龟仙人",Writer:"函谷生",Composer:"胡星圆",Arranger:"",Mixer:"",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"凭栏梦 ft.冷杉 ——《义犹未尽》原创古风音乐专辑",Singer:"小义&冷杉",Writer:"wjjslove",Composer:"Winky诗",Arranger:"Winky诗",Mixer:"暴风雪",Classification:"原创",Language:"华语",Style:"古风 对唱/合唱 流行"}
+{MusicName:"杳杳",Singer:"方糖泡泡",Writer:"方糖蘸馒头",Composer:"方糖蘸馒头",Arranger:"方糖蘸馒头",Mixer:"方糖蘸馒头",Classification:"原创",Language:"华语",Style:"古风 戏曲/曲艺"}
+{MusicName:"【剑网3七周年原创】浩气盟战歌《以身戮恶》[4P合唱]",Singer:"朱强&吾恩&Assen捷&T-Tone",Writer:"浓缩排骨&虞之",Composer:"章鱼烧正太",Arranger:"微风",Mixer:"Mr.曾经",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"容若记忆",Singer:"董贞",Writer:"秋旻",Composer:"东方训庭&董贞",Arranger:"赵二",Mixer:"唐瑜",Classification:"原创",Language:"华语",Style:"古风"}
+{MusicName:"【天涯三唱】",Singer:"流浪的蛙蛙",Writer:"为了狮子头",Composer:"李彦新",Arranger:"李彦新",Mixer:"MR.鱼",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
+{MusicName:"好久不见",Singer:"乌拉多恩",Writer:"乌拉多恩",Composer:"乌拉多恩",Arranger:"乌拉多恩",Mixer:"乌拉多恩",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"【茉莉花开】海棠",Singer:"玄觞",Writer:"千月兔、王朝、玄觞",Composer:"王朝",Arranger:"李超",Mixer:"刘城函",Classification:"原创",Language:"华语",Style:"古风 流行"}
+{MusicName:"上瘾",Singer:"玉面",Writer:"玉面",Composer:"玉面",Arranger:"玉面",Mixer:"幺唠",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"雪（独唱版）",Singer:"杜雯媞",Writer:"KING",Composer:"杜雯媞",Arranger:"余雷",Mixer:"刘羽伦",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"如斯",Singer:"球子（刘晓琼）",Writer:"周骏 球子（刘晓琼）",Composer:"球子（刘晓琼）",Arranger:"球子（刘晓琼）",Mixer:"十三  球子（刘晓琼）",Classification:"原创",Language:"华语",Style:"民谣 摇滚 流行"}
+{MusicName:"漫步在岁月洪流",Singer:"KasaYAYA（二丫）",Writer:"沃特艾文儿",Composer:"Mx-R辛照Bu萱",Arranger:"恒曌",Mixer:"亦北",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"07 落花不过身外客，流水从来是凉薄",Singer:"叶里",Writer:"叶里",Composer:"叶里",Arranger:"mading",Mixer:"mading",Classification:"原创",Language:"华语",Style:"古风 电子"}
+{MusicName:"甜蜜的花",Singer:"陶心瑶",Writer:"魏薇",Composer:"铁阳",Arranger:"王思谦",Mixer:"赵广为",Classification:"原创",Language:"华语",Style:"民谣"}
+{MusicName:"我们都爱过",Singer:"栾军",Writer:"李岩",Composer:"杜雯媞",Arranger:"余雷",Mixer:"刘巍",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"《旧友》",Singer:"星弟/小贱（谭冰尧）",Writer:"谭冰尧",Composer:"星弟",Arranger:"步鸿/星弟",Mixer:"星弟",Classification:"原创",Language:"华语",Style:"对唱/合唱 流行"}
+{MusicName:"【狐妖小红娘王权篇OP主题曲】梦回还",Singer:"呦猫UNEKO",Writer:"浓缩排骨",Composer:"战场原妖精",Arranger:"SUTEIMA",Mixer:"战场原妖精",Classification:"原创",Language:"华语",Style:"流行 动漫/游戏"}
+{MusicName:"孤独症－4357－",Singer:"ARIS",Writer:"Evalia",Composer:"Evalia",Arranger:"Evalia",Mixer:"Evalia",Classification:"原创",Language:"日语",Style:"流行"}
+{MusicName:"Wake-Up (feat.花たん)",Singer:"花たん",Writer:"梦璟SAYA",Composer:"Tureleon",Arranger:"Tureleon",Mixer:"Tureleon",Classification:"原创",Language:"日语",Style:"流行 摇滚"}
+{MusicName:"好在你没离开 - 《灵契》插曲",Singer:"Jalam",Writer:"张汇泉",Composer:"钱襄",Arranger:"沈佶",Mixer:"Jalam",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"镶嵌于星空的歌谣",Singer:"东京塔子",Writer:"すい",Composer:"LunaSafari",Arranger:"LunaSafari",Mixer:"Gong骏",Classification:"原创",Language:"日语",Style:"动漫/游戏"}
+{MusicName:"【洛天依】为了你唱下去",Singer:"洛天依",Writer:"COP",Composer:"COP",Arranger:"COP",Mixer:"COP",Classification:"原创",Language:"华语",Style:"流行"}
+{MusicName:"【ilem】深夜诗人",Singer:"三无ft.洛天依&言和&ilem",Writer:"ilem",Composer:"ilem",Arranger:"ilem",Mixer:"三无",Classification:"原创",Language:"华语",Style:"电子 DJ/舞曲 动漫/游戏"}
+{MusicName:"【原】《新·雪诉离歌》Ft. Assen捷 记古剑苏雪",Singer:"Assen捷&梦岚",Writer:"紫云紗",Composer:"紫云紗",Arranger:"潇儿",Mixer:"lucios",Classification:"原创",Language:"华语",Style:"古风 对唱/合唱 动漫/游戏"}
+{MusicName:"长生",Singer:"佑可猫",Writer:"锦衣小盆友",Composer:"阿软",Arranger:"阿软",Mixer:"啊鲤",Classification:"原创",Language:"华语",Style:"古风 动漫/游戏"}
