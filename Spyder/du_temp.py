@@ -1,7 +1,6 @@
 # coding=utf-8
 from bs4 import BeautifulSoup
 import requests  # send request
-import Queue
 import re
 import os
 import datetime
@@ -14,19 +13,16 @@ probeginTime = datetime.datetime.now()  # 程序开始时间
 RootPath = os.getcwd()
 
 
-# q = Queue.Queue()
-
-
-def Is_yc(url):
-    pattern = re.compile(r'http://5sing.kugou.com/yc/\d')
+def Is_yc(url):          # Judge whether the url is a yc song's url.
+    pattern = re.compile(r'http://5sing.kugou.com/yc/\d')     # \d follows with numbers.
     if pattern.search(url):
         return True
     else:
         return False
 
 
-def exitURL(level, url):
-    for i in range(1, level + 2):
+def Is_existed(level, url):         # Judge whether the url is already existed.
+    for i in range(1, level + 2):       # level+2 to ensure that we also examine the url in current level.
         filename = "WebGet_" + str(i) + ".txt"
         # the file may not exit
         if os.path.exists(RootPath + "\\" + filename):
@@ -41,9 +37,9 @@ def exitURL(level, url):
     return False
 
 
-def write_url(level, RootPath, url):
+def write_url(level, url):       # write the url in current level's output txt if it is not existed.
     outFile = "WebGet_" + str(level + 1) + ".txt"
-    if exitURL(level, url) is True:
+    if Is_existed(level, url) is True:
         #        print "%s is exit"%(url)
         return 0
     f_out = open(outFile, "a")
@@ -53,8 +49,8 @@ def write_url(level, RootPath, url):
     return 1
 
 
-def write_songInfo(level, RootPath, url):
-    if level == 1:
+def write_songInfo(level, url):    # if url is match yc, then download its info.
+    if level == 1:         # the first page
         return 0
     if check_info(url) == 0:
         print "the %s contain no songinfo!" % (url)
@@ -76,10 +72,10 @@ def write_songInfo(level, RootPath, url):
         item = i.split(u"：")
         info = info + eng_info[item[0]].decode("utf-8") + ":" + '"' + (item[1].strip()).decode("utf-8") + '",'
         count += 1
-    info = info[:-1]
+    info = info[:-1]     # delete the last ','
     info = info + "}"
     outFile = "songinfo_" + str(level) + ".txt"
-    #    print info
+    #    put info into txt.
     f_out = open(outFile, "a")
     f_out.write(info)
     f_out.write("\n")
@@ -87,7 +83,7 @@ def write_songInfo(level, RootPath, url):
     return 1
 
 
-def check_info(url):
+def check_info(url):  # avoid link error and invalid url.
     try:
         res = requests.get(url)
         soup = BeautifulSoup(res.text, 'html.parser')
@@ -104,7 +100,7 @@ def check_info(url):
         return 1
 
 
-def spyder(level, RootPath):
+def spyder(level):
     inFile = "WebGet_" + str(level) + ".txt"
     count_url = 0
     count_song = 0
@@ -112,21 +108,18 @@ def spyder(level, RootPath):
     data = f_in.readlines()
     for url in data:
         url = url.replace("\n", "")
-        if level != 1:
-            if Is_yc(url) is False:
-                # print "isn't a yc"
-                continue
         try:
             res = requests.get(url)
             soup = BeautifulSoup(res.text, 'html.parser')
-            count_song += write_songInfo(level, RootPath, url)
+            if Is_yc(url) is True:
+                count_song += write_songInfo(level, url)
             tag_a = soup.find_all("a", href=True)
             pattern = re.compile(r"http://5sing.kugou.com/")
             for i in tag_a:
                 get_url = i["href"]
                 if pattern.match(get_url):
                     # if the url is exit, return 0, else ,return 1
-                    count_url += write_url(level, RootPath, get_url)
+                    count_url += write_url(level, get_url)
             s = requests.session()
             s.keep_alive = False
         except:
@@ -137,7 +130,7 @@ def spyder(level, RootPath):
 
 
 for i in range(1, 8):
-    count = spyder(i, RootPath)
+    count = spyder(i)
     print "level %d has spyder %d urls, has songInfo %d" % (i, count[0], count[1])
 
 endtime = datetime.datetime.now()

@@ -22,14 +22,6 @@ def Spyder_url(url_in):   # url_in is a txt including all the url achieved in th
         res = requests.get(url)
         soup = BeautifulSoup(res.text, 'html.parser')
 
-        #tag_a = soup.find_all('div', class_='v_list_info list_yc')
-        #for a in tag_a:
-        #    new_url_lists = a.find_all('a')
-        #     for i in new_url_lists:
-        #         new_url = i.get('href')
-        #         add_url = new_url.replace('#listenContent','')
-        #         f_out.write(add_url + '\n')
-
         template = re.compile('http://5sing.kugou.com/yc/')
         t1 = soup.find_all('a')
         for i in t1:
@@ -70,13 +62,13 @@ def Spyder_info(url_in):   # url_in is a txt including all the url achieved in t
             data[title[i]] = tmp[1].decode()
 
         # download and collect
-        download = str(musicInfo[10].text)     # is 0 ,not know why.
-        download_num = download.replace('下载','')
-        data['Download'] = download_num
-        collect = musicInfo[12].text          # is 0 ,not know why.
-        collect_ = (str(collect).split('\n'))[1]
-        collect_num = collect_.replace('收藏','')
-        data['Collect'] = collect_num
+        # download = str(musicInfo[10].text)     # is 0 ,not know why.
+        # download_num = download.replace('下载','')
+        # data['Download'] = download_num
+        # collect = musicInfo[12].text          # is 0 ,not know why.
+        # collect_ = (str(collect).split('\n'))[1]
+        # collect_num = collect_.replace('收藏','')
+        # data['Collect'] = collect_num
         json_str = str(json.dumps(data, ensure_ascii=False))
         f_info.write(json_str + '\n')
         f_info.close()
