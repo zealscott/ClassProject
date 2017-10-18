@@ -109,10 +109,10 @@ def spyder(level):
     for url in data:
         url = url.replace("\n", "")
         try:
-            res = requests.get(url)
-            soup = BeautifulSoup(res.text, 'html.parser')
             if Is_yc(url) is True:
                 count_song += write_songInfo(level, url)
+            res = requests.get(url)
+            soup = BeautifulSoup(res.text, 'html.parser')
             tag_a = soup.find_all("a", href=True)
             pattern = re.compile(r"http://5sing.kugou.com/")
             for i in tag_a:
