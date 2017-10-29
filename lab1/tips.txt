@@ -1,0 +1,5 @@
+1.有些yc链接已经是无效链接，需要识别
+2.提取出的每个url要去掉换行符
+3.出现Max retries exceeded with url:错误
+	s = requests.session()
+  		s.keep_alive = False
