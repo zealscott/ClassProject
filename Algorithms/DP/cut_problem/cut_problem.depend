@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1510831236 source:c:\users\user\desktop\algorithms\dp\cut_problem\main.cpp
+	<iostream>
+	<vector>
+

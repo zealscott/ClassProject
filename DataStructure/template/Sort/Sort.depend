@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1511683086 source:c:\users\scott\desktop\github\datastructure\template\sort\main.cpp
+	<iostream>
+	"List.cpp"
+
+1511680712 source:c:\users\scott\desktop\github\datastructure\template\sort\radix_sort.cpp
+	<iostream>
+	"list.cpp"
+
+1511682932 c:\users\scott\desktop\github\datastructure\template\sort\list.cpp
+	<iostream>
+	"list.h"
+
+1511682497 c:\users\scott\desktop\github\datastructure\template\sort\list.h
+
+1511682932 source:c:\users\scott\desktop\github\datastructure\template\sort\list.cpp
+	<iostream>
+	"list.h"
+
+1511698181 source:c:\users\user\desktop\datastructure\template\sort\list.cpp
+	<iostream>
+	"List.h"
+
+1511698172 c:\users\user\desktop\datastructure\template\sort\list.h
+
+1511703236 source:c:\users\user\desktop\datastructure\template\sort\main.cpp
+	<iostream>
+	"Radix_Sort.h"
+
+1511698181 c:\users\user\desktop\datastructure\template\sort\list.cpp
+	<iostream>
+	"List.h"
+
+1511703132 source:c:\users\user\desktop\datastructure\template\sort\radix_sort.cpp
+	<iostream>
+	<queue>
+	<string>
+
+1511703087 c:\users\user\desktop\datastructure\template\sort\radix_sort.h
+	"List.cpp"
+	<queue>
+	<string>
+
+1511698393 source:c:\users\user\desktop\datastructure\template\sort\main1.cpp
+	<iostream>
+	"List.cpp"
+
+1511703051 c:\users\user\desktop\datastructure\template\sort\radix_sort.cpp
+	"Radix_Sort.h"
+	<iostream>
+	<queue>
+	<string>
+

@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1507544893 source:c:\users\user\desktop\datastructure\linked_list\main.cpp
+	<iostream>
+	<cstring>
+	"struct.h"
+	"fuc.h"
+
+1507544709 c:\users\user\desktop\datastructure\linked_list\struct.h
+	<iostream>
+	<cstring>
+
+1507545000 c:\users\user\desktop\datastructure\linked_list\fuc.h
+	<iostream>
+	<cstring>
+	"struct.h"
+
+1507985565 source:c:\users\scott\desktop\git\datastructure\linked_list_new\main.cpp
+	<iostream>
+	<cstring>
+	"struct.h"
+	"fuc.h"
+
+1507983792 c:\users\scott\desktop\git\datastructure\linked_list_new\struct.h
+	<iostream>
+	<cstring>
+
+1507985881 c:\users\scott\desktop\git\datastructure\linked_list_new\fuc.h
+	<iostream>
+	<cstring>
+	"struct.h"
+
+1508141120 source:c:\users\user\desktop\datastructure\linked_list_new\main.cpp
+	<iostream>
+	<cstring>
+	"struct.h"
+
+1508140881 c:\users\user\desktop\datastructure\linked_list_new\struct.h
+	<iostream>
+	<cstring>
+
+1508140818 source:c:\users\user\desktop\datastructure\linked_list_new\struct.cpp
+	<iostream>
+	<cstring>
+	"struct.h"
+

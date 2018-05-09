@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1506239944 source:c:\users\scott\datastructure\stack_operator\main.cpp
+	<iostream>
+	<cctype>
+	<stack>
+	<stdlib.h>
+	"fun.h"
+
+1506238816 c:\users\scott\datastructure\stack_operator\fun.h
+
+1506326123 source:c:\users\user\datastructure\stack_operator\main.cpp
+	<iostream>
+	<cctype>
+	<stack>
+	<stdlib.h>
+	<math.h>
+	"fun.h"
+
+1506319515 c:\users\user\datastructure\stack_operator\fun.h
+

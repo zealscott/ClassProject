@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1513576988 source:c:\users\user\desktop\datastructure\heap\main.cpp
+	<iostream>
+	"heap.h"
+
+1513574699 c:\users\user\desktop\datastructure\heap\heap.h
+	"BinaryNode.h"
+	<vector>
+	<iostream>
+
+1513576767 c:\users\user\desktop\datastructure\heap\binarynode.h
+	<iostream>
+

@@ -1,0 +1,58 @@
+1.
+10 5 12 4 7 null null
+22
+
+null
+0
+
+10 9 null
+10
+
+10 5 12 4 7 null 1 null null null null null null null 1
+24
+
+
+2.
+6
+aba
+bc
+aba
+ef
+d
+ef
+aaabc
+
+1
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+7
+aa
+bc
+cd
+aa
+bc
+cd
+ef
+abcdeefef
+
+3
+aa
+aa
+bb
+a
+
+2
+aa
+aa
+a
+
+3.
+6 4 1 # 2 # # 5 # # 8 # 9 # #
+2 9
+
+4 3 2 # # # 5 # 6 # #
+2 3
+
+6 4 1 # # 5 2 # # # 8 # 9 # #
+2 1

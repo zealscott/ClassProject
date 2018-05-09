@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1515721881 source:c:\users\user\desktop\1\main.cpp
+	<iostream>
+	<vector>
+
+1515742649 source:c:\users\user\desktop\datastructure\permutation\permutation\main.cpp
+	<iostream>
+	<vector>
+

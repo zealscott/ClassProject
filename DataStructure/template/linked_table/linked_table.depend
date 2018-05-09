@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1508331587 source:c:\users\user\desktop\datastructure\template\linked_table\circular.cpp
+	<iostream>
+	"circular.h"
+
+1508331513 source:c:\users\user\desktop\datastructure\template\linked_table\main.cpp
+	<iostream>
+	"circular.h"
+
+1508331415 c:\users\user\desktop\datastructure\template\linked_table\circular.h
+	<string>
+

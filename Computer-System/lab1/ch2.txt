@@ -1,0 +1,222 @@
+﻿Homework problem (ch2)
+杜云滔 10153903105
+2.62
+
+int int_shifts_are_arithmetic()
+{
+    int temp=1<<(sizeof(int)<<3-1);
+    temp>>=(sizeof(int)<<3-1);
+    return temp!=1;
+}
+
+2.63
+
+unsigned srl(unsigned x, int k)
+{
+    /*perform shift arithmetically*/
+    unsigned xsra = (int) x>> k;
+    int temp=(1<<(sizeof(int)<<3-k))-1;
+    return xsra&temp;
+}
+
+int sra(int x, int k)
+{
+    /*perform shift logically*/
+    int xsrl = (unsigned) x>>k;
+    int word=sizeof(int)<<3;
+    int temp=(1<<(word-k-1));   /*000100000*/
+    return xsrl|~((temp&xsrl)-1);
+}
+
+
+2.65
+
+/* return 1 when x contains an odd number of 1s;
+   0 otherwise. Assume w=32 */
+int odd_ones(unsigned x)
+{
+    int w=32;
+    while(w>1)    /* cannot use loop? */
+    {
+        w=w>>1;
+        x=(x>>w)^x;  /* if the two positions are 1,it's even */
+    }
+    return (x&1);
+}
+
+2.66
+
+/* Generate mask indicating leftmost 1 in x
+   Assume w=32  */
+int leftmost_one(unsigned x)
+{
+    x |= (x >> 1);
+    x |= (x >> 2);
+    x |= (x >> 4);
+    x |= (x >> 8);
+    x |= (x >> 16);  /* get 000111111...  */
+    return x^(x>>1);
+}
+
+2.69
+
+/* Do rotating left shift. Assume 0<=n<w  */
+unsigned rotate_left(unsigned x,int n)
+{
+    int word=sizeof(unsigned)<<3;
+    return x<<n | x>>(word-n);
+}
+
+
+2.75
+
+unsigned unsigned_high_prod(unsigned x,unsigned y)
+{
+    int word = sizeof(unsigned) << 3;
+    int i, j;
+    i = signed_high_prod(x, y);
+    /* the difference is just whether the
+       most significant bit is 1  */
+    j = (x>>(word-1))*y + (y>>(word-1))*x ;
+    return (i+j);
+}
+
+
+2.80
+
+{
+    /* if x is negative, add 0x3 */
+    int bias= (x>>31) & 0x3;
+    /* 3/4*/
+    x=(x+bias)>>2;
+    return (x<<1)+x;
+}
+
+2.94
+
+/* Compute 2*f. If f is NaN,then return f */
+float_bits float_twice(float_bits f){
+    unsigned sign=f>>31;
+    unsigned exp=(f>>23)&0xff;
+    unsigned frac=f&0x7fffff;
+    if(exp==0xff && frac!=0)
+        return uf;   /* NaN  */
+    if(exp==0xff && frac==0)
+        return uf;   /* infinite */
+    if(exp==0)
+    {
+        /*
+        if (frac>>22)   if frac>=0.5 
+        {
+            exp=1;     return to normalized 
+        }*/       
+	frac=(frac<<1);
+    }
+    else
+    {
+        exp+=1;
+        if(exp==0xff)
+            frac=0;
+    }
+    return (sign<<31)+(exp<<23)+frac;
+}
+
+
+2.95
+
+/* Compute 0.5*f. If f is NaN,then return f */
+float_bits float_half(float_bits f)
+{
+    unsigned sign=f>>31;
+    unsigned exp=f>>23&0xff;
+    unsigned frac=f&0x7fffff;
+    if(exp==0xff && frac!=0)
+        return f;   /* NaN  */
+    if(exp==0xff && frac==0)
+        return f;   /* infinite */
+    if(exp ==0 || exp==1)
+    {
+        if(exp==1)
+        {
+            /* change into denormalized */
+            frac=frac|0x800000;
+            exp=0;
+        }
+        /* rounding */
+        if((frac & 0x1)==1)
+            frac=(frac+1)>>1;
+        else
+            frac=frac>>1;
+    }
+    if(exp>0)
+    {
+        exp-=1;
+    }
+    return (sign<<31)+(exp<<23)+frac;
+}
+
+2.96
+
+/* Compute (int) f. If f is NaN or overflow,then return 0x80000000 */
+int float_f2i(float_bits f)
+{
+    unsigned sign=f>>31;
+    unsigned exp=f>>23&0xff;
+    unsigned frac=f&0x7fffff;
+    int temp=exp-0x7f;
+    if(exp==0xff && frac!=0)
+        return f;   /* NaN  */
+    if(exp==0xff && frac==0)
+        return f;   /* infinite */
+    if(exp<0x7f)  /* bias=127*/
+        /* too small, rounding to zero */
+        return 0;
+    else if(exp>158 ||(exp==158&&frac>0))
+        /* too big, 31+127=158 */
+        return 1<<31;
+    if(temp>23)
+        /* no need to round */
+        /* add 1  */
+        frac=((1<<23)|frac)<<(temp-23);
+    else
+        frac=(frac>>(23-c))|(1<<temp);
+	/*  whether negative  */
+    return sign?(~frac+1):frac;
+}
+
+
+2.98
+
+/* Compute (float)i */
+float_bits float_i2f(int i){
+/* using lift shift to store exp,frac, remember to rounding */
+    unsigned sign=(i>>31&1);
+    unsigned frac=i;
+    unsigned exp,c=0,flag=0;
+    if (x==0) return 0;
+    if (sign)
+    {
+        frac=~frac+1;
+    }
+    while (!(frac&(1<<31)))
+    {
+        frac<<=1;
+        c++;
+    }
+    exp=31-c+0x7f;
+    frac<<=1;
+    if (frac>>8 & 0x1)  
+    {
+	    if((frac & 0x1ff) !=0x100)
+		    flag=1;
+	    else
+	    {
+		    if (frac>>9 &0x1)
+			    flag=1;
+	    }
+    }
+    frac>>=9;
+    return (sign<<31)+(exp<<23)+(frac&0x7fffff)+flag;
+}
+
+

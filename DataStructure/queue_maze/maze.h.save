@@ -1,0 +1,173 @@
+#ifndef MAZE_H_INCLUDED
+#define MAZE_H_INCLUDED
+#include "queue.h"
+#include <stack>
+using namespace std;
+
+
+struct Pos
+{
+    int line;
+    int row;
+    int step;
+};
+
+template<class T>
+class Maze
+{
+private:
+    stack<Pos> sk;
+
+    T row,line;
+public:
+        Pos exit,entry;
+    T matrix[100][100];
+    void Initialize();
+    void print();
+    void GoMaze_DFS();
+    void GoMaze_BFS();
+    void printMin();
+};
+
+template<class T>
+void Maze<T>::Initialize()
+{
+    int i,j;
+    cout<<"please enter the lines & rows of maze"<<endl;
+    cin>>line>>row;
+    for (i=0; i<=line+1; i++)
+    {
+        for(j=0; j<=row+1; j++)
+        {
+            matrix[i][j]=0;
+        }
+    }
+    for (i=1; i<=line; i++)
+    {
+        for(j=1; j<=row; j++)
+        {
+            cin>>matrix[i][j];
+        }
+    }
+    cout<<"enter the entry point: line>>row>>"<<endl;
+    cin>>entry.line>>entry.row;
+    cout<<"enter the exit point: line>>row>>"<<endl;
+    cin>>exit.line>>exit.row;
+    cout<<"finish initialize!"<<endl;
+    sk.push(entry);
+    matrix[entry.line][entry.row]=2;
+}
+
+template<class T>
+void Maze<T>::print()
+{
+    int i,j;
+    for (i=1; i<=row; i++)
+    {
+        for (j=1; j<=line; j++)
+        {
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+
+template<class T>
+void Maze<T>::printMin()
+{
+    while (!sk.empty())
+    {
+        cout<<sk.top().line<<" "<<sk.top().row<<endl;
+        sk.pop();
+    }
+}
+
+
+template<class T>
+void Maze<T>::GoMaze_DFS()
+{
+    Pos top,temp;
+    top=sk.top();
+    print();
+    cout<<endl;
+    if (top.line==exit.line && top.row==exit.row) return;
+    if (matrix[top.line][top.row+1]==1) //left
+    {
+        matrix[top.line][top.row+1]=2;
+        temp.line=top.line;
+        temp.row=top.row+1;
+        sk.push(temp);
+        GoMaze_DFS();
+    }
+    if (matrix[top.line][top.row-1]==1)  //right
+    {
+        matrix[top.line][top.row-1]=2;
+        temp.line=top.line;
+        temp.row=top.row-1;
+        sk.push(temp);
+        GoMaze_DFS();
+    }
+    if (matrix[top.line+1][top.row]==1)  //down
+    {
+        matrix[top.line+1][top.row]=2;
+        temp.line=top.line+1;
+        temp.row=top.row;
+        sk.push(temp);
+        GoMaze_DFS();
+    }
+    if (matrix[top.line-1][top.row]==1)  //up
+    {
+        matrix[top.line-1][top.row]=2;
+        temp.line=top.line-1;
+        temp.row=top.row;
+        sk.push(temp);
+        GoMaze_DFS();
+    }
+    sk.pop();
+    GoMaze_DFS();
+}
+
+
+
+template<class T>
+void Maze<T>::GoMaze_BFS()
+{
+    int step=0;
+    int dir[4][2]= {1,0,-1,0,0,1,0,-1}; //方向
+    Queue<Pos> q;  //队列的实例化
+    q.init();
+    Pos now,temp;
+    now.line=entry.line;
+    now.row=entry.row;
+    now.step=0;
+    temp.step=0;
+    q.inQueue(now);
+    while (1)
+    {
+        if (q.isempty()) //如果是空队列
+        {
+            cout<<"cannot reach!"<<endl;
+            break;
+        }
+        now=q.outQueue();  //将当前队首弹出
+        if (now.line==exit.line && now.row==exit.row)
+        {
+            cout<<now.step<<endl;
+            break;
+        }
+        for(int i=0; i<4; i++)
+        {
+            temp.line=now.line+dir[i][0];
+            temp.row=now.row+dir[i][1];
+            if(matrix[temp.line][temp.row]==1) //如果是通道
+            {
+                temp.step=now.step+1;
+                matrix[temp.line][temp.row]=2; // 标记已经走过
+                q.inQueue(temp);  //入队
+            }
+        }
+    }
+
+}
+#endif // MAZE_H_INCLUDED

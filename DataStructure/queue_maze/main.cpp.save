@@ -1,0 +1,13 @@
+#include <iostream>
+#include "maze.h"
+using namespace std;
+
+int main()
+{
+    Maze<int> NewMaze;
+    NewMaze.Initialize();
+    NewMaze.GoMaze_DFS();// have some problem retu
+//    NewMaze.print();
+//    NewMaze.printMin();
+    return 0;
+}

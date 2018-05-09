@@ -1,0 +1,74 @@
+#include <iostream>
+//#include "MyIntStack.h"
+#include "tmep."
+//使用stack自定义数据类型，方便实现通用栈
+using namespace std;
+
+int main()
+{
+    int n;
+    double item;
+    MyStack<double> numbers;
+    cout<<"please enter a number:"<<endl;
+    cin>>n;
+    for (int i=0;i<n;i++)
+    {
+        cin>>item;
+        numbers.push(item);
+    }
+    cout<<endl<<endl;
+    while (!numbers.Empty())
+    {
+        numbers.top(item);
+        cout<<item<<" ";
+        numbers.pop();
+    }
+    cout<<endl;
+    return 0;
+}
+
+//template <class T>
+//MyStack<T>::MyStack()   //the stack is initialize to be empty
+//{
+//    cunt=0;
+//}
+
+//template <class T>
+//bool MyStack<T>::Empty() const
+//{
+//    bool outcome=true;
+//    if (cunt>0) outcome=false;
+//    return outcome;
+//}
+//
+//template <class T>
+//Error_code MyStack<T>::push(const T & item)
+//{
+//    Error_code outcome=success;
+//    if (cunt>maxstack)
+//        outcome=overflow;
+//    else
+//        entry[cunt++]=item;
+//    return outcome;
+//}
+//
+//template <class T>
+//Error_code MyStack<T>::pop()
+//{
+//    Error_code outcome=success;
+//    if (cunt==0)
+//        outcome=underflow;
+//    else --cunt;
+//    return outcome;
+//}
+//
+//template <class T>
+//Error_code MyStack<T>::top(T& item)
+//{
+//    Error_code outcome=success;
+//    if (cunt==0)
+//        outcome=underflow;
+//    else
+//        item=entry[cunt-1];
+//    return outcome;
+//}

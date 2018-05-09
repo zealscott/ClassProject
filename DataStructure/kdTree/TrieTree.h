@@ -1,0 +1,6 @@
+#ifndef TRIETREE_H_INCLUDED
+#define TRIETREE_H_INCLUDED
+
+
+
+#endif // TRIETREE_H_INCLUDED

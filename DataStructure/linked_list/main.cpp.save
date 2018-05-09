@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstring>
+#include "struct.h"
+#include "fuc.h"
+using namespace std;
+
+int main()
+{
+    LIST student_node1;
+    LIST student_node2;
+    student_node1.Reverse();
+    cout<<"reverse :"<<endl;
+    student_node1.print();
+    student_node1.Delete_ID();
+    cout<<"delete after :"<<endl;
+    student_node1.print();
+    cout<<"another node :"<<endl;
+    student_node2.print();
+    student_node1.bubblesort_score(student_node1.head);
+    student_node1.bubblesort_score(student_node2.head);
+    cout<<"after sort stu1:"<<endl;
+    student_node1.print();
+    cout<<"after sort stu2:"<<endl;
+    student_node2.print();
+    cout<<"after sort :"<<endl;
+    student_node1.print();
+    student_node1.merge_link(student_node2.head);
+    cout<<"after merge"<<endl;
+    student_node1.print();
+    return 0;
+}

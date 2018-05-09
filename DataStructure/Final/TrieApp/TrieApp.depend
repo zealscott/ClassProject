@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1515332913 source:c:\users\user\desktop\datastructure\final\trieapp\main.cpp
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<iostream>
+

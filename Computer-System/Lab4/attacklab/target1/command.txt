@@ -1,0 +1,27 @@
+首先通过objdump -d ctarget > ctarget.text 反汇编
+运行程序要加后缀-q
+1.cat ctarget1.txt |./hex2raw | ./ctarget -q
+
+2.
+  gcc -c ctarget2.s
+  objdump -d ctarget2.o >ctarget2.txt 
+  现在已经得到反汇编之后的机器码，如何让程序执行呢？
+  让机器跳转到缓冲区所在的位置即可，通过gdb设置断点查看缓冲区位置
+  得到rsp地址，0x5561dc78，将cookies用参数传给rdi
+
+  通过反汇编出来的机器码，加上rsp地址，再用hex2raw转换成字节码
+
+   cat ctarget2-ans.txt |./hex2raw | ./ctarget -q
+
+3.
+  首先将cookie转换为ascii表示形式
+        0x59b997fa => 35 39 62 39 39 37 66 61
+  由于进入hexmatch后缓冲区会被冲掉，不能保存我输入的cookie，因此需要多溢出到return address前面
+  如何将./hex2raw之后的文件作为输入使用gdb调试？
+	用gdb运行程序后，使用run < ans.txt 可以输入参数
+  与第二题类似，得到rsp地址，将保存cookies的地址用参数传给rdi
+  cat ctarget3-ans.txt |./hex2raw | ./ctarget -q
+
+4.
+  找到58 48 89 c7 c3对应的地址，再添加cookie，和touch2的地址，生成
+  

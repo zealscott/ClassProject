@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1511347159 source:c:\users\user\desktop\datastructure\skiing\main.cpp
+	<iostream>
+	"skiing.h"
+
+1508071357 source:c:\users\user\desktop\datastructure\skiing\sk_fun.cpp
+	<iostream>
+	"skiing.h"
+
+1511347159 c:\users\user\desktop\datastructure\skiing\skiing.h
+
+1508071357 c:\users\user\desktop\datastructure\skiing\sk_fun.cpp
+	<iostream>
+	"skiing.h"
+
+1511347159 source:c:\users\user\desktop\datastructure\skiing\skiing.cpp
+	<iostream>
+	"skiing.h"
+

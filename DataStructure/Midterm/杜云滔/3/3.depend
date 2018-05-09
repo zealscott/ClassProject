@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1512975552 source:c:\users\user\desktop\¶ÅÔÆÌÏ\3\main.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1512979400 c:\users\user\desktop\¶ÅÔÆÌÏ\3\binarytree.h
+	"BinaryNode.h"
+	"stdio.h"
+	<queue>
+	<stack>
+
+1512707618 c:\users\user\desktop\¶ÅÔÆÌÏ\3\binarynode.h
+
+1513076916 source:c:\users\user\desktop\datastructure\midterm\¶ÅÔÆÌÏ\3\main.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1513080933 c:\users\user\desktop\datastructure\midterm\¶ÅÔÆÌÏ\3\binarytree.h
+	"BinaryNode.h"
+	"stdio.h"
+	<queue>
+	<stack>
+
+1512707618 c:\users\user\desktop\datastructure\midterm\¶ÅÔÆÌÏ\3\binarynode.h
+

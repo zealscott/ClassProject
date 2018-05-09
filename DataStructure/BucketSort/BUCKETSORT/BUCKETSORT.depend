@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1510308033 source:c:\users\scott\desktop\git repository\datastructure\bucketsort\bucketsort\main.cpp
+	<iostream>
+	"sort.h"
+
+1510308376 c:\users\scott\desktop\git repository\datastructure\bucketsort\bucketsort\sort.h
+	<iostream>
+	<math.h>
+
+1511347159 source:c:\users\user\desktop\datastructure\bucketsort\bucketsort\main.cpp
+	<iostream>
+	"sort.h"
+	"class_int.h"
+
+1511347159 c:\users\user\desktop\datastructure\bucketsort\bucketsort\sort.h
+	<iostream>
+	<vector>
+	"class_int.h"
+
+1512564455 c:\users\user\desktop\datastructure\bucketsort\bucketsort\class_int.h
+	<iostream>
+	<vector>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1505739705 source:c:\users\user\algorithms\mergesort\main.cpp
+	<iostream>
+	<math.h>
+	<stdlib.h>
+

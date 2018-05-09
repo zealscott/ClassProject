@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1505723523 source:c:\users\user\desktop\temp\myintstack\main.cpp
+	<iostream>
+	"MyIntStack.h"
+
+1505720476 c:\users\user\desktop\temp\myintstack\myintstack.h
+
+1505723213 source:c:\users\user\desktop\temp\myintstack\main2.cpp
+	<iostream>
+	"MyIntStack_template.h"
+
+1505723604 c:\users\user\desktop\temp\myintstack\myintstack_template.h
+
+1506219635 source:c:\users\scott\datastructure\mystack&templatefuc\main.cpp
+	<iostream>
+	"MyIntStack.h"
+
+1506219635 c:\users\scott\datastructure\mystack&templatefuc\myintstack.h
+
+1506222779 source:c:\users\scott\datastructure\mystack&templatefuc\main2.cpp
+	<iostream>
+	"MyIntStack_template.h"
+	"temp.cpp"
+
+1506222832 c:\users\scott\datastructure\mystack&templatefuc\myintstack_template.h
+	<iostream>
+
+1506222894 source:c:\users\scott\datastructure\mystack&templatefuc\temp.cpp
+	<iostream>
+	"MyIntStack_template.h"
+
+1506222894 c:\users\scott\datastructure\mystack&templatefuc\temp.cpp
+	<iostream>
+	"MyIntStack_template.h"
+

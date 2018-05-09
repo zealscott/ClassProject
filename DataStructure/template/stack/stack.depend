@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1508420312 source:c:\users\user\desktop\datastructure\template\stack\main.cpp
+	<iostream>
+	"stack.h"
+
+1508420448 c:\users\user\desktop\datastructure\template\stack\stack.h
+	<iostream>
+	<string>
+

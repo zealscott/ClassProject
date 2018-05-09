@@ -1,0 +1,24 @@
+#include <iostream>
+//#include "List.h"   /*单独写.h文件会报错*/
+#include "List.cpp"
+
+using namespace std;
+
+int main()
+{
+    List <int>mylist;
+    for (int i=0;i<5;i++)
+        mylist.insert(i,i);
+    cout<<"Your list have "<<mylist.size()<<" element:"<<endl;
+    int i;
+    void (*fp)(int &x);
+    
+    mylist.traverse(print);
+    mylist.remove(0,i);
+    cout<<"After remove(0)"<<endl;
+    mylist.traverse(print);
+    cout<<"After update"<<endl;
+    mylist.traverse(update);
+    mylist.traverse(print);
+    return 0;
+}

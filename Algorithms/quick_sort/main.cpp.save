@@ -1,0 +1,13 @@
+#include <iostream>
+#include "QUICKSCORT.h"
+using namespace std;
+
+int main()
+{
+    int a[100],i,j,n;
+    cout<<"please enter the number of list"<<endl;
+    cin>>n;
+    for (i9)
+    cout << "Hello world!" << endl;
+    return 0;
+}

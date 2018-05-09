@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1515313930 source:c:\users\user\desktop\datastructure\final\tree\main.cpp
+	<iostream>
+	<string>
+	"IO.h"
+	"tree.h"
+
+1515312486 c:\users\user\desktop\datastructure\final\tree\io.h
+	<iostream>
+	<stdlib.h>
+
+1515313944 c:\users\user\desktop\datastructure\final\tree\tree.h
+	<string>
+	<queue>
+	"stdio.h"
+

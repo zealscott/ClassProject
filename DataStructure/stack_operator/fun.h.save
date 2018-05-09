@@ -1,0 +1,31 @@
+#include <iostream>
+#include <stack>
+
+#ifndef FUN_H_INCLUDED
+#define FUN_H_INCLUDED
+char relation[8][8]={{'0','+','-','*','/','(',')','#'},
+                    {'+','>','>','<','<','<','>','>'},
+                    {'-','>','>','<','<','<','>','>'},
+                    {'*','>','>','>','>','<','>','>'},
+                    {'/','>','>','>','>','<','>','>'},
+                    {'(','<','<','<','<','<','=','0'},
+                    {')','>','>','>','>','0','>','>'},
+                    {'#','<','<','<','<','<','0','='}};
+
+char precede(char top,char written)
+{
+    int i,j;
+    for (i=0;i<8;i++)
+    {
+        if (relation[i][0]==top) break;
+    }
+    for (j=0;j<8;j++)
+    {
+        if (relation[0][j]==written) break;
+    }
+    return relation[i][j];
+}
+
+
+
+#endif // FUN_H_INCLUDED

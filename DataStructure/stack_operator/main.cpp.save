@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cctype>
+#include <stack>
+#include "fun.h"
+//cannot operate large number;
+//cannot express negative;
+//.h cannot include <stack>;
+
+using namespace std;
+void EvaluateExpression();
+
+
+int main()
+{
+    EvaluateExpression();
+    return 0;
+}
+
+
+void EvaluateExpression()
+{
+    char c;
+    stack<int> number;
+    stack<char> op;
+    op.push('#');
+    cin>>c;
+    do
+    {
+        if (isdigit(c)) 
+        {
+            number.push(int(c));
+            c=getchar();
+            
+        else
+        {
+            switch (precede(op.top(),c))
+            {
+            case '<':
+                op.push(c);
+                cin>>c;
+                break;
+            case '=':
+                op.pop();
+                cin>>c;
+                break;
+            case '>':
+                int a,b;
+                char theta;
+                theta=op.top();
+                op.pop();
+                b=number.top();
+                number.pop();
+                a=number.top();
+                number.pop();
+                number.push(operate(a,theta,b));
+            }
+        }
+    }
+    while (c!='#' || op.top()!='#');
+    cout<<number.top()<<endl;
+}

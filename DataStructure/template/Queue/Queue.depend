@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1508418462 source:c:\users\user\desktop\datastructure\template\queue\main.cpp
+	<iostream>
+	"queue.h"
+	"queue_link.h"
+
+1508333017 c:\users\user\desktop\datastructure\template\queue\queue.h
+
+1508418568 c:\users\user\desktop\datastructure\template\queue\queue_link.h
+	<iostream>
+

@@ -1,0 +1,8 @@
+4889e0 movq %rsp, %rax
+
+    0x401aad
+add $0x37, %al的04 37
+
+   0x4019d8
+mov %rax, %rdi的48 89 c7
+   0x4019a2

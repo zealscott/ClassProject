@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1514103438 source:c:\users\user\desktop\datastructure\kdtree\main.cpp
+	<vector>
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	<stack>
+	<queue>
+	<math.h>
+	"QuardTree.h"
+
+1514178984 c:\users\user\desktop\datastructure\kdtree\quardtree.h
+	"QuardTreeNode.h"
+
+1514178991 c:\users\user\desktop\datastructure\kdtree\quardtreenode.h
+	"Point.h"
+	<vector>
+
+1513680613 c:\users\user\desktop\datastructure\kdtree\point.h
+	<iostream>
+	<math.h>
+

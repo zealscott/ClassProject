@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1506521741 source:c:\users\scott\algorithms\quick_sort\main.cpp
+	<iostream>
+	"QUICKSCORT.h"
+
+1506522374 c:\users\scott\algorithms\quick_sort\quickscort.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

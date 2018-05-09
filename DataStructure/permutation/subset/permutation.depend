@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1515722273 source:c:\users\user\desktop\datastructure\permutation\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

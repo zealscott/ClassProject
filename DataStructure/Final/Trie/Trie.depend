@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1515324656 source:c:\users\user\desktop\datastructure\final\trie\main.cpp
+	<iostream>
+	"TrieNode.h"
+
+1515325071 c:\users\user\desktop\datastructure\final\trie\trienode.h
+	<string.h>
+	<ostream>
+

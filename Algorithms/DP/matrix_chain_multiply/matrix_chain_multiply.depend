@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1510833692 source:c:\users\user\desktop\algorithms\dp\matrix_chain_multiply\main.cpp
+	<iostream>
+	"limits.h"
+

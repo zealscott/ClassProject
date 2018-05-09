@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1511009161 source:c:\users\user\desktop\algorithms\dp\knapsackproblem\main.cpp
+	<iostream>
+	"OnePack.h"
+
+1511009157 c:\users\user\desktop\algorithms\dp\knapsackproblem\onepack.h
+	<iostream>
+

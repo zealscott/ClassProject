@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1512285909 source:c:\users\user\desktop\tree\binarytree.cpp
+	<iostream>
+	<stack>
+	"BinaryTree.h"
+
+1512365394 c:\users\user\desktop\tree\binarytree.h
+	<stack>
+	"BinaryNode.h"
+
+1512366242 source:c:\users\user\desktop\tree\main.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1512385019 c:\users\user\desktop\tree\binarysearchtree.h
+	"BinaryTree.h"
+
+1512371536 source:c:\users\user\desktop\tree\mainbst.cpp
+	<iostream>
+	"BinaryTree.h"
+	"BinarySearchTree.h"
+
+1512470366 c:\users\user\desktop\tree\binarynode.h
+	<iostream>
+
+1512470816 source:c:\users\user\desktop\tree\mainavl.cpp
+	<iostream>
+	"AVLTree.h"
+
+1512470768 c:\users\user\desktop\tree\avltree.h
+	"BinarySearchTree.h"
+	"AVLtreeNode.h"
+
+1512470388 c:\users\user\desktop\tree\avltreenode.h
+	"BinaryNode.h"
+
+1512366242 source:c:\users\user\desktop\datastructure\template\tree\main.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1512365394 c:\users\user\desktop\datastructure\template\tree\binarytree.h
+	<stack>
+	"BinaryNode.h"
+
+1512470366 c:\users\user\desktop\datastructure\template\tree\binarynode.h
+	<iostream>
+
+1512650142 source:c:\users\user\desktop\datastructure\template\tree\mainavl.cpp
+	<iostream>
+	"AVLTree.h"
+
+1512470768 c:\users\user\desktop\datastructure\template\tree\avltree.h
+	"BinarySearchTree.h"
+	"AVLtreeNode.h"
+
+1512385019 c:\users\user\desktop\datastructure\template\tree\binarysearchtree.h
+	"BinaryTree.h"
+
+1512470388 c:\users\user\desktop\datastructure\template\tree\avltreenode.h
+	"BinaryNode.h"
+
+1512650148 source:c:\users\user\desktop\datastructure\template\tree\mainbst.cpp
+	<iostream>
+	"BinaryTree.h"
+	"BinarySearchTree.h"
+

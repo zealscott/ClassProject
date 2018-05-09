@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1505713992 source:c:\users\user\desktop\scott\lif\main.cpp
+	<iostream>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"lifegame.h"
+
+1505713394 c:\users\user\desktop\scott\lif\lifegame.h
+

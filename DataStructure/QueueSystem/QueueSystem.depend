@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1506434659 source:c:\users\user\datastructure\queuesystem\main.cpp
+	"allheader.h"
+
+1506434659 c:\users\user\datastructure\queuesystem\random.h
+	"allheader.h"
+
+1506435268 c:\users\user\datastructure\queuesystem\system.h
+	"allheader.h"
+
+1506434659 c:\users\user\datastructure\queuesystem\event.h
+	"allheader.h"
+
+1506435235 c:\users\user\datastructure\queuesystem\window.h
+	"allheader.h"
+
+1506434686 c:\users\user\datastructure\queuesystem\allheader.h
+	<queue>
+	<iostream>
+	<cstdlib>
+	<cmath>
+	"random.h"
+	"Event.h"
+	"customer.h"
+	"Window.h"
+	"System.h"
+
+1506434934 c:\users\user\datastructure\queuesystem\customer.h
+	"allheader.h"
+

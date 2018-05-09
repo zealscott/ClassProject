@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1512548755 source:c:\users\user\desktop\datastructure\midterm\hash\main.cpp
+	<iostream>
+
+1512551965 source:c:\users\user\desktop\datastructure\midterm\hash\map.cpp
+	<iostream>
+	<map>
+
+1512563758 source:c:\users\user\desktop\datastructure\midterm\hash\multimap.cpp
+	<map>
+	<string>
+	<iostream>
+
+1512560552 source:c:\users\user\desktop\datastructure\midterm\hash\pair.cpp
+	<iostream>
+	<map>
+
+1512562451 source:c:\users\user\desktop\datastructure\midterm\hash\hoj1800.cpp
+	<iostream>
+	<cstdio>
+	<map>
+	<string>
+	<vector>
+

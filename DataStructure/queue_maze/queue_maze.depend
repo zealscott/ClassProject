@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1506663157 source:c:\users\user\datastructure\queue_maze\main.cpp
+	<iostream>
+	"maze.h"
+
+1506663265 c:\users\user\datastructure\queue_maze\maze.h
+	"queue.h"
+	<stack>
+
+1506330036 c:\users\user\datastructure\queue_maze\queue.h
+
+1506351212 source:c:\users\scott\datastructure\queue_maze\main.cpp
+	<iostream>
+	"maze.h"
+
+1506351253 c:\users\scott\datastructure\queue_maze\maze.h
+	"queue.h"
+	<stack>
+
+1506343996 c:\users\scott\datastructure\queue_maze\queue.h
+
+1507527475 source:c:\users\user\desktop\datastructure\queue_maze\main.cpp
+	<iostream>
+	"maze.h"
+
+1507531991 c:\users\user\desktop\datastructure\queue_maze\maze.h
+	"queue.h"
+	<stack>
+
+1507433011 c:\users\user\desktop\datastructure\queue_maze\queue.h
+
