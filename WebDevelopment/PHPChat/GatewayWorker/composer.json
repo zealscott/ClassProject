@@ -1,5 +1,0 @@
-{
-    "require": {
-        "workerman/gateway-worker": "^3.0"
-    }
-}
