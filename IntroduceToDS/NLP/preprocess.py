@@ -39,7 +39,7 @@ def process(text):
 
     for word, tag in tags:
          wntag = tag[0].lower()
-         wntag = wntag if wntag in ['a', 'r', 'n', 'v'] else None
+         wntag = wntag if wntag in ['a', 'r', 'n', 'v','n','s'] else None
          if not wntag:
                  lemma = word
          else:
