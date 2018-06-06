@@ -41,5 +41,5 @@ def visualize(model, output_path):
     print('Run `tensorboard --logdir={0}` to run visualize result on tensorboard'.format(output_path))
 
 if __name__ == "__main__":
-    model = Word2Vec.load("Model\\imdb.d2v")
-    visualize(model,"Model\\visual")
+    model = Word2Vec.load("./Persistence/Model/imdb.d2v")
+    visualize(model,"./Persistence/Model/imdb.d2v")

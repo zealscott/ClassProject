@@ -67,12 +67,15 @@ class Train(object):
         self.sources = sources
         self.sentences = LabeledLineSentence(self.sources)
 
-    def process(self, vector_size=100, min_count=1, window=10, epoch=50):
+    def process(self, vector_size=100, min_count=1, window=10, epoch=10):
         """
         Train Doc2Vec model  
         """
+        # self.model = Doc2Vec(min_count=min_count, window=window, size=vector_size,
+        #  sample=1e-4, negative=5, workers=4)
+        # set para according to kaggle
         self.model = Doc2Vec(min_count=min_count, window=window, size=vector_size,
-                             sample=1e-4, negative=5, workers=4)
+                             sample=1e-3, workers=4)
 
         self.model.build_vocab(self.sentences.to_array())
 
@@ -116,7 +119,7 @@ class GetData(object):
         """
         return self.model
 
-    def GetArray(self,shuffle = False):
+    def GetArray(self, shuffle=False):
         """
         one vector (100,1) for one doc\n
         ``train_arrays``.shape = (25000,100)\n
@@ -139,8 +142,17 @@ class GetData(object):
             X_test[i] = self.model[prefix_test]
 
         if not shuffle:
-            return X_train,Y_train,X_test
-        
+            alldata = []
+            alldata.append(X_train)
+            alldata.append(Y_train)
+            alldata.append(X_test)
+
+            with open("./Persistence/Doc2VecArray.pickle", "wb") as f:
+                pickle.dump(alldata, f, protocol=4)
+
+            print("save to ./Persistence/Doc2VecArray.pickle")
+            return X_train, Y_train, X_test
+
         # 5000个测试数据， 其余验证数据+训练数据
         indexList = list(range(0, X_train.shape[0]))
         random.seed(1)
@@ -156,9 +168,20 @@ class GetData(object):
         testData = X_train[testIndex]
         testLabel = Y_train[testIndex]
 
+        alldata = []
+        alldata.append(trainData)
+        alldata.append(trainLabel)
+        alldata.append(testData)
+        alldata.append(testLabel)
+        alldata.append(X_test)
+
+        with open("./Persistence/Doc2VecArraySplit.pickle", "wb") as f:
+            pickle.dump(alldata, f, protocol=4)
+        print("save to ./Persistence/Doc2VecArraySplit.pickle")
+
         return trainData, trainLabel, testData, testLabel, X_test
 
-    def SaveDataForRNN(self, feature=1000):
+    def SaveDataForRNN(self, feature=500):
         """
         save X_train,Y_train,X_test to ``./Persistence/``\n
         X_train.shape = (25000,feature_size,model.vector.size)\n
@@ -175,66 +198,81 @@ class GetData(object):
         for i in range(0, len(sentences_array)):
             sentences_dict[sentences_array[i][1][0]] = sentences_array[i][0]
 
-        # data for RNN get first 1000 feature vectors from 1000 words
-        X_train = np.zeros(
-            shape=(25000, feature, self.model.vector_size)).astype('float16')
-        # Y_train = np.zeros(shape=(25000, 2)).astype('float16')
-        Y_train = np.zeros(25000)
-
-        # one-hot for Y_train [1][0] for positive [0][1] for negative
-        # pos = np.zeros(shape=(1, 2)).astype('float16')
-        # pos[0][0] = 1
-        # neg = np.zeros(shape=(1, 2)).astype('float16')
-        # neg[0][1] = 1
+        # Index2word is a list that contains the names of the words in
+        # the model's vocabulary. Convert it to a set, for speed
+        index2word_set = set(self.model.wv.index2word)
 
         # when short of word, using zero instead
-        empty_word = np.zeros(self.model.vector_size).astype('float16')
+        empty_word = np.zeros(self.model.vector_size,dtype='float16')
+
+
+        X_train = np.zeros((25000, feature, self.model.vector_size),dtype='float16')
+        Y_train = np.zeros(25000)
+
+
 
         # get first 1000 feature vectors from 1000 words
         for i in range(12500):
             prefix_train_pos = 'TRAIN_POS_' + str(i)
             prefix_train_neg = 'TRAIN_NEG_' + str(i)
+            # length of document
             len1 = len(sentences_dict[prefix_train_pos])
             len2 = len(sentences_dict[prefix_train_neg])
-            for j in range(feature):
+            cout = j = 0
+            # for pos document
+            while cout < feature:
                 if j < len1:
-                    # have enough word
-                    X_train[i, j, :] = self.model[sentences_dict[prefix_train_pos][j]]
+                    word = sentences_dict[prefix_train_pos][j]
+                    if word in index2word_set:
+                        X_train[i, cout, :] = self.model[word]
+                        cout += 1
                 else:
-                    X_train[i, j, :] = empty_word
+                    X_train[i, cout, :] = empty_word
+                    cout += 1
+                j += 1
 
+            # reset j/cout, for neg document
+            cout = j = 0
+            while cout < feature:
                 if j < len2:
-                    X_train[12500+i, j,
-                            :] = self.model[sentences_dict[prefix_train_neg][j]]
+                    word = sentences_dict[prefix_train_neg][j]
+                    if word in index2word_set:
+                        X_train[12500+i, cout, :] = self.model[word]
+                        cout += 1
                 else:
-                    X_train[12500+i, j, :] = empty_word
+                    X_train[12500+i, cout, :] = empty_word
+                    cout += 1
+                j += 1
 
             Y_train[i] = 1
             Y_train[12500 + i] = 0
-            # Y_train[i, :] = pos
-            # Y_train[12500 + i, :] = neg
 
-        with open('./Persistence/X_train.pickle', 'wb') as f:
+        with open('./Persistence/LSTM/X_train.pickle', 'wb') as f:
             pickle.dump(X_train, f, protocol=4)
             f.close()
 
-        with open('./Persistence/Y_train.pickle', 'wb') as f:
+        with open('./Persistence/LSTM/Y_train.pickle', 'wb') as f:
             pickle.dump(Y_train, f, protocol=4)
             f.close()
 
-        X_test = np.zeros(
-            shape=(25000, feature, self.model.vector_size)).astype('float16')
+        X_test =np.zeros((25000, feature, self.model.vector_size),dtype='float16')
 
         for i in range(25000):
             prefix_test = 'TEST_' + str(i)
             len1 = len(sentences_dict[prefix_test])
-            for j in range(feature):
+            cout = j = 0
+            while cout < feature:
                 if j < len1:
-                    X_test[i, j, :] = self.model[sentences_dict[prefix_test][j]]
+                    word = sentences_dict[prefix_test][j]
+                    if word in index2word_set:
+                        X_test[i, cout, :] = self.model[word]
+                        cout += 1
                 else:
-                    X_test[i, j, :] = empty_word
+                    X_test[i, cout, :] = empty_word
+                    cout += 1
+                j += 1
 
-        with open('./Persistence/X_test.pickle', 'wb') as f:
+        with open('./Persistence/LSTM/X_test.pickle', 'wb') as f:
             pickle.dump(X_test, f, protocol=4)
             f.close()
 
@@ -242,71 +280,73 @@ class GetData(object):
 
         # return X_train,Y_train,X_test
 
+
 def LoadDataTrain():
     """
     load Train data fot ``LSTM``  
     """
-    with open('./Persistence/X_train.pickle', 'rb') as f:
+    with open('./Persistence/LSTM/X_train.pickle', 'rb') as f:
         X_train = pickle.load(f)
         f.close()
-    with open('./Persistence/Y_train.pickle', 'rb') as f:
+    with open('./Persistence/LSTM/Y_train.pickle', 'rb') as f:
         Y_train = pickle.load(f)
         f.close()
     print("load train data success!")
 
     # random
     random.seed(datetime.now())
-    index = list(range(0, X_train.shape[0])) 
-    random.shuffle(index)   
-    X_train = X_train[index]  
-    Y_train = Y_train[index]  
+    index = list(range(0, X_train.shape[0]))
+    random.shuffle(index)
+    X_train = X_train[index]
+    Y_train = Y_train[index]
 
-    return X_train,Y_train
+    return X_train, Y_train
+
 
 def LoadDataTest():
     """
     load Test data fot ``LSTM``  
     """
-    with open('./Persistence/X_test.pickle', 'rb') as f:
+    with open('./Persistence/LSTM/X_test.pickle', 'rb') as f:
         X_test = pickle.load(f)
         f.close()
     print("load test data success!")
     return X_test
+
 
 def SaveResult(Y_test):
     """
     Y_test.shape = (25000) or (25000,2)\n
     save result to ``./result.csv``  
     """
-    if Y_test.ndim == 2:
-        result = np.zeros(shape=(25000)).astype('int')
-        for i in range(25000):
-            a = Y_test[i][0]
-            b = Y_test[i][1]
-            result[i] = (1 if a > b else 0)
-        Y_test = result
-    testDataPath = "RowData\\TestData.tsv"
-    DataFrame = pd.read_csv(testDataPath, sep='\t', quoting=3)
+    Y_test = Y_test.reshape(-1,)
+    DataFrame = pd.read_csv("RowData\\TestData.tsv", sep='\t', quoting=3)
     name = DataFrame['id']
     df = pd.DataFrame({'id': name, 'sentiment': Y_test})
-    df.to_csv('result.csv', index=False)
-    print("save to ./result.csv")
+    df.to_csv("result.csv", index=False, quoting=3)
+    print("save to result.csv")
 
 
 def run():
-    sources = {'CleanData\\test.txt': 'TEST', 'CleanData\\train-neg.txt': 'TRAIN_NEG',
-               'CleanData\\train-pos.txt': 'TRAIN_POS', 'CleanData\\train-unsup.txt': 'TRAIN_UNS'}
+    # sources = {'CleanData\\test.txt': 'TEST', 'CleanData\\train-neg.txt': 'TRAIN_NEG',
+    #            'CleanData\\train-pos.txt': 'TRAIN_POS', 'CleanData\\train-unsup.txt': 'TRAIN_UNS'}
 
-    test = Train(sources)
-    test.process(vector_size=100,window=10)
-    test.save('.\\Model\\imdb.d2v')
+    # save model
+    # test = Train(sources)
+    # test.process(vector_size=400,window=15,min_count=40)
+    # test.save('./Persistence/Model/imdb.d2v')
 
-    # data = GetData("./Model/imdb.d2v")
-    # print("model vector size = %d"%(data.model.vector_size))
+    # save for RNN
+    # data = GetData("./Persistence/Model/imdb.d2v")
+    # print("model vector size = %d" % (data.model.vector_size))
     # data.SaveDataForRNN()
+
+    # save for doc2vec
+    # data = GetData("./Persistence/Model/imdb.d2v")
+    # data.GetArray()
+
     return
 
 
 if __name__ == '__main__':
     run()
-    

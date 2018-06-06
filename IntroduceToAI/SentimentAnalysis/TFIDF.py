@@ -21,6 +21,7 @@ from sklearn.linear_model import SGDClassifier as SGD
 from sklearn.cross_validation import cross_val_score
 from sklearn.model_selection import StratifiedKFold
 from sklearn.pipeline import Pipeline
+from sklearn import preprocessing
 import xgboost as xgb
 
 
@@ -93,10 +94,11 @@ class classify():
         use LogisticRegression and GridSearchCV to find best parameters
         """
         # Decide which settings you want for the grid search.
-        grid_values = {'C': [30]}
+        grid_values = {'C': [1e-3,1e-2,1e-1,1,2]}
+        # grid_values = {'C': [1e-5,1e-4,1e-3,1e-2,1e-1]}
 
         clf = GridSearchCV(LR(penalty='l2', dual=True, random_state=0),
-                           grid_values, scoring='roc_auc', cv=20)
+                           grid_values, scoring='roc_auc', cv=20,n_jobs=4)
         # Try to set the scoring on what the contest is asking for.
         # The contest says scoring is for area under the ROC curve, so use this.
         clf.fit(self.X_train, self.Y_Train)  # Fit the model.
@@ -117,31 +119,14 @@ class classify():
         """  
         Pipeline+GridSearchCV
         """
-        kfold = StratifiedKFold(n_splits=5, shuffle=True)
-        parameters = [
-            {
-                'pca__n_components': [20, 40, 60, 80, 100],
-                'svm__kernel':['rbf'],
-                'svm__gamma':[1e-3, 1e-2, 1e-1],
-                'svm__C':[1e-2, 1e-1, 1, 5, 10]
-            },
-            {
-                'pca__n_components': [20, 40, 60, 80, 100],
-                'svm__kernel':['linear'],
-                'svm__C':[1e-2, 1e-1, 1, 5, 10]
-            }
-        ]
-        pipeline = Pipeline(
-            steps=[
-                ('pca', PCA()),  # 'pca'对应'pca__'
-                ('svm', SVC())  # 'svm'对应'svm__'
-            ]
-        )
+        parameters = [{'kernel': ['rbf'], 'gamma': [1e-2,0.005,1e-3],
+                       'C': [0.5,1,1.5,2,4]},
+                      {'kernel': ['linear'], 'C': [1e-3, 1e-2,0.1,1]}]
         clf = GridSearchCV(
-            estimator=pipeline,
-            param_grid=parameters,
-            cv=kfold,
-            scoring="accuracy",
+            SVC(probability=True),
+            parameters,
+            cv=5,
+            scoring="roc_auc",
             n_jobs=4
         )
         clf.fit(self.X_train, self.Y_Train)
@@ -151,20 +136,19 @@ class classify():
         return self.best_clf
 
     def SVM(self):
-        clf = SVC()
+        clf = SVC(probability=True,kernel='linear')
         clf.fit(self.X_train, self.Y_Train)
         score = clf.score(self.X_train, self.Y_Train)
         print("using SVM, score = %f" % score)
         self.best_clf = clf
         return self.best_clf
 
-
     def sgd(self):
         # Regularization parameter
-        sgd_params = {'alpha': [0.00006, 0.00007, 0.00008, 0.0001, 0.0005]}
+        # sgd_params = {'alpha': [ 0.18,0.17,0.19,0.185]}
+        sgd_params = {'alpha': [1e-1,0.5,1,1.5]}
 
-        clf = GridSearchCV(SGD(max_iter=5, random_state=0, shuffle=True, loss='modified_huber'),
-                           sgd_params, scoring='roc_auc', cv=20)  # Find out which regularization parameter works the best.
+        clf = GridSearchCV(SGD(max_iter=5, random_state=0,loss='modified_huber',n_jobs=4),sgd_params, scoring='roc_auc', cv=20)  # Find out which regularization parameter works the best.
 
         clf.fit(self.X_train, self.Y_Train)
         print("using SGD, Best: %f using %s" %
@@ -173,12 +157,12 @@ class classify():
         return self.best_clf
 
     def sgdboot(self):
-        cv_params = {'max_depth': [3, 5, 7], 'min_child_weight': [1, 3, 5]}
+        cv_params = {'max_depth': [7,9,10], 'min_child_weight': [1, 3, 5]}
         ind_params = {'learning_rate': 0.1, 'n_estimators': 1000, 'seed': 0, 'subsample': 0.8, 'colsample_bytree': 0.8,
                       'objective': 'binary:logistic'}
         clf = GridSearchCV(xgb.XGBClassifier(**ind_params),
                            cv_params,
-                           scoring='accuracy', cv=5, n_jobs=4)
+                           scoring='accuracy', cv=5, n_jobs=4,verbose=True)
         clf.fit(self.X_train, self.Y_Train)
         print("using sgdboot, Best: %f using %s" %
               (clf.best_score_, clf.best_params_))
@@ -242,8 +226,8 @@ if __name__ == '__main__':
     # AllData= process.tfidf(ngram=4)
 
     # X, y_train, X_test = AllData[0],AllData[1],AllData[2]
-    with open("./Persistence/ngram.pickle", "rb") as f:
-        X, y_train, X_test = pickle.load(f)
+    with open("./Persistence/Doc2VecArray.pickle", "rb") as f:
+        X_train, y_train, X_test = pickle.load(f)
         f.close()
 
     # model = MyLSTM(maxlen=X.shape[1])
@@ -252,14 +236,18 @@ if __name__ == '__main__':
     # print(Y_test)
     # print(Y_test.ndim)
 
-    clf = classify(X, y_train, X_test)
+    # scaler = preprocessing.MinMaxScaler().fit(X)
+    # X = scaler.transform(X)
+    # X_test = scaler.transform(X_test)
+
+    clf = classify(X_train, y_train, X_test)
     # clf.mnb()
     # clf.save("./mnb.csv")
-    # clf.LR()
-    # clf.save("./LR.csv")
-    # clf.sgd()
-    # clf.save("./sgd.csv")
-    clf.SVM()
-    clf.save("./svm.csv")
+    clf.LR()
+    clf.save("./LR.csv")
+    clf.sgd()
+    clf.save("./sgd.csv")
+    # clf.SVMTest()
+    # clf.save("./svm.csv")
     # clf.sgdboot()
     # clf.save("./sgdboot.csv")

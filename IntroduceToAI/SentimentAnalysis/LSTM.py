@@ -13,11 +13,13 @@ import Doc2Vec
 
 
 def MyLSTM():
+    feature = 500
+    vec_size = 400
     # model
     model = Sequential()
     # add conv1D layer
     model.add(Conv1D(filters=32, kernel_size=3, padding='same',
-                     activation='relu', input_shape=(1000, 100)))
+                     activation='relu', input_shape=(feature, vec_size)))
     model.add(Dropout(0.2))
     model.add(MaxPooling1D(pool_size=3))
     model.add(Dropout(0.2))
@@ -58,13 +60,11 @@ if __name__ == '__main__':
     trainData, trainLabel = Doc2Vec.LoadDataTrain()
     # model.fit(trainData, trainLabel, validation_split=0.20,
     #           epochs=10, batch_size=64, callbacks=[EarlyStopping(patience=2)])
-    model.fit(trainData, trainLabel, validation_split=0.2, epochs=10, batch_size=64)
+    model.fit(trainData, trainLabel, validation_split=0.2, epochs=15, batch_size=64)
     # save model
     model.save('./Persistence/model.h5')
-    # model = load_model('./RNN/model.h5')
+    # model = load_model('./Persistence/model.h5')
     X_test = Doc2Vec.LoadDataTest()
     Y_test = model.predict(X_test)
-    print(Y_test)
-    print(Y_test.ndim)
     # save result
     Doc2Vec.SaveResult(Y_test)
