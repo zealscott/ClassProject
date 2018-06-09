@@ -39,10 +39,6 @@ class TextPreProcess(object):
         """ split paragraph to sentence """
         return self.PunktTokenizer.tokenize(row['review'])
 
-    # def RemoveHTML(self, row):
-    #     """ remove HTML tags """
-    #     return [self.rc.sub('', sentence) for sentence in row['review']]
-
     def RemoveHTML(self, row):
         """ remove HTML tags """
         return [BeautifulSoup(sentence,"lxml").get_text() for sentence in row['review']]

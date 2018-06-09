@@ -1,27 +1,8 @@
 
 
-# 预处理
-
-- 注意`read_csv`的时候要加`quoting = 3`
-  - [pandas read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
-- 不使用`stopwords`
-- 不移除数字
 
 
-
-# Usage
-
-1. `run text Pre Process`
-
-   ```python
-   import PreText
-   Data = TextPreProcess(DataPath, OutPath)
-   Data.process()
-   ```
-
-2. ​
-
-   ​
+​
 
 # Doc2Vec
 
@@ -96,3 +77,4 @@
 
 1. [只用机器学习](http://nbviewer.jupyter.org/github/jmsteinw/Notebooks/blob/master/NLP_Movies.ipynb)
 2. ​
+

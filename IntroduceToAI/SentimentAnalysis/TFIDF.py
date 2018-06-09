@@ -1,16 +1,9 @@
 import re
 import numpy as np
 from bs4 import BeautifulSoup
-import pickle
 import pandas as pd
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout, LSTM, Bidirectional, Embedding
-from keras.layers.convolutional import MaxPooling1D, Conv1D
-from keras.preprocessing import sequence
-from keras.callbacks import EarlyStopping
-from keras.models import load_model
 from sklearn.feature_extraction.text import TfidfVectorizer as TFIV
 from sklearn.linear_model import LogisticRegression as LR
 from sklearn.model_selection import GridSearchCV
@@ -23,7 +16,7 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.pipeline import Pipeline
 from sklearn import preprocessing
 import xgboost as xgb
-
+import pickle
 
 class Preprocessing():
     def __init__(self, TrainDataPath, TestDataPath, Unlabeled=None):
@@ -135,14 +128,6 @@ class classify():
         self.best_clf = clf.best_estimator_
         return self.best_clf
 
-    def SVM(self):
-        clf = SVC(probability=True,kernel='linear')
-        clf.fit(self.X_train, self.Y_Train)
-        score = clf.score(self.X_train, self.Y_Train)
-        print("using SVM, score = %f" % score)
-        self.best_clf = clf
-        return self.best_clf
-
     def sgd(self):
         # Regularization parameter
         # sgd_params = {'alpha': [ 0.18,0.17,0.19,0.185]}
@@ -180,65 +165,13 @@ class classify():
         print("save to "+filename)
 
 
-def MyLSTM(max_features=25000, embedding_size=128, maxlen=2000):
-    model = Sequential()
-    model.add(Embedding(max_features, embedding_size, input_length=maxlen))
-    # add conv1D layer
-    model.add(Conv1D(filters=32, kernel_size=3, padding='same',
-                     activation='relu', input_shape=(1000, 100)))
-    model.add(Dropout(0.2))
-    model.add(MaxPooling1D(pool_size=3))
-    model.add(Dropout(0.2))
-    # add conv1D layer
-    model.add(Conv1D(filters=32, kernel_size=3,
-                     padding='same', activation='relu'))
-    model.add(Dropout(0.2))
-    model.add(MaxPooling1D(pool_size=3))
-    model.add(Dropout(0.2))
-    # add conv1D layer
-    model.add(Conv1D(filters=32, kernel_size=3,
-                     padding='same', activation='relu'))
-    model.add(Dropout(0.2))
-    model.add(MaxPooling1D(pool_size=3))
-    model.add(Dropout(0.2))
-    # add conv1D layer
-    model.add(Conv1D(filters=32, kernel_size=3,
-                     padding='same', activation='relu'))
-    model.add(Dropout(0.2))
-    model.add(MaxPooling1D(pool_size=3))
-    model.add(Dropout(0.2))
-    # add LSTM layer
-    model.add(LSTM(300, dropout=0.2, recurrent_dropout=0.2))
-    # model.add(Dropout(0.2))
-    model.add(Dense(1))
-    model.add(Activation('sigmoid'))
-    model.compile(loss='binary_crossentropy',
-                  optimizer='adam', metrics=['accuracy'])
-    # model complete
-    print(model.summary())
-    return model
-
-
 if __name__ == '__main__':
     # process = Preprocessing(
     #     "./RowData/LabeledTrainData.tsv", "./RowData/TestData.tsv")
+    
     # process.DataClean()
-    # AllData= process.tfidf(ngram=4)
+    # X_train, y_train, X_test= process.tfidf(ngram=4)
 
-    # X, y_train, X_test = AllData[0],AllData[1],AllData[2]
-    with open("./Persistence/Doc2VecArray.pickle", "rb") as f:
-        X_train, y_train, X_test = pickle.load(f)
-        f.close()
-
-    # model = MyLSTM(maxlen=X.shape[1])
-    # model.fit(X, y_train, validation_split=0.2, epochs=10, batch_size=64)
-    # Y_test = model.predict(X_test)
-    # print(Y_test)
-    # print(Y_test.ndim)
-
-    # scaler = preprocessing.MinMaxScaler().fit(X)
-    # X = scaler.transform(X)
-    # X_test = scaler.transform(X_test)
 
     clf = classify(X_train, y_train, X_test)
     # clf.mnb()

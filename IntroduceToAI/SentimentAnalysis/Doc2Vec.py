@@ -4,12 +4,12 @@ warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
 from gensim import utils
 from gensim.models.doc2vec import TaggedDocument
 from gensim.models import Doc2Vec
-import pickle
 import numpy as np
 from random import shuffle
 import random
 import pandas as pd
 from datetime import datetime
+import pickle
 
 
 class LabeledLineSentence(object):
@@ -71,8 +71,6 @@ class Train(object):
         """
         Train Doc2Vec model  
         """
-        # self.model = Doc2Vec(min_count=min_count, window=window, size=vector_size,
-        #  sample=1e-4, negative=5, workers=4)
         # set para according to kaggle
         self.model = Doc2Vec(min_count=min_count, window=window, size=vector_size,
                              sample=1e-3, workers=4)
@@ -103,7 +101,7 @@ class Train(object):
 
 
 class GetData(object):
-    def __init__(self, ModelName, pos_prefix="TRAIN_POS_", neg_prefix="TRAIN_NEG_", test_prefix="TEST_", ):
+    def __init__(self, ModelName, pos_prefix="TRAIN_POS_", neg_prefix="TRAIN_NEG_", test_prefix="TEST_"):
         """
         get the file path and prefix\n
         """
@@ -119,12 +117,11 @@ class GetData(object):
         """
         return self.model
 
-    def GetArray(self, shuffle=False):
+    def GetArray(self):
         """
-        one vector (100,1) for one doc\n
-        ``train_arrays``.shape = (25000,100)\n
-        ``train_label``.shape = (25000,1)\n
-        return [train_arrays,train_labels,test_arrays]  
+        ``X_train``.shape = (25000,model.vector_size)\n
+        ``Y_train``.shape = (25000)\n
+        return [X_train, Y_train, X_test]  
         """
         X_train = np.zeros((25000, self.model.vector_size))
         Y_train = np.zeros(25000)
@@ -141,47 +138,20 @@ class GetData(object):
             prefix_test = self.test_prefix + str(i)
             X_test[i] = self.model[prefix_test]
 
-        if not shuffle:
-            alldata = []
-            alldata.append(X_train)
-            alldata.append(Y_train)
-            alldata.append(X_test)
-
-            with open("./Persistence/Doc2VecArray.pickle", "wb") as f:
-                pickle.dump(alldata, f, protocol=4)
-
-            print("save to ./Persistence/Doc2VecArray.pickle")
-            return X_train, Y_train, X_test
-
-        # 5000个测试数据， 其余验证数据+训练数据
-        indexList = list(range(0, X_train.shape[0]))
-        random.seed(1)
-        random.shuffle(indexList)
-
-        # 取前20000个为训练集，后5000个为测试集
-        testIndex = indexList[-5000:]
-        trainIndex = indexList[:-5000]
-
-        trainData = X_train[trainIndex]
-        trainLabel = Y_train[trainIndex]
-
-        testData = X_train[testIndex]
-        testLabel = Y_train[testIndex]
-
+        # combine data for dump
         alldata = []
-        alldata.append(trainData)
-        alldata.append(trainLabel)
-        alldata.append(testData)
-        alldata.append(testLabel)
+        alldata.append(X_train)
+        alldata.append(Y_train)
         alldata.append(X_test)
 
-        with open("./Persistence/Doc2VecArraySplit.pickle", "wb") as f:
-            pickle.dump(alldata, f, protocol=4)
-        print("save to ./Persistence/Doc2VecArraySplit.pickle")
+        with open("./Persistence/Doc2VecArray.pkl",'wb+') as f:
+            pickle.dump(alldata,f,protocol=4)
 
-        return trainData, trainLabel, testData, testLabel, X_test
+        print("save to ./Persistence/Doc2VecArray")
+        return X_train, Y_train, X_test
 
-    def SaveDataForRNN(self, feature=500):
+
+    def SaveDataForRNN(self, feature=1000):
         """
         save X_train,Y_train,X_test to ``./Persistence/``\n
         X_train.shape = (25000,feature_size,model.vector.size)\n
@@ -208,8 +178,6 @@ class GetData(object):
 
         X_train = np.zeros((25000, feature, self.model.vector_size),dtype='float16')
         Y_train = np.zeros(25000)
-
-
 
         # get first 1000 feature vectors from 1000 words
         for i in range(12500):
@@ -247,13 +215,9 @@ class GetData(object):
             Y_train[i] = 1
             Y_train[12500 + i] = 0
 
-        with open('./Persistence/LSTM/X_train.pickle', 'wb') as f:
-            pickle.dump(X_train, f, protocol=4)
-            f.close()
+        np.save("./Persistence/LSTM/X_train",X_train)
 
-        with open('./Persistence/LSTM/Y_train.pickle', 'wb') as f:
-            pickle.dump(Y_train, f, protocol=4)
-            f.close()
+        np.save("./Persistence/LSTM/Y_train",Y_train)
 
         X_test =np.zeros((25000, feature, self.model.vector_size),dtype='float16')
 
@@ -272,9 +236,7 @@ class GetData(object):
                     cout += 1
                 j += 1
 
-        with open('./Persistence/LSTM/X_test.pickle', 'wb') as f:
-            pickle.dump(X_test, f, protocol=4)
-            f.close()
+        np.save("./Persistence/LSTM/X_test",X_test)
 
         print("save narray success to ./Persistence")
 
@@ -285,20 +247,18 @@ def LoadDataTrain():
     """
     load Train data fot ``LSTM``  
     """
-    with open('./Persistence/LSTM/X_train.pickle', 'rb') as f:
-        X_train = pickle.load(f)
-        f.close()
-    with open('./Persistence/LSTM/Y_train.pickle', 'rb') as f:
-        Y_train = pickle.load(f)
-        f.close()
+    X_train = np.load("./Persistence/LSTM/X_train.npy")
+
+    Y_train = np.load("./Persistence/LSTM/Y_train.npy")
+
     print("load train data success!")
 
-    # random
-    random.seed(datetime.now())
-    index = list(range(0, X_train.shape[0]))
-    random.shuffle(index)
-    X_train = X_train[index]
-    Y_train = Y_train[index]
+    # shuffle data, maybe not necessary
+    # random.seed(datetime.now())
+    # index = list(range(0, X_train.shape[0]))
+    # random.shuffle(index)
+    # X_train = X_train[index]
+    # Y_train = Y_train[index]
 
     return X_train, Y_train
 
@@ -307,20 +267,19 @@ def LoadDataTest():
     """
     load Test data fot ``LSTM``  
     """
-    with open('./Persistence/LSTM/X_test.pickle', 'rb') as f:
-        X_test = pickle.load(f)
-        f.close()
+    X_test = np.load("./Persistence/LSTM/X_test.npy")
+
     print("load test data success!")
     return X_test
 
 
 def SaveResult(Y_test):
     """
-    Y_test.shape = (25000) or (25000,2)\n
+    Y_test.shape = (25000) or (25000,1)\n
     save result to ``./result.csv``  
     """
     Y_test = Y_test.reshape(-1,)
-    DataFrame = pd.read_csv("RowData\\TestData.tsv", sep='\t', quoting=3)
+    DataFrame = pd.read_csv("./RowData/TestData.tsv", sep='\t', quoting=3)
     name = DataFrame['id']
     df = pd.DataFrame({'id': name, 'sentiment': Y_test})
     df.to_csv("result.csv", index=False, quoting=3)
@@ -333,13 +292,13 @@ def run():
 
     # save model
     # test = Train(sources)
-    # test.process(vector_size=400,window=15,min_count=40)
+    # test.process(vector_size=300,min_count=30,window=20)
     # test.save('./Persistence/Model/imdb.d2v')
 
     # save for RNN
     # data = GetData("./Persistence/Model/imdb.d2v")
     # print("model vector size = %d" % (data.model.vector_size))
-    # data.SaveDataForRNN()
+    # data.SaveDataForRNN(feature=700)
 
     # save for doc2vec
     # data = GetData("./Persistence/Model/imdb.d2v")

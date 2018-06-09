@@ -5,16 +5,36 @@ from keras.layers import Dense, Activation, Dropout, LSTM, Bidirectional
 from keras.layers.convolutional import MaxPooling1D, Conv1D
 from keras.callbacks import EarlyStopping
 from keras.models import load_model
-import pickle
 import numpy as np
 import pandas as pd
+# import for ROC
+import functools
+from keras import backend as K
+import tensorflow as tf
 # import my file
 import Doc2Vec
 
+# warp tensorflow metrics to keras
+# i.e. ROC
+def as_keras_metric(method):
+    @functools.wraps(method)
+    def wrapper(self, args, **kwargs):
+        """ Wrapper for turning tensorflow metrics into keras metrics """
+        value, update_op = method(self, args, **kwargs)
+        K.get_session().run(tf.local_variables_initializer())
+        with tf.control_dependencies([update_op]):
+            value = tf.identity(value)
+        return value
+    return wrapper
+
 
 def MyLSTM():
-    feature = 500
-    vec_size = 400
+    # how many words count?
+    feature = 700
+    # size of each word
+    vec_size = 300
+    # use ROC
+    auc_roc = as_keras_metric(tf.metrics.auc)
     # model
     model = Sequential()
     # add conv1D layer
@@ -47,7 +67,7 @@ def MyLSTM():
     model.add(Dense(1))
     model.add(Activation('sigmoid'))
     model.compile(loss='binary_crossentropy',
-                  optimizer='adam', metrics=['accuracy'])
+                  optimizer='adam', metrics=[auc_roc])
     # model complete
     print(model.summary())
     return model
@@ -58,12 +78,13 @@ if __name__ == '__main__':
     model = MyLSTM()
     # fit train data
     trainData, trainLabel = Doc2Vec.LoadDataTrain()
-    # model.fit(trainData, trainLabel, validation_split=0.20,
-    #           epochs=10, batch_size=64, callbacks=[EarlyStopping(patience=2)])
-    model.fit(trainData, trainLabel, validation_split=0.2, epochs=15, batch_size=64)
+    # model.fit(trainData, trainLabel, validation_split=0.2,
+    #           epochs=20, batch_size=64, callbacks=[EarlyStopping(patience=2)])
+    model.fit(trainData, trainLabel, validation_split=0.2, epochs=10, batch_size=64)
     # save model
-    model.save('./Persistence/model.h5')
-    # model = load_model('./Persistence/model.h5')
+    model.save('./Persistence/Model/LSTM.h5')
+    # auc_roc = as_keras_metric(tf.metrics.auc)
+    # model = load_model('./Persistence/Model/LSTM.h5',custom_objects={'auc':auc_roc})
     X_test = Doc2Vec.LoadDataTest()
     Y_test = model.predict(X_test)
     # save result

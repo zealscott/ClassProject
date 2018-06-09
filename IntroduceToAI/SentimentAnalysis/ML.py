@@ -1,187 +1,124 @@
-# classifier
-from sklearn.model_selection import StratifiedKFold
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.svm import SVC
-from sklearn.svm import LinearSVC
-from sklearn.cross_validation import cross_val_score
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.linear_model import SGDClassifier as SGD
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.naive_bayes import MultinomialNB as MNB
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from xgboost import XGBClassifier
 import numpy as np
 import pandas as pd
-import random
-import warnings
-warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
-from gensim.models import Doc2Vec
-from Doc2Vec import GetData
-from Doc2Vec import SaveResult
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+from sklearn.feature_extraction.text import TfidfVectorizer as TFIV
+from sklearn.linear_model import LogisticRegression as LR
+from sklearn.model_selection import GridSearchCV
+from sklearn.naive_bayes import MultinomialNB as MNB
+from sklearn.svm import SVC
+from sklearn.decomposition import PCA
+from sklearn.linear_model import SGDClassifier as SGD
+from sklearn.cross_validation import cross_val_score
+from sklearn.model_selection import StratifiedKFold
+from sklearn.pipeline import Pipeline
+from sklearn import preprocessing
+import xgboost as xgb
+import pickle
 
 
-class ClassifierTrain(object):
-    """
-    using machine learning tech to train data  
-    """
+class classify():
+    def __init__(self, X_train, Y_Train, X_Test):
+        self.X_train = X_train
+        self.Y_Train = Y_Train
+        self.X_Test = X_Test
 
-    def __init__(self, trainData, trainLabel, testData=None, testLabel=None):
-        self.trainData = trainData
-        self.trainLabel = trainLabel
-        self.testData = testData
-        self.testLabel = testLabel
+    def LR(self):
+        """ 
+        use LogisticRegression and GridSearchCV to find best parameters
+        """
+        # Decide which settings you want for the grid search.
+        grid_values = {'C': [1e-3,1e-2,1e-1,1,2]}
+        # grid_values = {'C': [1e-5,1e-4,1e-3,1e-2,1e-1]}
+
+        clf = GridSearchCV(LR(penalty='l2', dual=True, random_state=0),
+                           grid_values, scoring='roc_auc', cv=20,n_jobs=4)
+        # Try to set the scoring on what the contest is asking for.
+        # The contest says scoring is for area under the ROC curve, so use this.
+        clf.fit(self.X_train, self.Y_Train)  # Fit the model.
+        print("using LogisticRegression, Best: %f using %s" %
+              (clf.best_score_, clf.best_params_))
+        self.best_clf = clf.best_estimator_
+        return self.best_clf
+
+    def mnb(self):
+        clf = MNB()
+        clf.fit(self.X_train, self.Y_Train)
+        print("20 Fold CV Score for Multinomial Naive Bayes: %f" % (np.mean(cross_val_score
+                                                                            (clf, self.X_train, self.Y_Train, cv=20, scoring='roc_auc'))))
+        self.best_clf = clf
+        return clf
 
     def SVMTest(self):
         """  
         Pipeline+GridSearchCV
         """
-        kfold = StratifiedKFold(n_splits=5, shuffle=True)
-        parameters = [
-            {
-                'pca__n_components': [20, 40, 60, 80, 100],
-                'svm__kernel':['rbf'],
-                'svm__gamma':[1e-3, 1e-2, 1e-1],
-                'svm__C':[1e-2, 1e-1, 1, 5, 10]
-            },
-            {
-                'pca__n_components': [20, 40, 60, 80, 100],
-                'svm__kernel':['linear'],
-                'svm__C':[1e-2, 1e-1, 1, 5, 10]
-            }
-        ]
-        pipeline = Pipeline(
-            steps=[
-                ('pca', PCA()),  # 'pca'对应'pca__'
-                ('svm', SVC())  # 'svm'对应'svm__'
-            ]
-        )
+        parameters = [{'kernel': ['rbf'], 'gamma': [1e-2,0.005,1e-3],
+                       'C': [0.5,1,1.5,2,4]},
+                      {'kernel': ['linear'], 'C': [1e-3, 1e-2,0.1,1]}]
         clf = GridSearchCV(
-            estimator=pipeline,
-            param_grid=parameters,
-            cv=kfold,
-            scoring="accuracy",
+            SVC(probability=True),
+            parameters,
+            cv=5,
+            scoring="roc_auc",
             n_jobs=4
         )
-        clf.fit(self.trainData, self.trainLabel)
+        clf.fit(self.X_train, self.Y_Train)
         print("using SVM, Best: %f using %s" %
               (clf.best_score_, clf.best_params_))
-        best_clf = clf.best_estimator_
-        return best_clf
-
-    def SVM(self):
-        clf = SVC()
-        clf.fit(self.trainData, self.trainLabel)
-        score = clf.score(self.testData, self.testLabel)
-        print("using SVM, score = %f" % score)
-        best_clf = clf
-        return best_clf
-
-    def mnb(self):
-        clf = MNB()
-        clf.fit(self.trainData, self.trainLabel)
-        print("20 Fold CV Score for Multinomial Naive Bayes: %f" % (np.mean(cross_val_score
-                                                                            (clf, self.trainData, self.trainLabel, cv=20, scoring='roc_auc'))))
+        self.best_clf = clf.best_estimator_
+        return self.best_clf
 
     def sgd(self):
         # Regularization parameter
-        sgd_params = {'alpha': [0.00006, 0.00007, 0.00008, 0.0001, 0.0005]}
+        # sgd_params = {'alpha': [ 0.18,0.17,0.19,0.185]}
+        sgd_params = {'alpha': [1e-1,0.5,1,1.5]}
 
-        clf = GridSearchCV(SGD(max_iter=5,random_state=0, shuffle=True, loss='modified_huber'),
-                           sgd_params, scoring='roc_auc', cv=20)  # Find out which regularization parameter works the best.
+        clf = GridSearchCV(SGD(max_iter=5, random_state=0,loss='modified_huber',n_jobs=4),sgd_params, scoring='roc_auc', cv=20)  # Find out which regularization parameter works the best.
 
-        clf.fit(self.trainData, self.trainLabel)  # Fit the model.
+        clf.fit(self.X_train, self.Y_Train)
         print("using SGD, Best: %f using %s" %
               (clf.best_score_, clf.best_params_))
-        best_clf = clf.best_estimator_
-        return best_clf
+        self.best_clf = clf.best_estimator_
+        return self.best_clf
 
-    def LibSVM(self):
-        clf = LinearSVC()
-        clf.fit(self.trainData, self.trainLabel)
-        score = clf.score(self.testData, self.testLabel)
-        print("using LibSVM, score = %f" % score)
-        best_clf = clf
-        return best_clf
-
-    def NB(self):
-        clf = MultinomialNB()
-        clf.fit(self.trainData, self.trainLabel)
-        score = clf.score(self.testData, self.testLabel)
-        print("using MultinomialNB, score = %f" % score)
-        best_clf = clf
-        return best_clf
-
-    def LR(self):
-        # Decide which settings you want for the grid search.
-        grid_values = {'C': [30]}
-
-        clf = GridSearchCV(LogisticRegression(penalty='l2', dual=True, random_state=0),
-                           grid_values, scoring='roc_auc', cv=20)
-
-        clf.fit(self.trainData, self.trainLabel) # Fit the model.
-        print("using LogisticRegression, Best: %f using %s" %
+    def sgdboot(self):
+        cv_params = {'max_depth': [7,9,10], 'min_child_weight': [1, 3, 5]}
+        ind_params = {'learning_rate': 0.1, 'n_estimators': 1000, 'seed': 0, 'subsample': 0.8, 'colsample_bytree': 0.8,
+                      'objective': 'binary:logistic'}
+        clf = GridSearchCV(xgb.XGBClassifier(**ind_params),
+                           cv_params,
+                           scoring='roc_auc', cv=5, n_jobs=4,verbose=True)
+        clf.fit(self.X_train, self.Y_Train)
+        print("using sgdboot, Best: %f using %s" %
               (clf.best_score_, clf.best_params_))
-        best_clf = clf.best_estimator_
-        return best_clf
+        # print(clf.grid_scores_)
+        self.best_clf = clf.best_estimator_
+        return self.best_clf
 
+    def save(self, filename):
 
-    def KNN(self):
-        clf = KNeighborsClassifier(n_neighbors=100)
-        clf.fit(self.trainData, self.trainLabel)
-        score = clf.score(self.testData, self.testLabel)
-        print("using KNeighbors, score = %f" % score)
-        best_clf = clf
-        return best_clf
+        Y_test = self.best_clf.predict_proba(self.X_Test)[:, 1]
+        DataFrame = pd.read_csv("RowData\\TestData.tsv", sep='\t', quoting=3)
+        name = DataFrame['id']
+        df = pd.DataFrame({'id': name, 'sentiment': Y_test})
+        df.to_csv(filename, index=False, quoting=3)
+        print("save to "+filename)
 
-    def DT(self):
-        clf = DecisionTreeClassifier()
-        clf.fit(self.trainData, self.trainLabel)
-        score = clf.score(self.testData, self.testLabel)
-        print("using DecisionTree, score = %f" % score)
-        best_clf = clf
-        return best_clf
-
-    def RF(self):
-        clf = RandomForestClassifier()
-        clf.fit(self.trainData, self.trainLabel)
-        score = clf.score(self.testData, self.testLabel)
-        print("using RandomForest,score = %f" % score)
-        best_clf = clf
-        return best_clf
-
-
-def run():
-    data = GetData("./Model/imdb.d2v")
-
-    # trainData, trainLabel, testData, testLabel, X_test = data.GetArray()
-    trainData, trainLabel, X_test = data.GetArray()
-
-    print("trainData size:", trainData.shape)
-    print("trainLabel size:", trainLabel.shape)
-    print("test size:", X_test.shape)
-
-    # clf = ClassifierTrain(trainData, trainLabel, testData, testLabel)
-    classifer = ClassifierTrain(trainData, trainLabel)
-    # clf = classifer.sgd()
-    # clf = classifer.mnb()
-    clf = classifer.LR()
-
-    # clf = classify(data, label)
-    result = clf.predict_proba(X_test)
-    print(result.shape)
-    print(result)
-    # result = [round(value)for value in result]
-    SaveResult(result)
-    # clf = clf.SVM()
-    # clf.LibSVM()
-    # clf.RF()
-    # clf.DT()
-    # clf.KNN()
 
 if __name__ == '__main__':
-    run()
+    with open("./Persistence/Doc2VecArray.pkl","rb+") as f:
+        X_train, y_train, X_test = pickle.load(f)
+
+        
+    clf = classify(X_train, y_train, X_test)
+    # clf.mnb()
+    # clf.save("./mnb.csv")
+    clf.LR()
+    clf.save("./LR.csv")
+    clf.sgd()
+    clf.save("./sgd.csv")
+    # clf.SVMTest()
+    # clf.save("./svm.csv")
+    # clf.sgdboot()
+    # clf.save("./sgdboot.csv")
