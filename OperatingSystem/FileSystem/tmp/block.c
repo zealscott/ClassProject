@@ -1,12 +1,11 @@
 
-
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-#include "p5.h"
-
+// #include "p5.h"
+#define BLOCKSIZE 1024
 /* only open the file once */
 static int fd = -1;
 static int devsize = 0;
