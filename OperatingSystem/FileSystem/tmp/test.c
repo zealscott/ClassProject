@@ -5,7 +5,6 @@
 int main(int argc, char const *argv[])
 {
 
-
     return 0;
 }
 
@@ -33,3 +32,11 @@ int main(int argc, char const *argv[])
 //     my_mkfs();
 //     my_mkdir("/a");
 //     my_mkdir("/foo/abc");
+
+/* test rmdir */
+    // my_mkfs();
+    // my_mkdir("/b");
+    // my_mkdir("/foo/abc");
+    // my_rmdir("/b");
+    // my_rmdir("/b");
+    // my_rmdir("/foo");
