@@ -8,10 +8,12 @@
 #include <unistd.h>
 #include <time.h>
 
-#define MAX_PER_BITMAP 450 /* max block covered of one bit map */
-#define MAX_DIRENTRY 18    /* max directionary entry each block */
-#define BITMAP_NUM 56      /* number of bit map needed*/
-#define BITMAP_START 2     /* where bitmap store in disk */
+#define MAX_PER_BITMAP 450    /* max block covered of one bit map */
+#define MAX_DIRENTRY 18       /* max directionary entry each block */
+#define BITMAP_NUM 56         /* number of bit map needed*/
+#define BITMAP_START 2        /* where bitmap store in disk */
+#define INODE_DIRECT_MAX 200  /* inode direct block max 200 */
+#define INODE_DIRECT1_MAX 256 /* inode direct block max 200 */
 
 /* super block struct, 976 KB */
 typedef struct SuperBlk
@@ -37,12 +39,12 @@ typedef struct Dir
 /* inode size: 824 bytes */
 typedef struct inode
 {
-    time_t ctime;           /* last change time (size : 8 bytes)*/
-    unsigned int i_size;    /* file size:(bytes) */
-    unsigned int block_num; /* how many block it use */
-    int dir_block[200];     /* direct block */
-    int indir_block_1;      /* indirect block 1  */
-    int indir_block_2;      /* indirect block 2  */
+    time_t ctime;                    /* last change time (size : 8 bytes)*/
+    unsigned int i_size;             /* file size:(bytes) */
+    unsigned int block_num;          /* how many block it use */
+    int dir_block[INODE_DIRECT_MAX]; /* direct block */
+    int indir_block_1;               /* indirect block 1  */
+    int indir_block_2;               /* indirect block 2  */
 } INODE;
 
 /* need 56 bitmap block for 25000 block*/
@@ -52,6 +54,8 @@ typedef struct bitmap
     int free_block;               /* free block in this bitmap  */
     short bitmap[MAX_PER_BITMAP]; /* bit map */
 } BITMAP;
+
+typedef int INDIR_BLOCK[INODE_DIRECT1_MAX];
 
 /* ------------------------------------------ */
 /* claim global variables */
@@ -67,10 +71,9 @@ INODE tmpInode;
 /* clean PathName */
 void clean_pathname()
 {
-    for (int i = 0; i <5;i++)
-    memset(PathName[i],0,sizeof(PathName));
+    for (int i = 0; i < 5; i++)
+        memset(PathName[i], 0, sizeof(PathName));
 }
-
 
 /* write superblock back to disk */
 int Write_Superblk(SUPERBLK sb)
@@ -116,6 +119,17 @@ int Write_Inode(int block_num, INODE i_node)
         return -1;
 }
 
+/* write i-node block back to disk */
+int Write_Inode_block(int block_num, INDIR_BLOCK block1)
+{
+    char tmp[BLOCKSIZE];
+    memcpy(tmp, block1, sizeof(block1));
+    if (write_block(block_num, tmp) == 0)
+        return 0;
+    else
+        return -1;
+}
+
 /* return how many dir */
 int parse_path(char *Path)
 {
@@ -131,8 +145,10 @@ int parse_path(char *Path)
 /* find file or dir block location*/
 int find_file(int dir_num)
 {
-    if (dir_num <= 0)
+    if (dir_num == 0)
         return 58;
+    if (dir_num < 0)
+        return -1;
     int disk_num = 58, i, j, dir_in_use; /* root dir location */
     char TmpBuf[BLOCKSIZE];
     DIR tmpDir;
@@ -173,7 +189,10 @@ int bitmap_search_block(BITMAP *tmp)
     return -1;
 }
 
-/* find free block from bitmap, set the location to superblock */
+/* find free block from bitmap, 
+ * set the location to superblock 
+ * write SUPERBLK, bitmap back to disk
+ */
 int find_free_block()
 {
     int i, location;
@@ -225,6 +244,25 @@ int mk_new_dir(int parent_dir_disk_num)
         return -1;
 }
 
+/* allocate new block for i-node, write back 
+ * not success ,return -1,else, return block_location 
+ */
+int mk_new_inode()
+{
+    char TmpBuf[BLOCKSIZE];
+    int block_location;
+    INODE tmpInode;
+    if ((block_location = find_free_block()) == -1)
+        return -1;
+    read_block(block_location, TmpBuf);
+    /* init i-node */
+    memcpy(&tmpInode, TmpBuf, sizeof(tmpInode));
+    memset(&tmpInode, 0, sizeof(tmpInode));
+    tmpInode.ctime = time(NULL);
+    Write_Inode(block_location, tmpInode);
+    return block_location;
+}
+
 /* free block 
  * change superblock and bitmap
  */
@@ -244,4 +282,77 @@ void free_space(int free_block_num)
     /* write back  */
     Write_Superblk(SuperBlock);
     Write_Bitmap(bitmap_location, Tmpbitmap);
+}
+
+/* free indirect block1
+ * and itself
+ */
+void free_indirect_block1(int indirect_block1_location)
+{
+    int i, block_locatin;
+    char TmpBuf[BLOCKSIZE];
+    INDIR_BLOCK block1;
+    if (indirect_block1_location >= 58)
+    {
+        read_block(indirect_block1_location, TmpBuf);
+        memcpy(block1, TmpBuf, sizeof(block1));
+        for (i = 0; i < INODE_DIRECT1_MAX; i++)
+        {
+            if ((block_locatin = block1[i]) >= 59)
+                free_space(block_locatin);
+            else
+                break;
+        }
+        /* free itself */
+        free_space(indirect_block1_location);
+        /* clean block */
+        memset(block1, 0, sizeof(block1));
+        Write_Inode_block(indirect_block1_location, block1);
+    }
+    return;
+}
+
+/* free inode  data block(indirect,direct)
+ * set inode to zero
+ * free inode itself
+ */
+void free_inode(int inode_block_num)
+{
+    int block_locatin, i;
+    char TmpBuf[BLOCKSIZE];
+    INODE InodeTmp;
+    INDIR_BLOCK block2;
+    read_block(inode_block_num, TmpBuf);
+    memcpy(&InodeTmp, TmpBuf, sizeof(InodeTmp));
+    /* free direct block */
+    for (i = 0; i < INODE_DIRECT_MAX; i++)
+    {
+        if ((block_locatin = InodeTmp.dir_block[i]) >= 59)
+            free_space(block_locatin);
+        else
+            break;
+    }
+    /* free indirect block and itself */
+    free_indirect_block1(InodeTmp.indir_block_1);
+    /* free indirect block2 */
+    if (InodeTmp.indir_block_2 >= 58)
+    {
+        read_block(InodeTmp.indir_block_2, TmpBuf);
+        memcpy(block2, TmpBuf, sizeof(block2));
+        for (i = 0; i < INODE_DIRECT1_MAX; i++)
+        {
+            if ((block_locatin = block2[i]) >= 59)
+                free_indirect_block1(block_locatin);
+            else
+                break;
+        }
+        free_space(InodeTmp.indir_block_2); /* free indirect block2 itself */
+        memset(block2, 0, sizeof(block2));
+        Write_Inode_block(InodeTmp.indir_block_2, block2);
+    }
+    /* free inode itself */
+    free_space(inode_block_num);
+    memset(&InodeTmp, 0, sizof(InodeTmp));
+    Write_Inode(inode_block_num, InodeTmp);
+    return;
 }

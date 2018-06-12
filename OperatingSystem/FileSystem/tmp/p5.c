@@ -5,20 +5,63 @@
 #include <stdio.h>
 // #include "p5.h"
 
-/* open an exisiting file for reading or writing */
+/* open an exisiting file for reading or writing 
+ * if exist, return -1
+ * success, return file pointer
+ */
 int my_open(char *path)
 {
+  int path_num, i, disk_num;
+  char TmpBuf[BLOCKSIZE];
+  DIR ParentTmpDir;
   clean_pathname();
-  printf("my_open (%s) not implemented\n", path);
-  return -1;
+  path_num = parse_path(path);
+  disk_num = find_file(path_num);
+  return disk_num;
 }
 
-/* open a new file for writing only */
+/* open a new file for writing only 
+ * if exist, return -1
+ * success, return file pointer
+ */
 int my_creat(char *path)
 {
+  int path_num, i, disk_num, parent_disk_num, dir_in_use;
+  char TmpBuf[BLOCKSIZE];
+  DIR ParentTmpDir;
   clean_pathname();
-  printf("my_creat (%s) not implemented\n", path);
-  return -1;
+  path_num = parse_path(path);
+  parent_disk_num = find_file(path_num - 1); /* find parent dir */
+  if (parent_disk_num == -1)                 /* previous dir not existed */
+  {
+    printf("parent Directionary is not exist.\n");
+    return -1;
+  }
+  read_block(parent_disk_num, TmpBuf);
+  memcpy(&ParentTmpDir, TmpBuf, sizeof(ParentTmpDir));
+  dir_in_use = ParentTmpDir.in_use;
+  if (dir_in_use >= MAX_DIRENTRY)
+  {
+    printf("my_creat Error: cannot create more dir entry.\n");
+    return -1;
+  }
+  for (i = 0; i < dir_in_use; i++)
+  {
+    if (strcmp(PathName[path_num - 1], ParentTmpDir.entry[i].name) == 0)
+    {
+      printf("my_creat Error: file exist.\n");
+      return -1;
+    }
+  }
+  /* create i-node for new file */
+  disk_num = mk_new_inode();
+  /* modify dir,set inode and in_use */
+  strcpy(ParentTmpDir.entry[dir_in_use].name, PathName[path_num - 1]);
+  ParentTmpDir.entry[dir_in_use].i_node = disk_num;
+  ParentTmpDir.in_use++;
+  Write_Dir(parent_disk_num, ParentTmpDir);
+  printf("my_creat %s success: i-node in %d\n", PathName[path_num - 1], disk_num);
+  return disk_num; /* not found  */
 }
 
 /* sequentially read from a file */
@@ -44,13 +87,50 @@ int my_close(int fd)
   return -1;
 }
 
+/* remove file from disk
+ * if not exist, return -1
+ * free ParentDir, inode, and data
+ */
 int my_remove(char *path)
 {
+  int path_num, parent_disk_num, i, j;
+  char TmpBuf[BLOCKSIZE];
+  DIR ParentTmpDir;
   clean_pathname();
-  printf("my_remove (%s) not implemented\n", path);
-  return -1;
+  path_num = parse_path(path);
+  parent_disk_num = find_file(path_num - 1); /* find parent dir */
+  if (parent_disk_num == -1)                 /* previous dir not existed */
+  {
+    printf("parent Directionary is not exist.\n");
+    return -1;
+  }
+  read_block(parent_disk_num, TmpBuf);
+  memcpy(&ParentTmpDir, TmpBuf, sizeof(ParentTmpDir));
+  for (i = 0; i < ParentTmpDir.in_use; i++)
+  {
+    if (strcmp(PathName[path_num - 1], ParentTmpDir.entry[i].name) == 0)
+    {
+      /* free inode and its data block */
+      free_inode(ParentTmpDir.entry[i].i_node);
+      /* clean parent Directionary */
+      for (j = i; j < (ParentTmpDir.in_use - 1); j++)
+      {
+        strcpy(ParentTmpDir.entry[j].name, ParentTmpDir.entry[j + 1].name)
+      }
+      /* free parent dir */
+      ParentTmpDir.in_use--;
+      Write_Dir(parent_disk_num, ParentTmpDir);
+      printf("my_remove: remove %s success.\n", PathName[path_num - 1]);
+      return 0; /* success */
+    }
+  }
+  return -1; /* not found  */
 }
 
+/* rename a file
+ * support move entitiy
+ * if file not exist, return -1
+ */
 int my_rename(char *old, char *new)
 {
   clean_pathname();
@@ -71,7 +151,10 @@ int my_mkdir(char *path)
   path_num = parse_path(path);
   parent_disk_num = find_file(path_num - 1); /* find parent dir */
   if (parent_disk_num == -1)                 /* previous dir not existed */
+  {
+    printf("my_mkdir Error: parent Directionary is not exist.\n");
     return -1;
+  }
   read_block(parent_disk_num, TmpBuf);
   memcpy(&tmpDir, TmpBuf, sizeof(tmpDir));
   for (i = 0; i < tmpDir.in_use; i++)
@@ -93,7 +176,7 @@ int my_mkdir(char *path)
     tmpDir.entry[tmpDir.in_use].i_node = block_location;
     tmpDir.in_use++;
     Write_Dir(parent_disk_num, tmpDir);
-    printf("make dir success: %s i-node in: %d\n", PathName[path_num - 1], block_location);
+    printf("make dir success: %s dir disk num in: %d\n", PathName[path_num - 1], block_location);
     return 0;
   }
   return -1;
@@ -115,7 +198,7 @@ int my_rmdir(char *path)
   Parent_disk_num = find_file(path_num - 1);   /* find parent dir */
   if (disk_num == -1 || Parent_disk_num == -1) /*  dir not existed */
   {
-    printf("Error: Directionary is not exist.\n");
+    printf("rmdir Error: Directionary is not exist.\n");
     return -1;
   }
 
@@ -125,7 +208,7 @@ int my_rmdir(char *path)
   dir_in_use = tmpDir.in_use; /* how many file this dir contained */
   if (dir_in_use > 2)
   {
-    printf("error: dir is not empty.\n");
+    printf("rmdir Error: dir is not empty.\n");
     return -1; /* not empty */
   }
 
@@ -134,20 +217,21 @@ int my_rmdir(char *path)
   memcpy(&ParentTmpDir, TmpBuf, sizeof(ParentTmpDir));
   for (i = 0; i < ParentTmpDir.in_use; i++)
   {
-    if (strcmp(PathName[path_num - 1], ParentTmpDir.entry[i].name) == 0)
-      break;
+    if (strcmp(PathName[path_num - 1], ParentTmpDir.entry[i].name) == 0) /* remove from parent dir */
+    {
+      for (j = i; j < (ParentTmpDir.in_use - 1); j++)
+      {
+        strcpy(ParentTmpDir.entry[j].name, ParentTmpDir.entry[j + 1].name);
+      }
+      ParentTmpDir.in_use--;
+      Write_Dir(Parent_disk_num, ParentTmpDir); /* write back */
+      /* reduce superblock,bitmap */
+      free_space(disk_num);
+      printf("rmdir : %s ,success.\n", PathName[path_num - 1]);
+      return 0;
+    }
   }
-  /* remove from parent dir */
-  for (; i < (ParentTmpDir.in_use - 1); i++)
-  {
-    strcpy(ParentTmpDir.entry[i].name, ParentTmpDir.entry[i + 1].name);
-  }
-  ParentTmpDir.in_use--;
-  Write_Dir(Parent_disk_num, ParentTmpDir); /* write back */
-  /* reduce superblock,bitmap */
-  free_space(disk_num);
-  printf("rmdir : %s ,success.\n", PathName[path_num - 1]);
-  return 0;
+  return -1;/* not found */
 }
 
 /* check to see if the device already has a file system on it,
