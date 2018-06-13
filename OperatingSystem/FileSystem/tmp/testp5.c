@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "p5.h"
+#include "p5.c"
 
 char buffer0 [] = "hello world";
 char buffer1 [1000];		/* one thousand */
@@ -76,7 +76,7 @@ int main (int argc, char ** argv)
     exit (1);
   }
   printf ("successfully removed directory /foo/bar\n");
-
+  printf("-------------------\n");
   /* repeat the test on as many of the larger files as appropriate */
   fd1 = test_file ("/foo/bar1", buffer1, sizeof (buffer1), max_size);
   fd2 = test_file ("/foo/bar2", buffer2, sizeof (buffer2), max_size);

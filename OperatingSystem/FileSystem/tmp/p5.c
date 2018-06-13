@@ -17,6 +17,15 @@ int my_open(char *path)
   clean_pathname();
   path_num = parse_path(path);
   disk_num = find_file(path_num);
+  /* store into fp list */
+  for (i = 0; i < 50; i++)
+  {
+    if (OpenFP[i] == 0 || OpenFP[i] == disk_num) /* find an empty fp or has existed */
+    {
+      OpenFP[i] = disk_num;
+      break;
+    }
+  }
   return disk_num;
 }
 
@@ -61,30 +70,136 @@ int my_creat(char *path)
   ParentTmpDir.in_use++;
   Write_Dir(parent_disk_num, ParentTmpDir);
   printf("my_creat %s success: i-node in %d\n", PathName[path_num - 1], disk_num);
+  for (i = 0; i < 50; i++)
+  {
+    if (OpenFP[i] == 0 || OpenFP[i] == disk_num)
+    {
+      OpenFP[i] = disk_num;
+      break;
+    }
+  }
   return disk_num; /* not found  */
 }
 
-/* sequentially read from a file */
+/* sequentially read from a file according to fd(i-node)
+ * read bytes by btyes
+ * if read success, return 0
+ */
 int my_read(int fd, void *buf, int count)
 {
+  /* fp_index is the buf index to read in DRAM*/
+  int i, fp_index = -1;
+  INODE InodeTmp;
+  char TmpBuf[BLOCKSIZE];
   clean_pathname();
-  printf("my_read (%d, %x, %d) not implemented\n", fd, buf, count);
-  return -1;
+  if (fd <= 0)
+  {
+    printf("my_read Error: bad file descriptor.\n");
+    return -1;
+  }
+  for (i = 0; i < 50; i++)
+  {
+    if (OpenFP[i] == fd)
+    {
+      fp_index = i;
+      break;
+    }
+  }
+  if (fp_index == -1)
+    return -1; /* the file is not open */
+  /* read from buffer */
+  if (read_from_fpBuf(fp_index, count, buf) == count)
+    return count;
+  /* no buffer yet */
+  read_block(fd, TmpBuf); /* read i-node from disk */
+  memcpy(&InodeTmp, TmpBuf, sizeof(InodeTmp));
+  OpenFP_buffer[fp_index] = (char *)malloc(25000);
+  OpenFP_buffer_old[fp_index] = OpenFP_buffer[fp_index];
+  /* read file from disk to DRAM */
+  read_to_fpBuf(InodeTmp, fp_index);
+
+  read_from_fpBuf(fp_index, count, buf);
+  return count;
 }
 
-/* sequentially write to a file */
+/* write string to DRAM file
+ * store the file pointer and char *
+ */
 int my_write(int fd, void *buf, int count)
 {
+  /* left is the left unwrite bytes */
+  /* index is the buf index to write */
+  int i, fp_index, flag = 0;
+  INODE InodeTmp;
+  char TmpBuf[BLOCKSIZE];
   clean_pathname();
-  printf("my_write (%d, %x, %d) not implemented\n", fd, buf, count);
-  return -1;
+  if (fd <= 0)
+  {
+    printf("my_write Error: bad file descriptor.\n");
+    return -1;
+  }
+  read_block(fd, TmpBuf); /* read i-node from disk */
+  memcpy(&InodeTmp, TmpBuf, sizeof(InodeTmp));
+  if (InodeTmp.i_size != 0)
+    flag = 1;
+
+  /* write to DRAM buffer */
+  for (i = 0; i < 50; i++)
+  {
+    if (OpenFP[i] == fd)
+    {
+      fp_index = i;
+      break;
+    }
+  }
+  if (OpenFP_buffer[fp_index] == 0)
+  {
+    if (flag == 1)
+    { /* buffer not in DRAM, but has file, first read */
+      my_read(fd, buf, count);
+    }
+    else
+    { /* buffer not in DRAM, no file */
+      OpenFP_buffer[fp_index] = (char *)malloc(25000);
+      OpenFP_buffer_old[fp_index] = OpenFP_buffer[fp_index];
+    }
+  }
+  memcpy(OpenFP_buffer[fp_index], buf, count);
+  OpenFP_buffer[fp_index] += count;
+  InodeTmp.i_size = InodeTmp.i_size > count ? InodeTmp.i_size : count;
+  Write_Inode(fd, InodeTmp);
+  return count;
 }
 
 int my_close(int fd)
 {
+  int i, fp_index;
+  INODE InodeTmp;
+  char TmpBuf[BLOCKSIZE];
   clean_pathname();
-  printf("my_close (%d) not implemented\n", fd);
-  return -1;
+  read_block(fd, TmpBuf);
+  memcpy(&InodeTmp, TmpBuf, sizeof(InodeTmp));
+  for (i = 0; i < 50; i++)
+  {
+    if (OpenFP[i] == fd)
+    {
+      fp_index = i;
+      break;
+    }
+  }
+  write_fpBuf_to_disk(fd, InodeTmp, fp_index);
+  free(OpenFP_buffer_old[fp_index]);
+  for (i = 0; i < 50; i++)
+  {
+    if (OpenFP[i] == fd)
+    {
+      OpenFP[i] = 0;
+      OpenFP_buffer[i] = 0;
+      OpenFP_buffer_old[i] = 0;
+      break;
+    }
+  }
+  return 0;
 }
 
 /* remove file from disk
@@ -115,7 +230,7 @@ int my_remove(char *path)
       /* clean parent Directionary */
       for (j = i; j < (ParentTmpDir.in_use - 1); j++)
       {
-        strcpy(ParentTmpDir.entry[j].name, ParentTmpDir.entry[j + 1].name)
+        strcpy(ParentTmpDir.entry[j].name, ParentTmpDir.entry[j + 1].name);
       }
       /* free parent dir */
       ParentTmpDir.in_use--;
@@ -133,9 +248,55 @@ int my_remove(char *path)
  */
 int my_rename(char *old, char *new)
 {
+  int old_path_num, new_path_num;
+  int old_parent_dir_num, new_parent_dir_num, i, j, inode_disk_num;
+  DIR ParentTmpDir;
+  char TmpBuf[BLOCKSIZE];
   clean_pathname();
-  printf("my_remove (%s, %s) not implemented\n", old, new);
-  return -1;
+  /* find i-node */
+  old_path_num = parse_path(old);
+  old_parent_dir_num = find_file(old_path_num - 1);
+  if (old_parent_dir_num == -1)
+  {
+    printf("parent Directionary is not exist.\n");
+    return -1;
+  }
+  read_block(old_parent_dir_num, TmpBuf);
+  memcpy(&ParentTmpDir, TmpBuf, sizeof(ParentTmpDir));
+  for (i = 0; i < ParentTmpDir.in_use; i++)
+  {
+    if (strcmp(PathName[old_path_num - 1], ParentTmpDir.entry[i].name) == 0)
+    {
+      inode_disk_num = ParentTmpDir.entry[i].i_node;
+      /* clean dir */
+      for (j = i; j < (ParentTmpDir.in_use - 1); j++)
+      {
+        strcpy(ParentTmpDir.entry[j].name, ParentTmpDir.entry[j + 1].name);
+      }
+      /* free parent dir */
+      ParentTmpDir.in_use--;
+      Write_Dir(old_parent_dir_num, ParentTmpDir);
+    }
+  }
+  /* modify new dir */
+  clean_pathname();
+  new_path_num = parse_path(new);
+  new_parent_dir_num = find_file(new_path_num - 1);
+  if (new_parent_dir_num == -1)
+  {
+    printf("parent Directionary is not exist.\n");
+    return -1;
+  }
+  read_block(new_parent_dir_num, TmpBuf);
+  memset(&ParentTmpDir,0,sizeof(ParentTmpDir));
+  memcpy(&ParentTmpDir, TmpBuf, sizeof(ParentTmpDir));
+
+  strcpy(ParentTmpDir.entry[ParentTmpDir.in_use].name, PathName[new_path_num - 1]);
+  ParentTmpDir.entry[ParentTmpDir.in_use].i_node = inode_disk_num;
+  ParentTmpDir.in_use++;
+  Write_Dir(new_parent_dir_num, ParentTmpDir);
+  printf("my_rename success: rename to %s\n",PathName[new_path_num - 1]);
+  return 0;
 }
 
 /* make a new dir
@@ -189,7 +350,7 @@ int my_mkdir(char *path)
  */
 int my_rmdir(char *path)
 {
-  int path_num, disk_num, dir_in_use, Parent_disk_num, i;
+  int path_num, disk_num, dir_in_use, Parent_disk_num, i, j;
   char TmpBuf[BLOCKSIZE];
   DIR tmpDir, ParentTmpDir;
   clean_pathname();
@@ -231,7 +392,7 @@ int my_rmdir(char *path)
       return 0;
     }
   }
-  return -1;/* not found */
+  return -1; /* not found */
 }
 
 /* check to see if the device already has a file system on it,
