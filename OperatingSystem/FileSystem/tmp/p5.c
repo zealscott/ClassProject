@@ -425,7 +425,7 @@ void my_mkfs()
           if (i == 3)
           {
             /* first 3 block  has used*/
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 2; j++)
               bitmapTmp.bitmap[j] = 1;
             bitmapTmp.free_block = (MAX_PER_BITMAP - 3);
           }

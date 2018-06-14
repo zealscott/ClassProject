@@ -198,7 +198,7 @@ int bitmap_search_block(BITMAP *tmp)
         }
     }
     printf("bitmap_search_block Error: unable to free space.\n");
-    return -1;
+    exit(1);
 }
 
 /* find free block from bitmap, 
@@ -220,7 +220,6 @@ int find_free_block()
 
     /* set superblock parameters */
     SuperBlock.bitmap_usage[i]++;
-    printf("SuperBlock.bitmap_usage[%d] = %d\n", i, SuperBlock.bitmap_usage[i]);
     SuperBlock.free_space--;
     Write_Superblk(SuperBlock); /* write back */
     /* read bitmap */
@@ -281,7 +280,6 @@ int mk_new_inode()
  */
 void free_space(int free_block_num)
 {
-    printf("---free_space free_block_num = %d\n", free_block_num);
     int bitmap_location, i;
     char TmpBuf[BLOCKSIZE];
     BITMAP Tmpbitmap;
