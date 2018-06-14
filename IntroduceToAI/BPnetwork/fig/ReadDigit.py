@@ -10,7 +10,7 @@ class ReadDigit(object):
         self.filepath = r"MNIST_data\train-images-idx3-ubyte.gz"
 
     def _read32(self,bytestream):
-        dt = np.dtype(np.int32).newbyteorder('>')
+        dt = np.dtype(np.uint32).newbyteorder('>')
         return np.frombuffer(bytestream.read(4), dtype=dt)[0]
     def imagine_arr(self,filepath, index):
         with open(filepath, 'rb') as f:
@@ -48,8 +48,8 @@ class ReadDigit(object):
 
 
 # init class
-# a = ReadDigit()
+a = ReadDigit()
 # show the picture
-# a.showPic(5)
+a.showPic(5)
 
 # a.save()

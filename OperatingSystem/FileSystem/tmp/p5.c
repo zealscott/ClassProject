@@ -69,7 +69,6 @@ int my_creat(char *path)
   ParentTmpDir.entry[dir_in_use].i_node = disk_num;
   ParentTmpDir.in_use++;
   Write_Dir(parent_disk_num, ParentTmpDir);
-  printf("my_creat %s success: i-node in %d\n", PathName[path_num - 1], disk_num);
   for (i = 0; i < 50; i++)
   {
     if (OpenFP[i] == 0 || OpenFP[i] == disk_num)
@@ -92,11 +91,6 @@ int my_read(int fd, void *buf, int count)
   INODE InodeTmp;
   char TmpBuf[BLOCKSIZE];
   clean_pathname();
-  if (fd <= 0)
-  {
-    printf("my_read Error: bad file descriptor.\n");
-    return -1;
-  }
   for (i = 0; i < 50; i++)
   {
     if (OpenFP[i] == fd)
@@ -113,11 +107,10 @@ int my_read(int fd, void *buf, int count)
   /* no buffer yet */
   read_block(fd, TmpBuf); /* read i-node from disk */
   memcpy(&InodeTmp, TmpBuf, sizeof(InodeTmp));
-  OpenFP_buffer[fp_index] = (char *)malloc(25000);
+  OpenFP_buffer[fp_index] = (char *)malloc(50 * 1024 * 1024);
   OpenFP_buffer_old[fp_index] = OpenFP_buffer[fp_index];
   /* read file from disk to DRAM */
   read_to_fpBuf(InodeTmp, fp_index);
-
   read_from_fpBuf(fp_index, count, buf);
   return count;
 }
@@ -154,16 +147,15 @@ int my_write(int fd, void *buf, int count)
   }
   if (OpenFP_buffer[fp_index] == 0)
   {
+    OpenFP_buffer[fp_index] = (char *)malloc(50 * 1024 * 1024);
+    OpenFP_buffer_old[fp_index] = OpenFP_buffer[fp_index];
     if (flag == 1)
-    { /* buffer not in DRAM, but has file, first read */
-      my_read(fd, buf, count);
-    }
-    else
-    { /* buffer not in DRAM, no file */
-      OpenFP_buffer[fp_index] = (char *)malloc(25000);
-      OpenFP_buffer_old[fp_index] = OpenFP_buffer[fp_index];
+    {
+      /* if file exist, read file from disk to DRAM */
+      read_to_fpBuf(InodeTmp, fp_index);
     }
   }
+  /* write to buffer */
   memcpy(OpenFP_buffer[fp_index], buf, count);
   OpenFP_buffer[fp_index] += count;
   InodeTmp.i_size = InodeTmp.i_size > count ? InodeTmp.i_size : count;
@@ -171,6 +163,9 @@ int my_write(int fd, void *buf, int count)
   return count;
 }
 
+/** remove fp
+ * actually write buffer to disk
+ */
 int my_close(int fd)
 {
   int i, fp_index;
@@ -189,16 +184,9 @@ int my_close(int fd)
   }
   write_fpBuf_to_disk(fd, InodeTmp, fp_index);
   free(OpenFP_buffer_old[fp_index]);
-  for (i = 0; i < 50; i++)
-  {
-    if (OpenFP[i] == fd)
-    {
-      OpenFP[i] = 0;
-      OpenFP_buffer[i] = 0;
-      OpenFP_buffer_old[i] = 0;
-      break;
-    }
-  }
+  OpenFP[fp_index] = 0;
+  OpenFP_buffer[fp_index] = 0;
+  OpenFP_buffer_old[fp_index] = 0;
   return 0;
 }
 
@@ -235,7 +223,6 @@ int my_remove(char *path)
       /* free parent dir */
       ParentTmpDir.in_use--;
       Write_Dir(parent_disk_num, ParentTmpDir);
-      printf("my_remove: remove %s success.\n", PathName[path_num - 1]);
       return 0; /* success */
     }
   }
@@ -276,6 +263,7 @@ int my_rename(char *old, char *new)
       /* free parent dir */
       ParentTmpDir.in_use--;
       Write_Dir(old_parent_dir_num, ParentTmpDir);
+      break;
     }
   }
   /* modify new dir */
@@ -288,14 +276,13 @@ int my_rename(char *old, char *new)
     return -1;
   }
   read_block(new_parent_dir_num, TmpBuf);
-  memset(&ParentTmpDir,0,sizeof(ParentTmpDir));
+  memset(&ParentTmpDir, 0, sizeof(ParentTmpDir));
   memcpy(&ParentTmpDir, TmpBuf, sizeof(ParentTmpDir));
 
   strcpy(ParentTmpDir.entry[ParentTmpDir.in_use].name, PathName[new_path_num - 1]);
   ParentTmpDir.entry[ParentTmpDir.in_use].i_node = inode_disk_num;
   ParentTmpDir.in_use++;
   Write_Dir(new_parent_dir_num, ParentTmpDir);
-  printf("my_rename success: rename to %s\n",PathName[new_path_num - 1]);
   return 0;
 }
 
@@ -337,7 +324,6 @@ int my_mkdir(char *path)
     tmpDir.entry[tmpDir.in_use].i_node = block_location;
     tmpDir.in_use++;
     Write_Dir(parent_disk_num, tmpDir);
-    printf("make dir success: %s dir disk num in: %d\n", PathName[path_num - 1], block_location);
     return 0;
   }
   return -1;
@@ -388,7 +374,6 @@ int my_rmdir(char *path)
       Write_Dir(Parent_disk_num, ParentTmpDir); /* write back */
       /* reduce superblock,bitmap */
       free_space(disk_num);
-      printf("rmdir : %s ,success.\n", PathName[path_num - 1]);
       return 0;
     }
   }
@@ -398,45 +383,51 @@ int my_rmdir(char *path)
 /* check to see if the device already has a file system on it,
  * and if not, create one.
  * superblock in No.1 block,
- * bitmap in 2~57 block,
- * root dir in 58 block
+ * bitmap in 2~501 block,
+ * root dir in ROOT_DIR_BLOCK block
  */
 void my_mkfs()
 {
   char TmpBuf[BLOCKSIZE];
+  clean_pathname();
   BITMAP bitmapTmp;
-  dev_open();                 /* open device,once only */
-  for (int i = 0; i < 5; i++) /* init Path name */
-    PathName[i] = (char *)malloc(50 * sizeof(char));
+  dev_open();                     /* open device,once only */
   if (read_block(1, TmpBuf) == 0) /* read first block */
   {
+
     memcpy(&SuperBlock, TmpBuf, sizeof(SuperBlock));
     if (SuperBlock.is_format != 1)
     {
       /* init Super Block */
       memset(&SuperBlock, 0, sizeof(SuperBlock));
       SuperBlock.is_format = 1;
-      SuperBlock.free_space = (250000 - 58);
-      for (int i = 2; i < BITMAP_NUM + BITMAP_START; i++)
+      SuperBlock.free_space = (250000 - BITMAP_NUM - 2);
+      for (int i = 4; i < BITMAP_NUM + BITMAP_START; i++)
         SuperBlock.bitmap_usage[i] = 0;
-      SuperBlock.bitmap_usage[2] = 58; /* bitmap 2 has used 58 block */
+      SuperBlock.bitmap_usage[2] = MAX_PER_BITMAP;
+      SuperBlock.bitmap_usage[3] = 2;
       Write_Superblk(SuperBlock);
       /* init bit map */
-      for (int i = 2; i <= 57; i++)
+      for (int i = 2; i < (BITMAP_NUM + BITMAP_START); i++)
       {
         if (read_block(i, TmpBuf) == 0)
         {
           memcpy(&bitmapTmp, TmpBuf, sizeof(bitmapTmp));
           bitmapTmp.start_block = (i - 2) * MAX_PER_BITMAP + 1;
-          bitmapTmp.free_block = 450; /* all free */
-          memset(bitmapTmp.bitmap, 0,
-                 sizeof(bitmapTmp.bitmap)); /* set bitmap zero(unused) */
+          bitmapTmp.free_block = MAX_PER_BITMAP;                 /* all free */
+          memset(bitmapTmp.bitmap, 0, sizeof(bitmapTmp.bitmap)); /* set bitmap zero(unused) */
           if (i == 2)
           {
-            /* first 58 block has used*/
-            for (int j = 0; j <= 57; j++)
+            /* first bitmap  has used*/
+            memset(bitmapTmp.bitmap, 1, sizeof(bitmapTmp.bitmap));
+            bitmapTmp.free_block = 0;
+          }
+          if (i == 3)
+          {
+            /* first 3 block  has used*/
+            for (int j = 0; j < 3; j++)
               bitmapTmp.bitmap[j] = 1;
-            bitmapTmp.free_block = 392; /* used 58 blocks */
+            bitmapTmp.free_block = (MAX_PER_BITMAP - 3);
           }
           Write_Bitmap(i, bitmapTmp);
         }
@@ -444,22 +435,22 @@ void my_mkfs()
           exit(1);
       }
       /* init root dir block */
-      if (read_block(58, TmpBuf) == 0)
+      if (read_block(ROOT_DIR_BLOCK, TmpBuf) == 0)
       {
         memcpy(&RootDir, TmpBuf, sizeof(RootDir));
         strcpy(RootDir.entry[0].name, ".");
         strcpy(RootDir.entry[1].name, "..");
-        RootDir.entry[0].i_node = 58; /* root i-node is in No.59 block */
-        RootDir.entry[1].i_node = 58;
+        RootDir.entry[0].i_node = ROOT_DIR_BLOCK; /* root i-node is in ROOT_DIR_BLOCK  */
+        RootDir.entry[1].i_node = ROOT_DIR_BLOCK;
         RootDir.in_use = 2; /* just . and .. */
-        Write_Dir(58, RootDir);
+        Write_Dir(ROOT_DIR_BLOCK, RootDir);
       }
       else
         exit(1);
     }
     else
     {
-      read_block(58, TmpBuf);
+      read_block(ROOT_DIR_BLOCK, TmpBuf);
       memcpy(&RootDir, TmpBuf, sizeof(RootDir));
       /* read root dir from disk */
       printf("the device already has a file system!\n");

@@ -8,9 +8,10 @@
 #include <unistd.h>
 #include <time.h>
 
-#define MAX_PER_BITMAP 450    /* max block covered of one bit map */
+#define MAX_PER_BITMAP 500    /* max block covered of one bit map */
 #define MAX_DIRENTRY 18       /* max directionary entry each block */
-#define BITMAP_NUM 56         /* number of bit map needed*/
+#define BITMAP_NUM 500        /* number of bit map needed*/
+#define ROOT_DIR_BLOCK 502    /* number of bit map needed*/
 #define BITMAP_START 2        /* where bitmap store in disk */
 #define INODE_DIRECT_MAX 200  /* inode direct block max 200 */
 #define INODE_DIRECT1_MAX 256 /* inode direct block max 200 */
@@ -18,9 +19,9 @@
 /* super block struct, 976 KB */
 typedef struct SuperBlk
 {
-    int is_format;                     /* is this file system init? */
-    int bitmap_usage[BITMAP_NUM + 10]; /*  usage of each bit map ,begin with index 2 */
-    int free_space;                    /* free space */
+    int is_format;                      /* is this file system init? */
+    short bitmap_usage[BITMAP_NUM + 5]; /*  usage of each bit map ,begin with index 2 */
+    int free_space;                     /* free space */
 } SUPERBLK;
 
 /* each Dictionary Entry has 56 bytes, a block can have 18 entry */
@@ -47,7 +48,7 @@ typedef struct inode
     int indir_block_2;               /* indirect block 2  */
 } INODE;
 
-/* need 56 bitmap block for 25000 block*/
+/* need 500 bitmap block for 250000 block*/
 typedef struct bitmap
 {
     int start_block;              /* start block of the bit map */
@@ -59,7 +60,7 @@ typedef int INDIR_BLOCK[INODE_DIRECT1_MAX];
 
 /* ------------------------------------------ */
 /* claim global variables */
-char *PathName[5]; /* globel Path Name parsed */
+char PathName[5][20]; /* globel Path Name parsed */
 
 SUPERBLK SuperBlock; /* superblock will be used frequently */
 
@@ -78,7 +79,7 @@ char *OpenFP_buffer_old[50]; /* the buffer of fp,the fp position unchanged */
 void clean_pathname()
 {
     for (int i = 0; i < 5; i++)
-        memset(PathName[i], 0, sizeof(PathName));
+        memset(PathName[i], 0, sizeof(PathName[i]));
 }
 
 /* write superblock back to disk */
@@ -129,7 +130,7 @@ int Write_Inode(int block_num, INODE i_node)
 int Write_Inode_block(int block_num, INDIR_BLOCK block1)
 {
     char tmp[BLOCKSIZE];
-    memcpy(tmp, block1, sizeof(block1));
+    memcpy(tmp, block1, 1024);
     if (write_block(block_num, tmp) == 0)
         return 0;
     else
@@ -139,11 +140,17 @@ int Write_Inode_block(int block_num, INDIR_BLOCK block1)
 /* return how many dir */
 int parse_path(char *Path)
 {
-    char *p = NULL;
-    int i = 0;
-    for (p = strtok(Path, "/"); p != NULL; p = strtok(NULL, "/"))
+    char buf[50];
+    int i = 0, j = 0;
+    strcpy(buf, Path);
+    char *temp = strtok(buf, "/");
+    while (temp)
     {
-        memcpy(PathName[i++], p, strlen(p));
+        // strncpy(PathName[i], temp, strlen(temp));
+        // *(PathName[i]+strlen(temp)) = '\0';
+        strcpy(PathName[i], temp);
+        i++;
+        temp = strtok(NULL, "/");
     }
     return i;
 }
@@ -152,10 +159,10 @@ int parse_path(char *Path)
 int find_file(int dir_num)
 {
     if (dir_num == 0)
-        return 58;
+        return ROOT_DIR_BLOCK; /* root dir */
     if (dir_num < 0)
         return -1;
-    int disk_num = 58, i, j, dir_in_use; /* root dir location */
+    int disk_num = ROOT_DIR_BLOCK, i, j, dir_in_use; /* root dir location */
     char TmpBuf[BLOCKSIZE];
     DIR tmpDir;
     for (i = 0; i < dir_num; i++)
@@ -181,8 +188,6 @@ int find_file(int dir_num)
 int bitmap_search_block(BITMAP *tmp)
 {
     int i;
-    if (tmp->free_block == 0)
-        return -1; /* no more space */
     for (i = 0; i < MAX_PER_BITMAP; i++)
     {
         if (tmp->bitmap[i] == 0)
@@ -192,6 +197,7 @@ int bitmap_search_block(BITMAP *tmp)
             return (i + tmp->start_block); /* there is a free block */
         }
     }
+    printf("bitmap_search_block Error: unable to free space.\n");
     return -1;
 }
 
@@ -204,9 +210,9 @@ int find_free_block()
     int i, location;
     char TmpBuf[BLOCKSIZE];
     BITMAP tmpBitmap;
-    if (SuperBlock.free_space == 0)
+    if (SuperBlock.free_space <= 0)
         return -1; /* no more space */
-    for (i = 2; i < BITMAP_NUM + BITMAP_START; i++)
+    for (i = 3; i < BITMAP_NUM + BITMAP_START; i++)
     {
         if (SuperBlock.bitmap_usage[i] < MAX_PER_BITMAP)
             break;
@@ -214,6 +220,7 @@ int find_free_block()
 
     /* set superblock parameters */
     SuperBlock.bitmap_usage[i]++;
+    printf("SuperBlock.bitmap_usage[%d] = %d\n", i, SuperBlock.bitmap_usage[i]);
     SuperBlock.free_space--;
     Write_Superblk(SuperBlock); /* write back */
     /* read bitmap */
@@ -274,10 +281,11 @@ int mk_new_inode()
  */
 void free_space(int free_block_num)
 {
+    printf("---free_space free_block_num = %d\n", free_block_num);
     int bitmap_location, i;
     char TmpBuf[BLOCKSIZE];
     BITMAP Tmpbitmap;
-    /* (450-1)/450 + 2 = 2, so in disk No.2 */
+    /* (501-1)/500 + 2 = 3, so in disk No.3 */
     bitmap_location = (free_block_num - 1) / MAX_PER_BITMAP + BITMAP_START;
     SuperBlock.bitmap_usage[bitmap_location]--;
     SuperBlock.free_space++;
@@ -298,24 +306,19 @@ void free_indirect_block1(int indirect_block1_location)
     int i, block_locatin;
     char TmpBuf[BLOCKSIZE];
     INDIR_BLOCK block1;
-    if (indirect_block1_location >= 58)
+    if (indirect_block1_location < (BITMAP_NUM + 2))
+        return;
+    read_block(indirect_block1_location, TmpBuf);
+    memcpy(block1, TmpBuf, sizeof(block1));
+    for (i = 0; i < INODE_DIRECT1_MAX; i++)
     {
-        read_block(indirect_block1_location, TmpBuf);
-        memcpy(block1, TmpBuf, sizeof(block1));
-        for (i = 0; i < INODE_DIRECT1_MAX; i++)
-        {
-            if ((block_locatin = block1[i]) >= 59)
-                free_space(block_locatin);
-            else
-                break;
-        }
-        /* free itself */
-        free_space(indirect_block1_location);
-        /* clean block */
-        memset(block1, 0, sizeof(block1));
-        Write_Inode_block(indirect_block1_location, block1);
+        if ((block_locatin = block1[i]) >= (BITMAP_NUM + 2))
+            free_space(block_locatin);
+        else
+            return;
     }
-    return;
+    /* free itself */
+    free_space(indirect_block1_location);
 }
 
 /* free inode  data block(indirect,direct)
@@ -330,36 +333,30 @@ void free_inode(int inode_block_num)
     INDIR_BLOCK block2;
     read_block(inode_block_num, TmpBuf);
     memcpy(&InodeTmp, TmpBuf, sizeof(InodeTmp));
+    free_space(inode_block_num); /* free inode */
     /* free direct block */
     for (i = 0; i < INODE_DIRECT_MAX; i++)
     {
-        if ((block_locatin = InodeTmp.dir_block[i]) >= 59)
+        if ((block_locatin = InodeTmp.dir_block[i]) >= (BITMAP_NUM + 2))
             free_space(block_locatin);
+        else
+            return;
+    }
+    /* free indirect block */
+    free_indirect_block1(InodeTmp.indir_block_1);
+    if (InodeTmp.indir_block_2 == 0)
+        return;
+    /* free indirect block2 */
+    read_block(InodeTmp.indir_block_2, TmpBuf);
+    memcpy(block2, TmpBuf, sizeof(block2));
+    for (i = 0; i < INODE_DIRECT1_MAX; i++)
+    {
+        if ((block_locatin = block2[i]) >= (BITMAP_NUM + 2))
+            free_indirect_block1(block_locatin);
         else
             break;
     }
-    /* free indirect block and itself */
-    free_indirect_block1(InodeTmp.indir_block_1);
-    /* free indirect block2 */
-    if (InodeTmp.indir_block_2 >= 58)
-    {
-        read_block(InodeTmp.indir_block_2, TmpBuf);
-        memcpy(block2, TmpBuf, sizeof(block2));
-        for (i = 0; i < INODE_DIRECT1_MAX; i++)
-        {
-            if ((block_locatin = block2[i]) >= 59)
-                free_indirect_block1(block_locatin);
-            else
-                break;
-        }
-        free_space(InodeTmp.indir_block_2); /* free indirect block2 itself */
-        memset(block2, 0, sizeof(block2));
-        Write_Inode_block(InodeTmp.indir_block_2, block2);
-    }
-    /* free inode itself */
-    free_space(inode_block_num);
-    memset(&InodeTmp, 0, sizeof(InodeTmp));
-    Write_Inode(inode_block_num, InodeTmp);
+    free_space(InodeTmp.indir_block_2); /* free indirect block2 itself */
     return;
 }
 
@@ -368,6 +365,11 @@ void free_inode(int inode_block_num)
  */
 void read_file(int disk_num, void *buf, int length)
 {
+    if (disk_num == 0)
+    {
+        printf("read_file Error.\n");
+        exit(0);
+    }
     char TmpBuf[BLOCKSIZE];
     read_block(disk_num, TmpBuf);
     memcpy(buf, TmpBuf, length);
@@ -379,23 +381,35 @@ void read_file(int disk_num, void *buf, int length)
  */
 int read_indir_block1(int block1_disk_num, void *buf, int left)
 {
-    int index = 0, i;
+    if (block1_disk_num == 0)
+    {
+        printf("read_indir_block1 Error: block1_disk_num == 0");
+        exit(0);
+    }
+    int i;
     INDIR_BLOCK block1;
     char TmpBuf[BLOCKSIZE];
     read_block(block1_disk_num, TmpBuf);
-    memcpy(block1, TmpBuf, sizeof(block1));
+    memcpy(block1, TmpBuf, 1024);
+    /* for debug */
+    if (block1[0] == 0)
+    {
+        printf("read_indir_block1 Error! block1 not exist.\n");
+        exit(1);
+    }
+    /* for debug */
     for (i = 0; i < INODE_DIRECT1_MAX; i++)
     {
-        if (left < BLOCKSIZE)
+        if (left <= BLOCKSIZE)
         {
-            read_file(block1[i], buf + index, left);
+            read_file(block1[i], buf, left);
             return 0; /* read success */
         }
-        read_file(block1[i], buf + index, BLOCKSIZE);
+        read_file(block1[i], buf, BLOCKSIZE);
         left -= BLOCKSIZE;
-        index += BLOCKSIZE;
+        buf += BLOCKSIZE; /* add bias */
     }
-    return (left > 0 ? left : 0);
+    return left;
 }
 
 /** read file from DRAM buffer 
@@ -415,6 +429,8 @@ int read_from_fpBuf(int fp_index, int count, void *buf)
 }
 
 /** read file from disk to buffer
+ *  used by read/write 
+ *  assume file exist
  *  return 1 for success
  */
 int read_to_fpBuf(INODE inodeTmp, int fd_index)
@@ -422,10 +438,11 @@ int read_to_fpBuf(INODE inodeTmp, int fd_index)
     char TmpBuf[BLOCKSIZE];
     int left = inodeTmp.i_size, i;
     char *FilePointer = OpenFP_buffer[fd_index];
+    INDIR_BLOCK block2;
     /* read from direct block */
     for (i = 0; i < INODE_DIRECT_MAX; i++)
     {
-        if (left < BLOCKSIZE)
+        if (left <= BLOCKSIZE)
         {
             read_file(inodeTmp.dir_block[i], FilePointer, left);
             return 1; /* read success */
@@ -434,23 +451,26 @@ int read_to_fpBuf(INODE inodeTmp, int fd_index)
         left -= BLOCKSIZE;
         FilePointer += BLOCKSIZE;
     }
-    if (left > 0) /* using indirect block1 */
+    /* read from indir_block_1 */
+    left = read_indir_block1(inodeTmp.indir_block_1, FilePointer, left);
+    FilePointer += (BLOCKSIZE * INODE_DIRECT1_MAX); /* add bias */
+    if (left == 0)
+        return 1; /* read complete */
+    /* else, read from block2 */
+    read_block(inodeTmp.indir_block_2, TmpBuf);
+    memcpy(block2, TmpBuf, 1024);
+    if (block2[0] == 0)
     {
-        left = read_indir_block1(inodeTmp.indir_block_1, FilePointer, left);
-        FilePointer += (BLOCKSIZE * INODE_DIRECT1_MAX); /* add bias */
+        printf("read_to_fpBuf Error, block2 not exist.\n");
+        exit(0);
+    }
+    for (i = 0; i < INODE_DIRECT1_MAX; i++)
+    {
+        left = read_indir_block1(block2[i], FilePointer, left);
         if (left == 0)
-            return 1; /* read complete */
-        /* else, read from block2 */
-        INDIR_BLOCK block2;
-        read_block(inodeTmp.indir_block_2, TmpBuf);
-        memcpy(block2, TmpBuf, sizeof(block2));
-        for (i = 0; i < INODE_DIRECT1_MAX; i++)
-        {
-            left = read_indir_block1(block2[i], FilePointer, left);
-            if (left == 0)
-                return 1; /* read success */
-            FilePointer += (BLOCKSIZE * INODE_DIRECT1_MAX);
-        }
+            return 1; /* read success */
+
+        FilePointer += (BLOCKSIZE * INODE_DIRECT1_MAX);
     }
     return 1;
 }
@@ -471,32 +491,41 @@ void write_file(int disk_num, void *buf, int length)
  */
 int write_indir_block1(int block1_disk_num, void *buf, int left)
 {
-    int index = 0, disk_num, i;
+    if (block1_disk_num == 0)
+    {
+        printf("write_indir_block1 Error: block1_disk_num = 0\n");
+        exit(1);
+    }
+    int disk_num, i;
     INDIR_BLOCK block1;
     char TmpBuf[BLOCKSIZE];
     read_block(block1_disk_num, TmpBuf);
     memcpy(block1, TmpBuf, sizeof(block1));
     for (i = 0; i < INODE_DIRECT1_MAX; i++)
     {
-        /* allocate space for block */
-        disk_num = find_free_block();
-        if (disk_num == -1)
+        if (block1[i] == 0)
         {
-            printf("my_write Error: fail to allocate new block.\n");
-            exit(1);
+            /* allocate space for block */
+            disk_num = find_free_block();
+            if (disk_num == -1)
+            {
+                printf("my_write Error: fail to allocate new block.left = %d \n", left);
+                exit(1);
+            }
+            block1[i] = disk_num;
         }
-        block1[i] = disk_num;
-        if (left < BLOCKSIZE)
+        if (left <= BLOCKSIZE)
         {
-            write_file(disk_num, buf + index, left);
-            return 0; /* read success */
+            write_file(block1[i], buf, left);
+            Write_Inode_block(block1_disk_num, block1); /* write back to disk */
+            return 0;                                   /* read success */
         }
-        write_file(disk_num, buf + index, BLOCKSIZE);
+        write_file(block1[i], buf, BLOCKSIZE);
         left -= BLOCKSIZE;
-        index += BLOCKSIZE;
+        buf += BLOCKSIZE;
     }
     Write_Inode_block(block1_disk_num, block1); /* write back to disk */
-    return (left > 0 ? left : 0);
+    return left;
 }
 
 /** write file from DRAM to disk
@@ -504,9 +533,10 @@ int write_indir_block1(int block1_disk_num, void *buf, int left)
  */
 int write_fpBuf_to_disk(int fd, INODE InodeTmp, int fd_index)
 {
-    int left = InodeTmp.i_size, i, index = 0, disk_num;
+    int left = InodeTmp.i_size, i, disk_num;
     char *FilePointer = OpenFP_buffer_old[fd_index];
     INDIR_BLOCK block2;
+    char TmpBuf[BLOCKSIZE];
     /* read from direct block */
     for (i = 0; i < INODE_DIRECT_MAX; i++)
     {
@@ -520,52 +550,50 @@ int write_fpBuf_to_disk(int fd, INODE InodeTmp, int fd_index)
             }
             InodeTmp.dir_block[i] = disk_num; /* store block location */
         }
-        if (left < BLOCKSIZE)
+        if (left <= BLOCKSIZE)
         {
-            write_file(InodeTmp.dir_block[i], FilePointer + index, left);
+            write_file(InodeTmp.dir_block[i], FilePointer, left);
             Write_Inode(fd, InodeTmp); /* store to disk */
-            printf("my_write success, i-node = %d\n", fd);
-            return 1; /* read success */
+            return 1;                  /* read success */
         }
-        write_file(InodeTmp.dir_block[i], FilePointer + index, BLOCKSIZE);
+        write_file(InodeTmp.dir_block[i], FilePointer, BLOCKSIZE);
         left -= BLOCKSIZE;
-        index += BLOCKSIZE;
+        FilePointer += BLOCKSIZE;
     }
     /* using indirect block1 */
-    if (left > 0)
+    if (InodeTmp.indir_block_1 == 0) /* indir_block_1 not allocated */
     {
-        if (InodeTmp.indir_block_1 == 0) /* indir_block_1 not allocated */
+        disk_num = find_free_block();
+        if (disk_num == -1)
         {
-            disk_num = find_free_block();
-            if (disk_num == -1)
-            {
-                printf("my_write Error:fail to allocate new block.\n");
-                exit(1);
-            }
-            InodeTmp.indir_block_1 = disk_num;
+            printf("my_write Error:fail to allocate new block.\n");
+            exit(1);
         }
-        left = write_indir_block1(InodeTmp.indir_block_1, FilePointer + index, left);
-        index += (BLOCKSIZE * INODE_DIRECT1_MAX);
-        if (left == 0)
+        InodeTmp.indir_block_1 = disk_num;
+    }
+    left = write_indir_block1(InodeTmp.indir_block_1, FilePointer, left);
+    FilePointer += (BLOCKSIZE * INODE_DIRECT1_MAX);
+    if (left == 0)
+    {
+        Write_Inode(fd, InodeTmp); /* store to disk */
+        return 0;                  /* read complete */
+    }
+    /* else, read from block2 */
+    if (InodeTmp.indir_block_2 == 0)
+    {
+        disk_num = find_free_block();
+        if (disk_num == -1)
         {
-            Write_Inode(fd, InodeTmp); /* store to disk */
-            printf("my_write success, i-node = %d, using indir_block_1\n", fd);
-            return 0; /* read complete */
+            printf("my_write Error:fail to allocate new block.\n");
+            return -1;
         }
-        /* else, read from block2 */
-        if (InodeTmp.indir_block_2 == 0)
-        {
-            disk_num = find_free_block();
-            if (disk_num == -1)
-            {
-                printf("my_write Error:fail to allocate new block.\n");
-                return -1;
-            }
-            InodeTmp.indir_block_2 = disk_num; /* store block2 location */
-        }
-
-        memset(block2, 0, sizeof(block2));
-        for (i = 0; i < INODE_DIRECT1_MAX; i++)
+        InodeTmp.indir_block_2 = disk_num; /* store block2 location */
+    }
+    read_block(InodeTmp.indir_block_2, TmpBuf);
+    memcpy(block2, TmpBuf, 1024);
+    for (i = 0; i < INODE_DIRECT1_MAX; i++)
+    {
+        if (block2[i] == 0) /* allocate new space  */
         {
             disk_num = find_free_block();
             if (disk_num == -1)
@@ -574,16 +602,15 @@ int write_fpBuf_to_disk(int fd, INODE InodeTmp, int fd_index)
                 exit(1);
             }
             block2[i] = disk_num;
-            left = write_indir_block1(block2[i], FilePointer + index, left);
-            if (left == 0)
-            {
-                Write_Inode_block(InodeTmp.indir_block_2, block2);
-                printf("my_write success, i-node = %d, using indir_block_2\n", fd);
-                return 1; /* read success */
-            }
-            index += (BLOCKSIZE * INODE_DIRECT1_MAX);
+        }
+        left = write_indir_block1(block2[i], FilePointer, left);
+        FilePointer += (BLOCKSIZE * INODE_DIRECT1_MAX);
+        if (left == 0)
+        {
+            Write_Inode_block(InodeTmp.indir_block_2, block2);
+            Write_Inode(fd, InodeTmp); /* store to disk */
+            return 1;                  /* read success */
         }
     }
-    Write_Inode_block(InodeTmp.indir_block_2, block2);
     return 1;
 }

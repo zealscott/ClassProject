@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "limits.h"
 #include "p5.c"
 
 void test_bitmap()
@@ -17,16 +18,18 @@ void test_bitmap()
 
 int main(int argc, char const *argv[])
 {
-    my_mkfs();
-    char *buf = "asdfghjkl";
-    char buf2[50];
-    my_mkdir("/b");
-    int fd = my_creat("/b/s.txt");
-    // int fd = my_open("/b/s.txt");
-    my_write(fd, buf, 20);
-    my_read(fd, buf2, 20);
-    printf("buf2 = %s\n",buf2);
-    test_bitmap();
+    BITMAP bittmp;
+    printf("sizeof (superblock) = %d", sizeof(SuperBlock));
+    printf("sizeof (BITMAP) = %d", sizeof(bittmp));
+    // char *buf = "asdfghjkl";
+    // char buf2[50];
+    // my_mkdir("/b");
+    // int fd = my_creat("/b/s.txt");
+    // // int fd = my_open("/b/s.txt");
+    // my_write(fd, buf, 20);
+    // my_read(fd, buf2, 20);
+    // printf("buf2 = %s\n",buf2);
+    // test_bitmap();
     return 0;
 }
 
