@@ -19,8 +19,12 @@ void test_bitmap()
 int main(int argc, char const *argv[])
 {
     BITMAP bittmp;
-    printf("sizeof (superblock) = %d", sizeof(SuperBlock));
-    printf("sizeof (BITMAP) = %d", sizeof(bittmp));
+    INODE i_nodetmp;
+    DIR dirTmp;
+    printf("sizeof (superblock) = %d\n", sizeof(SuperBlock));
+    printf("sizeof (BITMAP) = %d\n", sizeof(bittmp));
+    printf("sizeof (INODE) = %d\n", sizeof(i_nodetmp));
+    printf("sizeof (DIR) = %d\n", sizeof(dirTmp));
     // char *buf = "asdfghjkl";
     // char buf2[50];
     // my_mkdir("/b");

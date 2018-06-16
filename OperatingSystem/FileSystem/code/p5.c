@@ -1,18 +1,15 @@
-
-
-#include "block.c"
-#include "blkFun.c"
 #include <stdio.h>
-// #include "p5.h"
+#include <stdlib.h>
+#include <string.h>
+#include "p5.h"
 
 /* open an exisiting file for reading or writing 
  * if exist, return -1
  * success, return file pointer
  */
-int my_open(char *path)
+int my_open(const char *path)
 {
   int path_num, i, disk_num;
-  char TmpBuf[BLOCKSIZE];
   DIR ParentTmpDir;
   clean_pathname();
   path_num = parse_path(path);
@@ -33,10 +30,9 @@ int my_open(char *path)
  * if exist, return -1
  * success, return file pointer
  */
-int my_creat(char *path)
+int my_creat(const char *path)
 {
   int path_num, i, disk_num, parent_disk_num, dir_in_use;
-  char TmpBuf[BLOCKSIZE];
   DIR ParentTmpDir;
   clean_pathname();
   path_num = parse_path(path);
@@ -77,7 +73,7 @@ int my_creat(char *path)
       break;
     }
   }
-  return disk_num; /* not found  */
+  return disk_num;
 }
 
 /* sequentially read from a file according to fd(i-node)
@@ -89,7 +85,6 @@ int my_read(int fd, void *buf, int count)
   /* fp_index is the buf index to read in DRAM*/
   int i, fp_index = -1;
   INODE InodeTmp;
-  char TmpBuf[BLOCKSIZE];
   clean_pathname();
   for (i = 0; i < 50; i++)
   {
@@ -99,8 +94,8 @@ int my_read(int fd, void *buf, int count)
       break;
     }
   }
-  if (fp_index == -1)
-    return -1; /* the file is not open */
+  if (fp_index == -1) /* the file is not open */
+    return -1;
   /* read from buffer */
   if (read_from_fpBuf(fp_index, count, buf) == count)
     return count;
@@ -118,13 +113,12 @@ int my_read(int fd, void *buf, int count)
 /* write string to DRAM file
  * store the file pointer and char *
  */
-int my_write(int fd, void *buf, int count)
+int my_write(int fd, const void *buf, int count)
 {
   /* left is the left unwrite bytes */
   /* index is the buf index to write */
   int i, fp_index, flag = 0;
   INODE InodeTmp;
-  char TmpBuf[BLOCKSIZE];
   clean_pathname();
   if (fd <= 0)
   {
@@ -166,11 +160,10 @@ int my_write(int fd, void *buf, int count)
 /** remove fp
  * actually write buffer to disk
  */
-int my_close(int fd)
+int my_close(const int fd)
 {
   int i, fp_index;
   INODE InodeTmp;
-  char TmpBuf[BLOCKSIZE];
   clean_pathname();
   read_block(fd, TmpBuf);
   memcpy(&InodeTmp, TmpBuf, sizeof(InodeTmp));
@@ -183,6 +176,7 @@ int my_close(int fd)
     }
   }
   write_fpBuf_to_disk(fd, InodeTmp, fp_index);
+  Write_Superblk(SuperBlock); /* write back */
   free(OpenFP_buffer_old[fp_index]);
   OpenFP[fp_index] = 0;
   OpenFP_buffer[fp_index] = 0;
@@ -194,10 +188,9 @@ int my_close(int fd)
  * if not exist, return -1
  * free ParentDir, inode, and data
  */
-int my_remove(char *path)
+int my_remove(const char *path)
 {
   int path_num, parent_disk_num, i, j;
-  char TmpBuf[BLOCKSIZE];
   DIR ParentTmpDir;
   clean_pathname();
   path_num = parse_path(path);
@@ -233,12 +226,11 @@ int my_remove(char *path)
  * support move entitiy
  * if file not exist, return -1
  */
-int my_rename(char *old, char *new)
+int my_rename(const char *old, const char *new)
 {
   int old_path_num, new_path_num;
   int old_parent_dir_num, new_parent_dir_num, i, j, inode_disk_num;
   DIR ParentTmpDir;
-  char TmpBuf[BLOCKSIZE];
   clean_pathname();
   /* find i-node */
   old_path_num = parse_path(old);
@@ -290,10 +282,9 @@ int my_rename(char *old, char *new)
  * only works if all but the last component of the path already exists
  * return 0 success, otherwise -1
  */
-int my_mkdir(char *path)
+int my_mkdir(const char *path)
 {
   int path_num, i, disk_num, parent_disk_num;
-  char TmpBuf[BLOCKSIZE];
   DIR tmpDir;
   clean_pathname();
   path_num = parse_path(path);
@@ -334,10 +325,9 @@ int my_mkdir(char *path)
  * only works when the dir is empty
  * return 0 success, otherwise -1
  */
-int my_rmdir(char *path)
+int my_rmdir(const char *path)
 {
   int path_num, disk_num, dir_in_use, Parent_disk_num, i, j;
-  char TmpBuf[BLOCKSIZE];
   DIR tmpDir, ParentTmpDir;
   clean_pathname();
   path_num = parse_path(path);
@@ -388,7 +378,6 @@ int my_rmdir(char *path)
  */
 void my_mkfs()
 {
-  char TmpBuf[BLOCKSIZE];
   clean_pathname();
   BITMAP bitmapTmp;
   dev_open();                     /* open device,once only */
