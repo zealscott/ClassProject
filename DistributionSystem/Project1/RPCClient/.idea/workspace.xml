@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bed5332-c765-4bb7-8273-0bc0bbed9ce0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/HelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RPCClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPCserver/src/HelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPCserver/src/HelloServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPCserver/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPCserver/src/RPCServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPCserver/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RPCserver/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Socket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,12 +17,12 @@
     <session id="-1702851679">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -55,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RPCClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="46" />
+            <state relative-caret-position="141">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HelloService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="30">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -107,9 +104,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="156" />
-    <option name="y" value="8" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="42" />
+    <option name="y" value="28" />
     <option name="width" value="1690" />
     <option name="height" value="1016" />
   </component>
@@ -120,6 +117,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,15 +135,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537365827640" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RPCserver" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537445552158" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -215,18 +212,19 @@
       <workItem from="1537237873734" duration="711000" />
       <workItem from="1537239682991" duration="235000" />
       <workItem from="1537281358060" duration="8367000" />
-      <workItem from="1537355949736" duration="2391000" />
+      <workItem from="1537355949736" duration="3385000" />
+      <workItem from="1537445352636" duration="213000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14187000" />
+    <option name="totallyTimeSpent" value="15394000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="156" y="8" width="1690" height="1016" extended-state="1" />
+    <frame x="42" y="28" width="1690" height="1016" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.121472396" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12269939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -275,15 +273,15 @@
     <entry file="file://$PROJECT_DIR$/src/HelloServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/HelloService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="30">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RPCClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="46" />
+        <state relative-caret-position="141">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
