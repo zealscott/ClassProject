@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d59ce3-3236-41ef-9397-b3fa201366d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Project1/实验报告.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Project1/实验报告.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Project1/Socket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Project1/Socket/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,10 +17,11 @@
     <session id="-1734339739">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -62,11 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tour/QuickTour.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="166" column="43" selection-start-line="158" selection-start-column="8" selection-end-line="166" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="320">
+              <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -96,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/3.8.2/mongodb-driver-core-3.8.2-sources.jar!/com/mongodb/client/model/Projections.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
+            <state relative-caret-position="754">
               <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
               <folding>
                 <element signature="e#3440#3441#0" expanded="true" />
@@ -167,8 +166,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="422" />
-    <option name="y" value="50" />
+    <option name="x" value="-84" />
+    <option name="y" value="9" />
     <option name="width" value="1400" />
     <option name="height" value="999" />
   </component>
@@ -178,9 +177,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,17 +209,37 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PJ1" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PJ1" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="database" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PJ1" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="tour" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537497586717" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DistributionSystem/Project1/Socket" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538101277106" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -274,11 +291,12 @@
       <updated>1537490082900</updated>
       <workItem from="1537490085916" duration="6102000" />
       <workItem from="1537841148186" duration="53000" />
+      <workItem from="1538101232448" duration="274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6155000" />
+    <option name="totallyTimeSpent" value="6429000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -290,9 +308,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="422" y="50" width="1400" height="999" extended-state="0" />
+    <frame x="-84" y="9" width="1400" height="999" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18134329" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18358208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -364,17 +382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/3.8.2/mongodb-driver-core-3.8.2-sources.jar!/com/mongodb/client/model/Projections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
-          <folding>
-            <element signature="e#3440#3441#0" expanded="true" />
-            <element signature="e#3504#3505#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-sync/3.8.2/mongodb-driver-sync-3.8.2-sources.jar!/com/mongodb/client/MongoIterable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
@@ -389,13 +396,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/3.8.2/mongodb-driver-core-3.8.2-sources.jar!/com/mongodb/client/model/Projections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+          <folding>
+            <element signature="e#3440#3441#0" expanded="true" />
+            <element signature="e#3504#3505#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tour/QuickTour.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="166" column="43" selection-start-line="158" selection-start-column="8" selection-end-line="166" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="320">
+          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
         </state>
       </provider>
     </entry>
