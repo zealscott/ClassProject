@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="hadoop-common-2.7.3">
+    <CLASSES>
+      <root url="jar:///usr/local/hadoop/share/hadoop/common/hadoop-common-2.7.3.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/common/hadoop-nfs-2.7.3.jar!/" />
+      <root url="file:///usr/local/hadoop/share/hadoop/common/lib" />
+      <root url="file:///usr/local/hadoop/share/hadoop/mapreduce/lib" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-2.7.3.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-2.7.3.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.3.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-2.7.3.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-2.7.3.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.3-tests.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.3.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-2.7.3.jar!/" />
+      <root url="jar:///usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file:///usr/local/hadoop/share/hadoop/common/lib" />
+    </SOURCES>
+    <jarDirectory url="file:///usr/local/hadoop/share/hadoop/common/lib" recursive="false" />
+    <jarDirectory url="file:///usr/local/hadoop/share/hadoop/mapreduce/lib" recursive="false" />
+    <jarDirectory url="file:///usr/local/hadoop/share/hadoop/common/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>
