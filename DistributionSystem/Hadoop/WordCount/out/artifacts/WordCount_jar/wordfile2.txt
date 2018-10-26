@@ -1,0 +1,2 @@
+Hadoop is good
+Spark is fast
