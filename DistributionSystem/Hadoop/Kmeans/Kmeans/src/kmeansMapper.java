@@ -26,15 +26,21 @@ public class kmeansMapper extends Mapper<LongWritable, Text, IntWritable, Text> 
     public void setup(Context context) throws IOException, InterruptedException {
         means = new ArrayList<Point>();
 
-//
-//        URI[] cacheFiles  = context.getCacheFiles();
-//        BufferedReader br = new BufferedReader(new FileReader(cacheFiles[0].toString()));
+        // this API does not work
+        // URI[] cacheFiles  = context.getCacheFiles();
+        // BufferedReader br = new BufferedReader(new FileReader(cacheFiles[0].toString()));
 
-        Configuration conf = new Configuration();
-        FileSystem fs = FileSystem.get(conf);
-        FSDataInputStream hdfsInStream = fs.open(new Path("output/cache/part-r-00000"));
-        InputStreamReader isr = new InputStreamReader(hdfsInStream, "utf-8");
-        BufferedReader br = new BufferedReader(isr);
+        // old API works
+        String localCacheFiles = context.getLocalCacheFiles()[0].getName();
+        BufferedReader br = new BufferedReader(new FileReader(localCacheFiles));
+
+        // does not use DistributedCache
+
+//        Configuration conf = new Configuration();
+//        FileSystem fs = FileSystem.get(conf);
+//        FSDataInputStream hdfsInStream = fs.open(new Path("output/cache/part-r-00000"));
+//        InputStreamReader isr = new InputStreamReader(hdfsInStream, "utf-8");
+//        BufferedReader br = new BufferedReader(isr);
 
 
         String lineString = null;

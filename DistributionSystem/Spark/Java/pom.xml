@@ -1,0 +1,22 @@
+<project>
+    <groupId>edu.berkeley</groupId>
+    <artifactId>simple-project</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <name>Simple Project</name>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+    </dependencies>
+</project>

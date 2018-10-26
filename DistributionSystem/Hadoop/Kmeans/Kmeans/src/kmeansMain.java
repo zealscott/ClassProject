@@ -111,10 +111,8 @@ public class kmeansMain {
             conf.set("k", k+"");
             conf.set("mapreduce.output.textoutputformat.separator", ",");
 
-
             Job kmeans = Job.getInstance(conf, "Kmeans "+ (counter + ""));
 
-            // add cache
             kmeans.addCacheFile(cacheMeansPath.toUri());
 
             kmeans.setJarByClass(kmeansMapper.class);

@@ -12,7 +12,7 @@ public class DBtest {
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spj", "postgres", "5183");
-            c.setAutoCommit(false); // 把自动提交
+            c.setAutoCommit(false); // 把自动提交关闭，需要手动commit
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
