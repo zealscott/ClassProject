@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/scott/Desktop/Trie/Trie.h
+string
+-
+map
+-
+
+/Users/scott/Desktop/Trie/main.cpp
+iostream
+-
+fstream
+-
+Trie.h
+/Users/scott/Desktop/Trie/Trie.h
+
