@@ -1,0 +1,13 @@
+210000 Nanjing
+214000 Wuxi
+221000 Xuzhou
+213000 Changzhou
+215000 Suzhou
+226000 Nantong
+222000 Lianyungang
+223001 Huaian
+225000 Yangzhou
+212000 Zhenjiang
+225300 Taizhou
+223800 Suqian
+224000 Yancheng

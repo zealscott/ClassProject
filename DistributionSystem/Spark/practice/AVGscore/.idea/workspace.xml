@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7d804d13-dd54-4824-91f8-e07f2256e6bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Natural join/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Natural join/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Natural join/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/Kmeans/src/kmeansMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/Kmeans/src/kmeansMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project1/str_convert.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/1-1.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/1-2.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/2-1.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/TEST_schema.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/TPCC_full_schema.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/TPCC_short_schema.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/YCSB_schema.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/test.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/test_txn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/test_wl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_const.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_helper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_helper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_query.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_query.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_txn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_wl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb_query.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb_query.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb_txn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb_wl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/dl_detect.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/dl_detect.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/hekaton.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/occ.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/occ.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/plock.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/plock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_hekaton.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_hekaton.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_lock.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_lock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_mvcc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_mvcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_occ.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_occ.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_silo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_silo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_tictoc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_tictoc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_ts.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_ts.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_vll.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_vll.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/silo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/tictoc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/vll.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/vll.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/config-std.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/config.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/libs/libjemalloc.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/catalog.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/catalog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/index_base.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/index_btree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/index_btree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/index_hash.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/index_hash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/row.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/row.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/table.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/storage/table.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/global.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/global.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/helper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/helper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/manager.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/manager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/mem_alloc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/mem_alloc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/parser.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/query.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/query.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/stats.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/stats.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/thread.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/thread.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/txn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/txn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/wl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/system/wl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/DBx1000/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2/ReadMe.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SoftwareEngineering/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/.idea/Trie.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/Trie.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/Trie.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/Trie" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/Trie.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Trie/trie.cpp" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-299420440">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="517" />
+          <entry key="xml" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="517" />
+          <entry key="XML" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-589930927">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="csv" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="325" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="325" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/AVGScore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" column="10" selection-end-line="15" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/AVGScore.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/AVGScore.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="C:\Users\scott\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="AVGScore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="AVGScore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="144" />
+    <option name="y" value="25" />
+    <option name="width" value="1680" />
+    <option name="height" value="952" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540974890857" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Natural join" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.24875125" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d804d13-dd54-4824-91f8-e07f2256e6bc" name="Default Changelist" comment="" />
+      <created>1540908088280</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540908088280</updated>
+      <workItem from="1540908092535" duration="6018000" />
+      <workItem from="1540969519279" duration="4217000" />
+      <workItem from="1540975549886" duration="41000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="10276000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49940547" weight="0.17260443" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info id="Maven Projects" order="7" sideWeight="0.50059456" visible="true" weight="0.14872068" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Bean Validation" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/score.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AVGScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="10" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>common lib</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>AVGScore</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.24875125" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.clearspring.analytics:stream:2.7.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

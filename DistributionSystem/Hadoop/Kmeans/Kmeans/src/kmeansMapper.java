@@ -56,7 +56,7 @@ public class kmeansMapper extends Mapper<LongWritable, Text, IntWritable, Text> 
 
     public void map(LongWritable key, Text keyvalue, Context context) throws IOException, InterruptedException{
         // ignore first line
-        if (key.get() == 0)
+        if (key.toString.euqal("0"))
             return;
 
         String[] keyValue = StringUtils.split(keyvalue.toString(),",");

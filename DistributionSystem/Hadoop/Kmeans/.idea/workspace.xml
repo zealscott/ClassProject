@@ -2,20 +2,146 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd7b5989-c7fd-4c16-917b-7004e0e5f19a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Database/JDBC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Database/JDBC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Database/JDBC/out/production/JDBC/com/database/jdbctest/JDBCOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Database/JDBC/out/production/JDBC/com/database/jdbctest/JDBCOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Database/JDBC/out/production/JDBC/com/database/jdbctest/entity/JDBCTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Database/JDBC/out/production/JDBC/com/database/jdbctest/entity/JDBCTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Database/JDBC/src/com/database/jdbctest/DBtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Database/JDBC/src/com/database/jdbctest/DBtest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Database/JDBC/src/com/database/jdbctest/JDBCOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Database/JDBC/src/com/database/jdbctest/JDBCOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Database/JDBC/src/com/database/jdbctest/entity/JDBCTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Database/JDBC/src/com/database/jdbctest/entity/JDBCTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kmeans/src/kmeansMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kmeans/src/kmeansMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kmeans/src/kmeansMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kmeans/src/kmeansMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Natural join/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Natural join/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Natural join/out/artifacts/Natural_join_jar/Natural join.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/out/artifacts/Natural_join_jar/Natural join.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Natural join/out/production/Natural join/natural_join$joinMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/out/production/Natural join/natural_join$joinMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Natural join/out/production/Natural join/natural_join$joinReducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/out/production/Natural join/natural_join$joinReducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Natural join/out/production/Natural join/natural_join.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/out/production/Natural join/natural_join.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project1/str_convert.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/1-1.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/1-2.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/2-1.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/TEST_schema.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/TPCC_full_schema.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/TPCC_short_schema.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/YCSB_schema.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/test.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/test_txn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/test_wl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_const.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_helper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_helper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_query.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_query.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_txn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/tpcc_wl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb_query.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb_query.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb_txn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/benchmarks/ycsb_wl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/dl_detect.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/dl_detect.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/hekaton.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/occ.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/occ.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/plock.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/plock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_hekaton.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_hekaton.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_lock.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_lock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_mvcc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_mvcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_occ.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_occ.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_silo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_silo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_tictoc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_tictoc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_ts.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_ts.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_vll.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/row_vll.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/silo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/tictoc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/vll.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/concurrency_control/vll.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/config-std.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/config.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/libs/libjemalloc.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/catalog.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/catalog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/index_base.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/index_btree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/index_btree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/index_hash.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/index_hash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/row.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/row.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/table.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/storage/table.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/global.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/global.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/helper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/helper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/manager.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/manager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/mem_alloc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/mem_alloc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/parser.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/query.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/query.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/stats.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/stats.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/thread.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/thread.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/txn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/txn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/wl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/system/wl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/DBx1000/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Project2/ReadMe.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SoftwareEngineering/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/.idea/Trie.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/Trie.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/Trie.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/Trie.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/Trie" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/Trie.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SoftwareEngineering/Trie/trie.cpp" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,10 +153,11 @@
     <session id="2006642787">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,7 +186,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Kmeans/src/kmeansMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2772">
+            <state relative-caret-position="2716">
               <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,6 +246,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,8 +270,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,16 +304,17 @@
       <updated>1540537156932</updated>
       <workItem from="1540537158141" duration="381000" />
       <workItem from="1540537963916" duration="648000" />
+      <workItem from="1540799936026" duration="63000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1029000" />
+    <option name="totallyTimeSpent" value="1092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14872068" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15031983" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -231,7 +359,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Kmeans/src/kmeansMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
+        <state relative-caret-position="2716">
           <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
