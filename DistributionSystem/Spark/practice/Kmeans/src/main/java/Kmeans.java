@@ -56,7 +56,6 @@ public class Kmeans implements KmeansInterface, Serializable {
      * @Method compare two cluster center with threshold
      */
     public boolean clusterCompare() {
-
         for (Tuple2<Integer, Point> oldCenter : oldCenterList) {
             int clusterNum = oldCenter._1;
             for (Tuple2<Integer, Point> newCenter : newCenterList) {

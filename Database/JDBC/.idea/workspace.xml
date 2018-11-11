@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3975ac1a-e6c0-473e-b1c8-306211804a3a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/com/database/jdbctest/JDBCOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC/com/database/jdbctest/JDBCOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/com/database/jdbctest/entity/JDBCTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC/com/database/jdbctest/entity/JDBCTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/database/jdbctest/DBtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/database/jdbctest/DBtest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/database/jdbctest/JDBCOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/database/jdbctest/JDBCOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/database/jdbctest/entity/JDBCTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/database/jdbctest/entity/JDBCTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/out/artifacts/Natural_join_jar/Natural join.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/out/artifacts/Natural_join_jar/Natural join.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/out/production/Natural join/natural_join$joinMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/out/production/Natural join/natural_join$joinMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/out/production/Natural join/natural_join$joinReducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/out/production/Natural join/natural_join$joinReducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/out/production/Natural join/natural_join.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Natural join/out/production/Natural join/natural_join.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Spark/practice/Kmeans/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Spark/practice/Kmeans/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Spark/practice/Kmeans/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Spark/practice/Kmeans/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DistributionSystem/Spark/practice/Kmeans/src/main/java/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DistributionSystem/Spark/practice/Kmeans/src/main/java/Kmeans.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +18,12 @@
     <session id="-1994523917">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -62,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/database/jdbctest/entity/JDBCTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="390">
               <caret line="15" column="21" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="21" />
             </state>
           </provider>
@@ -71,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/database/jdbctest/entity/S.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="390">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#360#361#0" expanded="true" />
@@ -110,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/database/jdbctest/DBtest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="312">
               <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -165,6 +158,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,14 +192,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540518486324" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DistributionSystem/Hadoop/Kmeans" />
+    <property name="last_opened_file_path" value="$USER_HOME$/iCloudDrive/CS/DataBaseSystem/JAR/postgresql-42.2.5.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -276,16 +269,18 @@
       <workItem from="1540512930608" duration="5434000" />
       <workItem from="1540522250697" duration="43000" />
       <workItem from="1540537138854" duration="18000" />
+      <workItem from="1541723257114" duration="97000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5495000" />
+    <option name="totallyTimeSpent" value="5592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19029851" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1924307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -331,14 +326,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/database/jdbctest/entity/JDBCTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="390">
           <caret line="15" column="21" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/database/jdbctest/entity/S.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="390">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#360#361#0" expanded="true" />
@@ -363,7 +358,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/database/jdbctest/DBtest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="312">
           <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
