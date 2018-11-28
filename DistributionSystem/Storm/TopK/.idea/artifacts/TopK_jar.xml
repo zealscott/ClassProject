@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TopK:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TopK_jar</output-path>
+    <root id="archive" name="TopK.jar">
+      <element id="module-output" name="TopK" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="StreamJoin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/StreamJoin_jar</output-path>
+    <root id="archive" name="StreamJoin.jar">
+      <element id="module-output" name="StreamJoin" />
+    </root>
+  </artifact>
+</component>
