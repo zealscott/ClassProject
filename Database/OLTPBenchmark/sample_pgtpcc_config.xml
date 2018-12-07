@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<parameters>
+        <!-- Connection details -->
+        <dbtype>postgres</dbtype>
+        <driver>org.postgresql.Driver</driver>
+        <DBUrl>jdbc:postgresql://localhost:5432/tpcc_test</DBUrl> #连接信息
+        <username>postgres</username> #用户名
+        <password>postgres</password> #密码
+        <isolation>TRANSACTION_READ_COMMITTED</isolation>  #隔离级别
+        <scalefactor>1</scalefactor>  #数据库的scale factor，在TPCC里面可以理解为warehouse的数量
+        <terminals>30</terminals>  #
+        <works>   #指定多个工作的任务，也可以包含两个工作任务（TP和AP的任务）
+                <work>
+                        <time>30</time>    #执行的时间
+                        <rate>4000</rate>  #峰值多少（考虑到对其他工作任务的影响）
+                        <ratelimited bench=“tpcc”>true</ratelimited>  #工作负载类型
+                <weights>44,44,4,4,4</weights> 负载分配
+                </work>
+        </works>
+        <!-- TPCC specific -->  
+   	<transactiontypes>
+    	<transactiontype>
+    		<name>NewOrder</name>
+    	</transactiontype>
+    	<transactiontype>
+    		<name>Payment</name>
+    	</transactiontype>
+    	<transactiontype>
+    		<name>OrderStatus</name>
+    	</transactiontype>
+    	<transactiontype>
+    		<name>Delivery</name>
+    	</transactiontype>
+    	<transactiontype>
+    		<name>StockLevel</name>
+    	</transactiontype>
+   	</transactiontypes>
+</parameters>
