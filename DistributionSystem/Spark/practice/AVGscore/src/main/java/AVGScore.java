@@ -24,7 +24,7 @@ public class AVGScore {
 
         /**
          * map string to (id, score) and convert to (group_id, (score,1))
-         * reduceByKey => (group_id,(sumScore, count)
+         * reduceByKey => (group_id,(sumScore, count))
          * and then mapValues to avg score
          */
 
