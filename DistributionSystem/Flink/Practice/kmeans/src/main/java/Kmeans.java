@@ -1,137 +1,195 @@
-
-
+import org.apache.flink.api.common.functions.*;
+import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
+import org.apache.flink.api.java.functions.FunctionAnnotation;
+import org.apache.flink.api.java.operators.IterativeDataSet;
 import org.apache.flink.api.java.tuple.Tuple2;
-import scala.Serializable;
+import org.apache.flink.api.java.tuple.Tuple3;
+import org.apache.flink.api.java.utils.ParameterTool;
+import org.apache.flink.configuration.Configuration;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
-public class Kmeans implements KmeansInterface, Serializable {
+public class Kmeans {
 
-    // every point has a cluster number and point(x,y)
-    private List<Tuple2<Integer, Point>> oldCenterList = new ArrayList<>();
-    private List<Tuple2<Integer, Point>> newCenterList = new ArrayList<>();
-    private double threshold = 0.000001;
+    public static void main(String[] args) throws Exception {
+        // Checking input parameters
+        final ParameterTool params = ParameterTool.fromArgs(args);
+        // set up execution environment
+        ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
+        env.getConfig().setGlobalJobParameters(params); // make parameters available in the web interface
+
+        // get input data:
+        DataSet<Point> points = getPoint(params, env);
+        if (points == null)
+            return;
+        DataSet<Centroid> centroids = getCentroid(params, env);
 
 
-    /**
-     * @param point
-     * @return cluster belonged
-     * @Method get the closest cluster for the point
-     */
-    public int findClosest(Point point) {
-        int argmin = -1;
-        double minimalDistance = Double.MAX_VALUE;
-        for (Tuple2<Integer, Point> i : oldCenterList) {
-            double distance = point.EuclideanDis(i.f1);
-            if (distance < minimalDistance) {
-                minimalDistance = distance;
-                argmin = i.f0;
-            }
+        // set number of bulk iterations for KMeans algorithm
+        IterativeDataSet<Centroid> loop = centroids.iterate(params.getInt("iterations", 100));
+
+        DataSet<Centroid> newCentroids = points
+                // compute closest centroid for each point
+                .map(new SelectNearestCenter()).withBroadcastSet(loop, "centroids")
+                // count and sum point coordinates for each centroid
+                .map(new CountAppender())
+                .groupBy(0).reduce(new CentroidAccumulator())
+                // compute new centroids from point counts and coordinate sums
+                .map(new CentroidAverager());
+
+
+        // feed new centroids back into next iteration
+        DataSet<Centroid> finalCentroids = loop.closeWith(newCentroids, newCentroids.filter(new thresholdFilter()).withBroadcastSet(loop,"centroids"));
+
+//        DataSet<Tuple2<Integer, Point>> clusteredPoints = points
+//                // assign points to final clusters
+//                .map(new SelectNearestCenter()).withBroadcastSet(finalCentroids, "centroids");
+
+        // emit result
+        if (params.has("output")) {
+            finalCentroids.writeAsCsv(params.get("output"), "\n", " ");
+            env.execute();
+        } else {
+            System.out.println("Printing result to stdout. Use --output to specify output path.");
+            finalCentroids.print();
         }
-        return argmin;
     }
 
-
-    /**
-     * @param outFile string
-     * @Method save center to txt
-     */
-    public void saveToFile(String outFile, ExecutionEnvironment env) {
-
+    private static DataSet<Point> getPoint(ParameterTool params, ExecutionEnvironment env) {
+        DataSet<Point> points;
+        if (params.has("input")) {
+            // read points from CSV file
+            points = env.readCsvFile(params.get("input"))
+                    .ignoreFirstLine()
+                    .pojoType(Point.class, "x", "y");
+        } else {
+            System.out.println("Use --input to specify file input.");
+            return null;
+        }
+        return points;
     }
 
+    private static DataSet<Centroid> getCentroid(ParameterTool params, ExecutionEnvironment env) throws Exception {
+        ArrayList<Centroid> centroidArrayList = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new FileReader(params.get("input")));
+        String text = br.readLine();
+        int k = Integer.parseInt(text.split(",")[0]);
+
+        while (k != 0) {
+            text = br.readLine();
+            double x = Double.parseDouble(text.split(",")[0]);
+            double y = Double.parseDouble(text.split(",")[1]);
+            centroidArrayList.add(new Centroid(k, x, y));
+            k--;
+        }
+
+        DataSet<Centroid> centroids = env.fromCollection(centroidArrayList);
+        return centroids;
+    }
 
     /**
-     * @return False for not stable
-     * @Method compare two cluster center with threshold
+     * Determines the closest cluster center for a data point.
      */
-    public boolean clusterCompare() {
-        for (Tuple2<Integer, Point> oldCenter : oldCenterList) {
-            int clusterNum = oldCenter._1;
-            for (Tuple2<Integer, Point> newCenter : newCenterList) {
-                if (newCenter._1 == clusterNum) {
-                    double dis = oldCenter._2.EuclideanDis(newCenter._2);
-                    if (dis > threshold)
-                        return false;
-                    break;
+    @FunctionAnnotation.ForwardedFields("*->1")
+    public static final class SelectNearestCenter extends RichMapFunction<Point, Tuple2<Integer, Point>> {
+        private Collection<Centroid> centroids;
+
+        /**
+         * Reads the centroid values from a broadcast variable into a collection.
+         */
+        @Override
+        public void open(Configuration parameters) throws Exception {
+            this.centroids = getRuntimeContext().getBroadcastVariable("centroids");
+        }
+
+        @Override
+        public Tuple2<Integer, Point> map(Point p) throws Exception {
+
+            double minDistance = Double.MAX_VALUE;
+            int closestCentroidId = -1;
+
+            // check all cluster centers
+            for (Centroid centroid : centroids) {
+                // compute distance
+                double distance = p.euclideanDistance(centroid);
+
+                // update nearest cluster if necessary
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestCentroidId = centroid.id;
                 }
             }
+
+            // emit a new record with the center id and the data point.
+            return new Tuple2<>(closestCentroidId, p);
         }
-        return true;
+    }
+
+    /**
+     * Appends a count variable to the tuple.
+     */
+    @FunctionAnnotation.ForwardedFields("f0;f1")
+    public static final class CountAppender implements MapFunction<Tuple2<Integer, Point>, Tuple3<Integer, Point, Long>> {
+        @Override
+        public Tuple3<Integer, Point, Long> map(Tuple2<Integer, Point> t) {
+            return new Tuple3<>(t.f0, t.f1, 1L);
+        }
+    }
+
+    /**
+     * Sums and counts point coordinates.
+     */
+    @FunctionAnnotation.ForwardedFields("0")
+    public static final class CentroidAccumulator implements ReduceFunction<Tuple3<Integer, Point, Long>> {
+
+        @Override
+        public Tuple3<Integer, Point, Long> reduce(Tuple3<Integer, Point, Long> val1, Tuple3<Integer, Point, Long> val2) {
+            return new Tuple3<>(val1.f0, val1.f1.add(val2.f1), val1.f2 + val2.f2);
+        }
+    }
+
+    /**
+     * Computes new centroid from coordinate sum and count of points.
+     */
+    @FunctionAnnotation.ForwardedFields("0->id")
+    public static final class CentroidAverager implements MapFunction<Tuple3<Integer, Point, Long>, Centroid> {
+        @Override
+        public Centroid map(Tuple3<Integer, Point, Long> value) {
+            // id, X/num Y/num
+            return new Centroid(value.f0, value.f1.div(value.f2));
+        }
     }
 
 
     /**
-     * @param kmeansRDD
-     * @return init pointsRDD
-     * @Method prepare Points RDD and select clusters randomly
+     * Filter that filters vertices where the centorid difference is below a threshold.
      */
-    public JavaPairRDD<Integer, Point> Prepare(JavaRDD<String> kmeansRDD) {
-        // get the number of cluster
-        String fisrtLine = kmeansRDD.first();
-        int clusterCount = Integer.parseInt(fisrtLine.split(",")[0]);
+    public static final class thresholdFilter extends RichFilterFunction<Centroid> {
+        private Collection<Centroid> centroids;
+        private double threshold = 1e-5;
 
-//        filter first line and convert to <Point,clusternum>, init set all cluster number 1
-        JavaPairRDD<Integer, Point> pointsRDD = kmeansRDD.filter(line -> !line.equals(fisrtLine)).mapToPair(
-                line -> {
-                    String[] splitLine = line.split(",");
-                    double X = Double.parseDouble(splitLine[0]);
-                    double Y = Double.parseDouble(splitLine[1]);
-                    return new Tuple2<>(0, new Point(X, Y));
+        /**
+         * Reads the centroid values from a broadcast variable into a collection.
+         */
+        @Override
+        public void open(Configuration parameters) throws Exception {
+            this.centroids = getRuntimeContext().getBroadcastVariable("centroids");
+        }
+
+        @Override
+        public boolean filter(Centroid centroid) {
+            for (Centroid oldcentroid : centroids) {
+                if (centroid.id == oldcentroid.id) {
+                    // compute distance
+                    double distance = centroid.euclideanDistance(oldcentroid);
+                    return (distance > this.threshold);
                 }
-        );
-
-//       init center list
-        oldCenterList.addAll(pointsRDD.take(clusterCount));
-
-        for (int i = 0; i < clusterCount; i++) {
-            Tuple2<Integer, Point> tmp = oldCenterList.get(i);
-            oldCenterList.set(i, new Tuple2<>(i, tmp._2));
+            }
+            return true;
         }
-
-        newCenterList.addAll(oldCenterList);
-
-        return pointsRDD;
-
     }
-
-
-    /**
-     * @param pointsRDD to cluster
-     * @return new classify PointsRDD
-     * @method cluster and update new cluster center
-     */
-    public JavaPairRDD<Integer, Point> cluster(JavaPairRDD<Integer, Point> pointsRDD) {
-
-        JavaPairRDD<Integer, Point> newPointsRDD = pointsRDD.mapToPair(
-                kv -> new Tuple2<>(findClosest(kv._2), kv._2)
-        );
-
-        JavaPairRDD<Integer, Point> newClusterRDD = newPointsRDD
-                .mapValues(
-                        value -> new Tuple2<>(value, 1))
-                .reduceByKey(
-                        new Function2<Tuple2<Point, Integer>, Tuple2<Point, Integer>, Tuple2<Point, Integer>>() {
-                            @Override
-                            public Tuple2<Point, Integer> call(Tuple2<Point, Integer> value1, Tuple2<Point, Integer> value2) throws Exception {
-                                Point tmp = new Point(value1._1.getX() + value2._1.getX(), value1._1.getY() + value2._1.getY());
-                                int count = value1._2 + value2._2;
-                                return new Tuple2<>(tmp, count);
-                            }
-                        }
-                ).mapValues(
-                        v -> new Point(v._1.getX() / v._2, v._1.getY() / v._2)
-                );
-
-        oldCenterList.clear();
-        oldCenterList.addAll(newCenterList);
-        // convert to list to store
-        newCenterList.clear();
-        newCenterList.addAll(newClusterRDD.collect());
-
-        return newPointsRDD;
-    }
-
 }
