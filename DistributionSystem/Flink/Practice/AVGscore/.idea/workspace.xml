@@ -6,7 +6,237 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d92709b-7b9b-4d87-b073-716a0bfe125e" name="Default Changelist" comment="" />
+    <list default="true" id="6d92709b-7b9b-4d87-b073-716a0bfe125e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/src/main/java/ConnectedComponentsData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Graph/PageRank/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Graph/PageRank/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Graph/PageRank/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_101" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_102" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_103" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_104" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_105" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_106" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_107" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_108" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_109" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_110" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_111" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_112" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_114" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_115" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_116" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_117" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_118" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_119" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_120" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_121" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_122" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_123" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_124" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_125" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_126" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_127" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_128" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_129" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_130" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_131" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_132" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_133" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_134" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_135" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_136" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_137" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_138" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_139" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_140" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_141" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_142" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_143" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_144" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_145" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_146" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_147" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_148" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_149" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_150" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab4/__MACOSX/attacklab/._README-attacklab.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab4/__MACOSX/attacklab/._attacklab-release.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab4/__MACOSX/attacklab/._attacklab.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab4/__MACOSX/attacklab/._target.tar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/OLTPBenchmark/sample_pgtpcc_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/OLTPBenchmark/sample_pgtpcc_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/libraries/Hibernate_5_3_7_5_3_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/libraries/Hibernate_5_3_7_5_3_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/libraries/javax_activation_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/libraries/javax_activation_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/libraries/postgresql_42_2_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/libraries/postgresql_42_2_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/hibernate2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/hibernate2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/out/production/hibernate2/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/out/production/hibernate2/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/src/Entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/src/Entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/src/Entity/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/src/Entity/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernate2/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernate2/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/dataSources/2a54aa1a-4550-4571-a285-b1cd4009adcb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/dataSources/2a54aa1a-4550-4571-a285-b1cd4009adcb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/libraries/Hibernate_5_3_7_5_3_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/libraries/Hibernate_5_3_7_5_3_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/libraries/javax_activation_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/libraries/javax_activation_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/libraries/postgresql_42_2_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/libraries/postgresql_42_2_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/hibernateTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/hibernateTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/out/production/hibernateTest/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/out/production/hibernateTest/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/HibernateSessionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/HibernateSessionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Market.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/PlayerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/PlayerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Trade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/TreasureCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/TreasureCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/score.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NaturalJoin/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NaturalJoin/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NaturalJoin/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NaturalJoin/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NaturalJoin/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NaturalJoin/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NaturalJoin/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../NaturalJoin/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NaturalJoin/address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../NaturalJoin/address.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NaturalJoin/person.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../NaturalJoin/person.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NaturalJoin/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../NaturalJoin/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StuScore/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StuScore/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StuScore/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StuScore/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StuScore/StuScore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/StuScore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StuScore/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StuScore/src/main/java/StuScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/src/main/java/StuScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StuScore/stuID.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/stuID.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kmeans/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kmeans/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kmeans/kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/../kmeans/kmeans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kmeans/src/main/java/Centroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kmeans/src/main/java/Centroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kmeans/src/main/java/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kmeans/src/main/java/Kmeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kmeans/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../kmeans/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCount/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCount/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCount/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCount/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCount/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCount/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCount/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCount/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCount/WordCount.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCount/WordCount.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCount/src/main/java/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCount/src/main/java/WordCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCount/src/main/java/WordCountData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCount/src/main/java/WordCountData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCount/src/main/java/WordCountTokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCount/src/main/java/WordCountTokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCountSteaming/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCountSteaming/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCountSteaming/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCountSteaming/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCountSteaming/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCountSteaming/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCountSteaming/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCountSteaming/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCountSteaming/WordCountSteaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCountSteaming/WordCountSteaming.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WordCountSteaming/src/main/java/SocketWindowWordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../WordCountSteaming/src/main/java/SocketWindowWordCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/Kmeans.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/Kmeans.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/score.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/AVGscore/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/Kmeans.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/Kmeans.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/src/main/java/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/src/main/java/Kmeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/src/main/java/Points.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Kmeans/src/main/java/Points.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Natural join/address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Natural join/address.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/Natural join/person.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/Natural join/person.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spark/practice/StuScore/stuID.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spark/practice/StuScore/stuID.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SparkSteaming/NetworkWordCount/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SparkSteaming/NetworkWordCount/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SparkSteaming/NetworkWordCount/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SparkSteaming/NetworkWordCount/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SparkSteaming/NetworkWordCount/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SparkSteaming/NetworkWordCount/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/artifacts/StreamJoin_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/artifacts/StreamJoin_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/StreamJoin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/StreamJoin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/src/main/java/SimpleJoinBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/src/main/java/SimpleJoinBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/src/main/java/SingleJoinExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/src/main/java/SingleJoinExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/StreamJoin/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/StreamJoin/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/SentenceSpout.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/SentenceSpout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/SplitSentenceBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/SplitSentenceBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/TopK.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/TopK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/WordTopKTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/WordTopKTopology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/TopK/src/main/java/pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/artifacts/WordCount_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/artifacts/WordCount_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/WordCount.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/WordCount.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/SentenceSpout.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/SentenceSpout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/SplitSentenceBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/SplitSentenceBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/WordCountBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/WordCountBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/WordCountTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/WordCount/src/main/java/WordCountTopology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/src/main/java/SentenceSpout.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/src/main/java/SentenceSpout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/src/main/java/SplitSentenceBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/src/main/java/SplitSentenceBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/src/main/java/WordSortBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/src/main/java/WordSortBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/src/main/java/WordSortTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/src/main/java/WordSortTopology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Storm/wordSort/wordSort.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Storm/wordSort/wordSort.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._AssignmentToIndex.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._ComputeJointDistribution.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._ComputeMarginal.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._ConvertNetwork.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._Credit_net.net" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._FactorMarginalization.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._FactorProduct.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._FactorTutorial.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._GetValueOfAssignment.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._IndexToAssignment.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._ObserveEvidence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._PA-Simple-BN-Knowledge-Engineering.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._SetValueOfAssignment.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._submit.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/._submit_input.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/._jsonlab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/._makeValidFieldName.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/._submitWithConfiguration.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._AUTHORS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._ChangeLog.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._LICENSE_BSD.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._jsonopt.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._loadjson.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._loadubjson.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._mergestruct.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._savejson.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._saveubjson.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PGM/PA-Simple-BN-Knowledge-Engineering-Release/__MACOSX/lib/jsonlab/._varargin2struct.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2-shell/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project2-shell/ReadMe.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project3-Trie/30wChinsesSeqDic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SoftwareEngineering/Project3-Trie/30wChinsesSeqDic.csv" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,10 +280,11 @@
     <session id="1915313770">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -92,7 +323,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="260">
               <caret line="10" column="18" selection-end-line="28" selection-end-column="10" />
             </state>
           </provider>
@@ -101,8 +332,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/AVGscore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="29" column="52" selection-end-line="54" />
+            <state relative-caret-position="358">
+              <caret line="32" column="28" selection-end-line="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,7 +351,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -143,11 +374,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="127" />
-    <option name="y" value="80" />
-    <option name="width" value="954" />
-    <option name="height" value="668" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="37" />
+    <option name="y" value="23" />
+    <option name="width" value="1643" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -157,6 +388,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,7 +412,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,23 +452,24 @@
       <workItem from="1544939676126" duration="2525000" />
       <workItem from="1544946272659" duration="746000" />
       <workItem from="1544956722754" duration="3409000" />
+      <workItem from="1545372988848" duration="241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6900000" />
+    <option name="totallyTimeSpent" value="7141000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1649" height="902" extended-state="6" />
+    <frame x="37" y="23" width="1643" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07985028" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08108108" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32901555" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -249,6 +481,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32901555" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -269,15 +502,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="260">
           <caret line="10" column="18" selection-end-line="28" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AVGscore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="29" column="52" selection-end-line="54" />
+        <state relative-caret-position="358">
+          <caret line="32" column="28" selection-end-line="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

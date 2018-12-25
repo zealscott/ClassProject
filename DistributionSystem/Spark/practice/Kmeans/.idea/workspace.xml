@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14593d73-4684-4093-926b-694958d4d34c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/src/main/java/NaturalJoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/Kmeans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/KmeansInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/ConnectedComponents/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/ConnectedComponents/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/ConnectedComponents/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/ConnectedComponents/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/ConnectedComponents/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/ConnectedComponents/ConnectedComponents.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/ConnectedComponents/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/ConnectedComponents/src/main/java/ConnectedComponentsData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/PageRank/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/PageRank/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Flink/Graph/PageRank/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_101" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_102" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_103" beforeDir="false" />
@@ -99,23 +100,28 @@
       <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Trade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/TreasureCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/TreasureCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/AVGscore/score.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/NaturalJoin/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/NaturalJoin/address.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/NaturalJoin/person.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/StuScore.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/out/artifacts/StuScore_jar/StuScore.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/src/main/java/StuScore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/stuID.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/target/classes/StuScore$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/StuScore/target/classes/StuScore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/AVGscore/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/AVGscore/score.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/AVGscore/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/AVGscore/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/address.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/person.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/person.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/NaturalJoin/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/StuScore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/StuScore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/src/main/java/StuScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/src/main/java/StuScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/stuID.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/StuScore/stuID.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/kmeans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/Centroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/Centroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/Kmeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/Practice/kmeans/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Flink/WordCount/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/WordCount/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Flink/WordCount/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/WordCount/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Flink/WordCount/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/WordCount/.idea/misc.xml" afterDir="false" />
@@ -130,31 +136,22 @@
       <change beforePath="$PROJECT_DIR$/../../../Flink/WordCountSteaming/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/WordCountSteaming/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Flink/WordCountSteaming/WordCountSteaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/WordCountSteaming/WordCountSteaming.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Flink/WordCountSteaming/src/main/java/SocketWindowWordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Flink/WordCountSteaming/src/main/java/SocketWindowWordCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/kmeans/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/kmeans/k-means.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flink/kmeans/kmeans.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/Kmeans.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/Kmeans.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hadoop/Kmeans/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AVGscore/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AVGscore/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AVGscore/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AVGscore/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AVGscore/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AVGscore/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AVGscore/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AVGscore/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AVGscore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AVGscore/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AVGscore/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../AVGscore/score.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AVGscore/src/main/java/AVGScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AVGscore/src/main/java/AVGScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AVGscore/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../AVGscore/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kmeans.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Kmeans.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Kmeans.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Points.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Points.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Natural join/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Natural join/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Natural join/address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/address.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Natural join/person.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Natural join/person.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../StuScore/stuID.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../StuScore/stuID.csv" afterDir="false" />
@@ -312,9 +309,10 @@
     <session id="-1402900984">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -333,7 +331,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Kmeans.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="2028">
               <caret line="86" column="30" selection-end-line="145" />
             </state>
           </provider>
@@ -354,7 +352,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kmeansRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="26">
               <caret line="8" selection-end-line="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -367,7 +365,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Points.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="8" lean-forward="true" selection-end-line="46" selection-end-column="1" />
+              <caret line="8" selection-end-line="46" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -442,7 +440,11 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -484,11 +486,12 @@
       <workItem from="1541082459732" duration="325000" />
       <workItem from="1541722780371" duration="60000" />
       <workItem from="1544946531648" duration="961000" />
+      <workItem from="1545372989339" duration="50000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29402000" />
+    <option name="totallyTimeSpent" value="29452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="23" width="1643" height="1027" extended-state="0" />
@@ -498,9 +501,9 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.14475873" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.14456317" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info active="true" id="Maven Projects" order="7" visible="true" weight="0.14393464" />
+      <window_info id="Maven Projects" order="7" weight="0.14393464" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.40673575" />
@@ -538,9 +541,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Kmeans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2028">
+          <caret line="86" column="30" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kmeansRun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="26">
           <caret line="8" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -551,14 +561,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Points.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="8" lean-forward="true" selection-end-line="46" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Kmeans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="86" column="30" selection-end-line="145" />
+          <caret line="8" selection-end-line="46" selection-end-column="1" />
         </state>
       </provider>
     </entry>
