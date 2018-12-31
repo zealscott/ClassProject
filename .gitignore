@@ -5,8 +5,8 @@
 /IntroduceToAI/SentimentAnalysis/RowData.zip
 /IntroduceToAI/BPnetwork/data
 
-target/*
-out/*
+target/
+out/
 
 .ipynb_checkpoints
 
