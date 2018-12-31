@@ -1,4 +1,3 @@
-import org.apache.commons.compress.archivers.dump.DumpArchiveEntry;
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;

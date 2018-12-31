@@ -7,14 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d92709b-7b9b-4d87-b073-716a0bfe125e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Graph/ConnectedComponents/src/main/java/ConnectedComponentsData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Graph/PageRank/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Graph/PageRank/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Graph/PageRank/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_101" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_102" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../ComputerSystem/Lab2/bombs/__MACOSX/bombs/._bomb_103" beforeDir="false" />
@@ -102,6 +94,7 @@
       <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/Trade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/TreasureCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/entity/TreasureCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Database/hibernateTest/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/score.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NaturalJoin/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NaturalJoin/.idea/compiler.xml" afterDir="false" />
@@ -280,21 +273,22 @@
     <session id="1915313770">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="411" />
+          <entry key="java" value="412" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="411" />
+          <entry key="JAVA" value="412" />
         </counts>
       </usages-collector>
     </session>
@@ -332,8 +326,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/AVGscore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="32" column="28" selection-end-line="54" />
+            <state relative-caret-position="234">
+              <caret line="9" column="61" lean-forward="true" selection-end-line="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -388,6 +382,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -411,13 +406,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544939468959" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546053854889" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -453,17 +447,17 @@
       <workItem from="1544946272659" duration="746000" />
       <workItem from="1544956722754" duration="3409000" />
       <workItem from="1545372988848" duration="241000" />
+      <workItem from="1546053698103" duration="199000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7141000" />
+    <option name="totallyTimeSpent" value="7340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="23" width="1643" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08108108" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.082338154" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -509,8 +503,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AVGscore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="32" column="28" selection-end-line="54" />
+        <state relative-caret-position="234">
+          <caret line="9" column="61" lean-forward="true" selection-end-line="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
