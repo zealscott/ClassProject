@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JDBC:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JDBC_jar</output-path>
+    <root id="archive" name="JDBC.jar">
+      <element id="module-output" name="JDBC" />
+      <element id="extracted-dir" path="$USER_HOME$/iCloudDrive/CS/DataBaseSystem/JAR/postgresql-42.2.5.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
