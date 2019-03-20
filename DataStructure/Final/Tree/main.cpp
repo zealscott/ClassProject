@@ -11,7 +11,7 @@ int main()
     string t;
     getline(cin,t);
     BinaryTreeNode* T;
-//    BfsCreateTree(T);
+   BfsCreateTree(T);
     DfsCreateTree(T);
     cout<<t<<endl;
 //    PreOrder(T);
@@ -23,7 +23,7 @@ int main()
 int main2()
 {
     BinaryTreeNode* T;
-// Ç°ÐòÖÐÐò½¨Ê÷
+// Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     string PreArray = "ABCDEGF";
     string InArray = "CBEGDFA";
     string PostArray = "CGEFDBA";
