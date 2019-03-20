@@ -7,7 +7,9 @@
 
 target/
 out/
+__MACOSX/
 
 .ipynb_checkpoints
+.DS_Store
 
 ## 参考https://blog.csdn.net/u014079773/article/details/51602344
