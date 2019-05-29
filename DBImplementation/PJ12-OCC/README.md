@@ -3,7 +3,7 @@ This project aims to complement a simple Timestamp ordering concurrency control.
 compile the file:
 
 ```shell
-clang++ -std=c++11 main.cpp cc_to.cpp data_to.cpp -o p
+clang++ -std=c++11 main.cpp cc_occ.cpp data_occ.cpp -o p
 ```
 
 - global.h：全局配置及变量

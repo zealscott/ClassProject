@@ -43,10 +43,11 @@ for write:
 RC data_to::access(thread::id tid, TsType type, Data *data, time_t ts)
 {
 	RC rc = RCOK;
+	latch.lock();
 	if (type == R_REQ)
 	{
-		if (data->writestamp > ts)
-			rc = RCERROR;
+		if (data_.writestamp > ts)
+			rc = ABORT;
 		else if (ts > min_pts)
 		{
 			buffer_req(type, tid, data, ts);
@@ -54,17 +55,20 @@ RC data_to::access(thread::id tid, TsType type, Data *data, time_t ts)
 		}
 		else // execute
 		{
-			data->readstamp = ts;
+			data->value = data_.value;
+			if (data_.readstamp < ts)
+				data_.readstamp = ts;
+			rc = RCOK;
 		}
 	}
 	else if (type == P_REQ)
 	{
-		if (ts < data->writestamp)
-			rc = RCERROR;
+		if (ts < data_.readstamp || ts < data_.writestamp)
+			rc = ABORT;
 		else
 		{
 			buffer_req(type, tid, data, ts);
-			// rc = WAIT;
+			rc = RCOK;
 		}
 	}
 	else
@@ -78,10 +82,12 @@ RC data_to::access(thread::id tid, TsType type, Data *data, time_t ts)
 		{
 			// pop from pre write entry
 			debuffer_req(P_REQ, tid);
-			data->writestamp = ts;
+			data_.writestamp = ts;
+			data_.value = data->value;
 			update_buffer();
 		}
 	}
+	latch.unlock();
 	return rc;
 }
 
@@ -277,7 +283,10 @@ void data_to::update_buffer()
 			while (readExcuteEntry != NULL)
 			{
 				if (readExcuteEntry->data->readstamp < readExcuteEntry->ts)
-					readExcuteEntry->data->readstamp = readExcuteEntry->ts;
+				{
+					// readExcuteEntry->data->readstamp = readExcuteEntry->ts;
+					readExcuteEntry->data->value = data_.value;
+				}
 				readExcuteEntry = readExcuteEntry->next;
 			}
 			time_t new_min_rts = cal_min(R_REQ);
@@ -285,14 +294,22 @@ void data_to::update_buffer()
 				break;
 			else
 			{
+				time_t toWrite_ts = min_rts;
 				min_rts = new_min_rts;
+				// 只需要找出当前小于min_rts的最大的数据，保存在writeExcute，执行写操作
 				TOReqEntry *writeExcuteEntry = delete_buffer(W_REQ, min_rts);
+				TOReqEntry *writeExcute = NULL;
 				while (writeExcuteEntry != NULL)
 				{
-					if (writeExcuteEntry->data->readstamp < writeExcuteEntry->ts)
-						writeExcuteEntry->data->readstamp = writeExcuteEntry->ts;
+					if (writeExcuteEntry->ts > toWrite_ts)
+					{
+						writeExcute = writeExcuteEntry;
+						toWrite_ts = writeExcuteEntry->ts;
+					}
 					writeExcuteEntry = writeExcuteEntry->next;
 				}
+				if (writeExcute != NULL)
+					data_.value = writeExcute->data->value;
 			}
 		}
 	}
