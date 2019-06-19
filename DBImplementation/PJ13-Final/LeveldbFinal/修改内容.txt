@@ -1,0 +1,36 @@
+version_set.h下添加：
+std::vector<FileMetaData *>  GetFiles(int level) {
+            return files_[level];
+        }
+
+db.h下添加：
+virtual Version* GetCurrentVersion();
+
+db_impl.h下添加：
+virtual Version* GetCurrentVersion();
+
+db_impl.cc下添加：
+
+    Version* DBImpl::GetCurrentVersion(){
+        return versions_->current();
+    }
+    Version* DB::GetCurrentVersion(){
+        return GetCurrentVersion();
+    }
+
+
+主函数：
+    leveldb::DB *db2;
+    leveldb::Options options2;
+    options2.create_if_missing = true;
+    leveldb::Status status2 = leveldb::DB::Open(options2,
+                                                "/home/rui/CLionProjects/test_read_sst/cmake-build-debug/mydb123",
+                                                &db2);
+
+    leveldb::Version *current = db2->GetCurrentVersion();
+    std::vector<leveldb::FileMetaData *> files_ = current->GetFiles(0);
+    for (int i = 0; i < files_.size(); i++) {
+        std::cout << files_[i]->number << " ";
+        std::cout << files_[i]->smallest.user_key().ToString() << " ";
+        std::cout << files_[i]->largest.user_key().ToString() << std::endl;
+    }

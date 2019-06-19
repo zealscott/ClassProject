@@ -35,6 +35,7 @@ RC cc_occ::commit(txn_man * txn)
 	RC rc = RCOK;
 
 	rc = occ_man.validate(txn);
-
+	//cout << rc << endl;
+	//cout << txn->tid << "  s:  " << txn->start_ts << "  e:  " << txn->end_ts << "  c:  " << txn->commit_ts <<endl;
 	return rc;
 }

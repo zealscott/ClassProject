@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="test_read_sst"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sstMaxMin">
+				<Option output="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/sstMaxMin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/db"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/helpers/memenv"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/leveldb"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/table"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/util"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 sstMaxMin"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sstMaxMin/fast">
+				<Option output="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/sstMaxMin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/db"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/helpers/memenv"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/leveldb"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/table"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/util"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 sstMaxMin/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="read_sst">
+				<Option output="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/read_sst" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/db"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/helpers/memenv"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/leveldb"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/table"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/util"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 read_sst"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="read_sst/fast">
+				<Option output="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/read_sst" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/db"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/helpers/memenv"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/leveldb"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/table"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/util"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 read_sst/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="multimap">
+				<Option output="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/multimap" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/db"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/helpers/memenv"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/leveldb"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/table"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/util"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 multimap"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="multimap/fast">
+				<Option output="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/multimap" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/db"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/helpers/memenv"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/leveldb"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/table"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/util"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 multimap/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_read_sst">
+				<Option output="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/test_read_sst" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/db"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/helpers/memenv"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/leveldb"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/table"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/util"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_read_sst"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_read_sst/fast">
+				<Option output="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/test_read_sst" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/db"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/helpers/memenv"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/leveldb"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/include/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/port"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/table"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/util"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/include"/>
+					<Add directory="/Users/scott/Desktop/LeveldbFinal"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_read_sst/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/builder.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/builder.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/c.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/db_impl.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/db_impl.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/db_iter.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/db_iter.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/dbformat.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/dbformat.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/dumpfile.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/filename.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/filename.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/log_format.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/log_reader.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/log_reader.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/log_writer.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/log_writer.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/memtable.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/memtable.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/repair.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/skiplist.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/snapshot.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/table_cache.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/table_cache.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/version_edit.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/version_edit.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/version_set.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/version_set.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/write_batch.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/db/write_batch_internal.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/helpers/memenv/memenv.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/helpers/memenv/memenv.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/c.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/cache.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/comparator.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/db.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/dumpfile.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/env.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/export.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/filter_policy.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/iterator.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/options.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/slice.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/status.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/table.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/table_builder.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/leveldb/write_batch.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/include/port/port_config.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/port/port.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/port/port_example.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/port/port_stdcxx.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/port/thread_annotations.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/block.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/block.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/block_builder.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/block_builder.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/filter_block.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/filter_block.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/format.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/format.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/iterator.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/iterator_wrapper.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/merger.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/merger.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/table.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/table_builder.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/two_level_iterator.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/table/two_level_iterator.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/test/FinalDemo.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/test/multimap.cc">
+			<Option target="multimap"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/test/read_sst.cc">
+			<Option target="read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/test/sstMaxMin.cc">
+			<Option target="sstMaxMin"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/arena.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/arena.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/bloom.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/cache.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/coding.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/coding.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/comparator.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/crc32c.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/crc32c.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/env.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/env_posix.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/filter_policy.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/hash.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/hash.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/histogram.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/histogram.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/logging.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/logging.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/mutexlock.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/no_destructor.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/options.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/posix_logger.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/random.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/status.cc">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/util/testutil.h">
+			<Option target="test_read_sst"/>
+		</Unit>
+		<Unit filename="/Users/scott/Desktop/LeveldbFinal/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

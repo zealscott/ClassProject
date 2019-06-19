@@ -1,0 +1,6 @@
+/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/CMakeFiles/sstMaxMin.dir
+/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/CMakeFiles/read_sst.dir
+/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/CMakeFiles/multimap.dir
+/Users/scott/Desktop/LeveldbFinal/cmake-build-debug/CMakeFiles/test_read_sst.dir

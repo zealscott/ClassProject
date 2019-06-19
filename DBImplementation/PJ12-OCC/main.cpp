@@ -5,11 +5,12 @@
 #include <thread>
 #include <ctime>
 #include <unistd.h>
+#include "cc_occ.h"
+#include "data_to.h"
 #include "global.h"
 #include "structure.h"
 #include "txn.h"
 #include "data.h"
-#include "cc_occ.h"
 
 using namespace std;
 
@@ -167,9 +168,9 @@ RC transaction1(cc_occ &ccOCC)
 		if (rc != RCOK)
 			return rc;
 	}
-	time_t end_ts = get_ts();
-	txn->end_ts = end_ts;
 	rc = ccOCC.commit(txn);
+	//cout << rc << endl;
+	cout << "txn1:" << txn->tid << "  s:  " << txn->start_ts << "  e:  " << txn->end_ts << "  c:  " << txn->commit_ts << "  his_len: " << ccOCC.occ_man.his_len << endl;
 	return rc;
 }
 
@@ -198,9 +199,8 @@ RC transaction2(cc_occ &ccOCC)
 		if (rc != RCOK)
 			return rc;
 	}
-	time_t end_ts = get_ts();
-	txn->end_ts = end_ts;
 	rc = ccOCC.commit(txn);
+	cout << "txn2:" << txn->tid << "  s:  " << txn->start_ts << "  e:  " << txn->end_ts << "  c:  " << txn->commit_ts << "  his_len: " << ccOCC.occ_man.his_len << endl;
 	return rc;
 }
 
@@ -232,9 +232,8 @@ RC transaction3(cc_occ &ccOCC)
 	rc = ccOCC.update(to_string(k3), v3 + 10, txn);
 	if (rc != RCOK)
 		return rc;
-	time_t end_ts = get_ts();
-	txn->end_ts = end_ts;
 	rc = ccOCC.commit(txn);
+	cout << "txn3:" << txn->tid << "  s:  " << txn->start_ts << "  e:  " << txn->end_ts << "  c:  " << txn->commit_ts << "  his_len: " << ccOCC.occ_man.his_len << endl;
 	return rc;
 }
 /*

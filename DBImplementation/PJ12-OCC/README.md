@@ -1,4 +1,4 @@
-This project aims to complement a simple Timestamp ordering concurrency control.
+This project aims to complement a simple Optimistic Concurrency Control.
 
 compile the file:
 

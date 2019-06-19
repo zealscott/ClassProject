@@ -16,6 +16,7 @@ public:
 	txn_man() {
 		start_ts = INT64_MAX;
 		end_ts = INT64_MAX;
+		commit_ts = INT64_MAX;
 		tid = this_thread::get_id();
 
 		rd_cnt = 0;
@@ -27,6 +28,8 @@ public:
 
 	//end time of the read phase
 	time_t end_ts;
+
+	time_t commit_ts;
 
 	thread::id tid;
 

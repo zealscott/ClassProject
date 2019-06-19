@@ -6,6 +6,7 @@
 #include<mutex>
 #include<vector>
 
+#include"data_to.h"
 #include"data_occ.h"
 #include"data.h"
 using namespace std;
@@ -29,7 +30,7 @@ public:
 	RC delete_();
 
 	//std::vector<Data> data_;
-	//std::unordered_map<std::string, Data> data_map;  //hash mapï¿½ï¿½use for store data
+	//std::unordered_map<std::string, Data> data_map;  //hash map£¬use for store data
 	std::unordered_map<std::string, Data> data_map;
 private:
 	cc_type cc;

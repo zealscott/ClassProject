@@ -48,17 +48,19 @@ public:
 	{
 		*this = d;
 	}
+	int his_len;
+	int active_len;
 
 private:
 	bool test_validate(setEntry *set1, setEntry *set2);
 	RC get_rw_set(txn_man *txn, setEntry *&rset, setEntry *&wset);
 	bool is_overlap(setEntry *set, time_t start, time_t end);
+	void update_data(txn_man *txn, setEntry *wset, bool valid);
 
 	//wset of committed txn, new to old
 	setEntry *history;
 	//wset of active txn
 	setEntry *active;
-	int his_len;
-	int active_len;
+
 	mutex latch;
 };
