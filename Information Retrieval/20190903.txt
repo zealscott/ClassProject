@@ -1,0 +1,23 @@
+2019.09.02:
+    5个小作业 50% + 1个大作业 40% + 出勤 10%
+
+2019.09.03
+    ##安装lucene
+    1.https://blog.csdn.net/u013819513/article/details/79733756
+    2.目录下新建lucene_test
+    3.java org.apache.lucene.demo.IndexFiles -docs D:\4lswj\lucene-6.6.3
+    4.java org.apache.lucene.demo.SearchFiles
+
+    ##总文件分到每个小文件里
+    with open('wiki.txt', 'r') as f:
+        lines = f.read()
+    lines = lines.split('\n\n')#107万左右
+    print(len(lines))
+    for i in range(len(lines)):
+        content = lines[i]
+        with open('/Users/zp/Downloads/wiki/wiki_txt/' + str(i) + '.txt', 'w') as f:
+            f.write(content)
+
+    ##lucene搜索参考代码
+    http://www.yidooo.net/2011/11/21/pylucene-study-notes-document-indexing-and-retrieval.html
+    https://www.iteye.com/blog/arenzhj-2189817

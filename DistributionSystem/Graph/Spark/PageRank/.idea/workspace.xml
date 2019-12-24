@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3ce5084-e072-4069-a946-befa53be659f" name="Default Changelist" comment="" />
+    <list default="true" id="a3ce5084-e072-4069-a946-befa53be659f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../DBImplementation/Final/大作业要求.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../DBImplementation/PJ13-Final/LeveldbFinal/修改内容.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../DBImplementation/PJ13-Final/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../DBImplementation/PJ13-Final/README.md" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,10 +23,11 @@
     <session id="2010666810">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -142,11 +147,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1" />
-    <option name="y" value="25" />
-    <option name="width" value="890" />
-    <option name="height" value="894" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -231,11 +235,12 @@
       <workItem from="1546053771361" duration="8690000" />
       <workItem from="1546219336323" duration="3677000" />
       <workItem from="1558315926138" duration="9000" />
+      <workItem from="1564318547573" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12376000" />
+    <option name="totallyTimeSpent" value="12379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />

@@ -1,16 +1,3 @@
----
-title: LevelDB Project
-categories:
-  - DBImplementation
-  - Project
-mathjax: true
-date: 2019-06-19 22:18:03
----
-
-基于LevelDB的大作业。
-
-<!-- more --> 
-
 # Project说明
 
 ## 要求
